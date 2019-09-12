@@ -12,6 +12,11 @@ html, body {
     padding-top:20px;
 }
 
+#resume {
+    font-weight: bold !important;
+    color: red;
+}
+
 #profile {
     border-radius: 50%; /*once this is a square, it will become a circle */
 }
