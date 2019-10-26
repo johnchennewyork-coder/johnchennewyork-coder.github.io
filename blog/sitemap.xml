@@ -3,11 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://johntiger1.github.io/blog/categories/</loc>
+    <loc>http://johntiger1.github.io/blog/</loc>
+    <lastmod>2019-10-26T15:12:28-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://johntiger1.github.io/blog/</loc>
+    <loc>http://johntiger1.github.io/blog/posts/my-third/</loc>
+    <lastmod>2019-10-26T15:12:28-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://johntiger1.github.io/blog/posts/</loc>
+    <lastmod>2019-10-26T15:12:28-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://johntiger1.github.io/blog/posts/my-sec/</loc>
+    <lastmod>2019-10-26T15:10:20-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://johntiger1.github.io/blog/posts/my-first-post/</loc>
+    <lastmod>2019-10-26T15:09:49-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://johntiger1.github.io/blog/categories/</loc>
   </url>
   
   <url>
