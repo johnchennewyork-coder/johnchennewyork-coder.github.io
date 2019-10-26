@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>My New Hugo Site</title>
-    <link>http://johntiger1.github.io/blog/</link>
+    <link>https://johntiger1.github.io/blog/</link>
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 26 Oct 2019 15:12:28 -0400</lastBuildDate>
     
-	<atom:link href="http://johntiger1.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://johntiger1.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>My Third</title>
-      <link>http://johntiger1.github.io/blog/posts/my-third/</link>
+      <link>https://johntiger1.github.io/blog/posts/my-third/</link>
       <pubDate>Sat, 26 Oct 2019 15:12:28 -0400</pubDate>
       
-      <guid>http://johntiger1.github.io/blog/posts/my-third/</guid>
+      <guid>https://johntiger1.github.io/blog/posts/my-third/</guid>
       <description></description>
     </item>
     
     <item>
       <title>My Sec</title>
-      <link>http://johntiger1.github.io/blog/posts/my-sec/</link>
+      <link>https://johntiger1.github.io/blog/posts/my-sec/</link>
       <pubDate>Sat, 26 Oct 2019 15:10:20 -0400</pubDate>
       
-      <guid>http://johntiger1.github.io/blog/posts/my-sec/</guid>
+      <guid>https://johntiger1.github.io/blog/posts/my-sec/</guid>
       <description></description>
     </item>
     
     <item>
       <title>My First Post</title>
-      <link>http://johntiger1.github.io/blog/posts/my-first-post/</link>
+      <link>https://johntiger1.github.io/blog/posts/my-first-post/</link>
       <pubDate>Sat, 26 Oct 2019 15:09:49 -0400</pubDate>
       
-      <guid>http://johntiger1.github.io/blog/posts/my-first-post/</guid>
+      <guid>https://johntiger1.github.io/blog/posts/my-first-post/</guid>
       <description></description>
     </item>
     
