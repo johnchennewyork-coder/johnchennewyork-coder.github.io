@@ -19,7 +19,7 @@
       <guid>https://johntiger1.github.io/blog/posts/hugo-subsite/</guid>
       <description>You may have noticed that this blog exists under my main Github personal website. How did I get it to work?
  Github exposes your entire vitual directory by default. (This is why you can just put raw assets in the repo, and they will be served when queried directly) So, I just made Hugo build the entire blog subsite to a folder in my main repo!
-  In short: 1.</description>
+  In short:</description>
     </item>
     
     <item>
