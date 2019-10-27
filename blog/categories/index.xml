@@ -6,9 +6,37 @@
     <description>Recent content in Categories on John&#39;s Machine Learning and Deep Learning Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sat, 26 Oct 2019 23:18:32 -0400</lastBuildDate>
     
 	<atom:link href="https://johntiger1.github.io/blog/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Blogging</title>
+      <link>https://johntiger1.github.io/blog/categories/blogging/</link>
+      <pubDate>Sat, 26 Oct 2019 23:18:32 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/categories/blogging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Development</title>
+      <link>https://johntiger1.github.io/blog/categories/development/</link>
+      <pubDate>Sat, 26 Oct 2019 23:18:32 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/categories/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web Programming</title>
+      <link>https://johntiger1.github.io/blog/categories/web-programming/</link>
+      <pubDate>Sat, 26 Oct 2019 23:18:32 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/categories/web-programming/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

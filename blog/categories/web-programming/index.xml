@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web Programming on John&#39;s Machine Learning and Deep Learning Blog</title>
+    <link>https://johntiger1.github.io/blog/categories/web-programming/</link>
+    <description>Recent content in Web Programming on John&#39;s Machine Learning and Deep Learning Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Oct 2019 23:18:32 -0400</lastBuildDate>
+    
+	<atom:link href="https://johntiger1.github.io/blog/categories/web-programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to make a Hugo Subsite</title>
+      <link>https://johntiger1.github.io/blog/posts/hugo-subsite/</link>
+      <pubDate>Sat, 26 Oct 2019 23:18:32 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/hugo-subsite/</guid>
+      <description>You may have noticed that this blog exists under my main Github personal website. How did I get it to work?
+ Github exposes your entire vitual directory by default. (This is why you can just put raw assets in the repo, and they will be served when queried directly) So, I just made Hugo build the entire blog subsite to a folder in my main repo!
+  In short:</description>
+    </item>
+    
+  </channel>
+</rss>

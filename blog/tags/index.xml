@@ -6,9 +6,37 @@
     <description>Recent content in Tags on John&#39;s Machine Learning and Deep Learning Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sat, 26 Oct 2019 23:18:32 -0400</lastBuildDate>
     
 	<atom:link href="https://johntiger1.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Git submodules</title>
+      <link>https://johntiger1.github.io/blog/tags/git-submodules/</link>
+      <pubDate>Sat, 26 Oct 2019 23:18:32 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/tags/git-submodules/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://johntiger1.github.io/blog/tags/hugo/</link>
+      <pubDate>Sat, 26 Oct 2019 23:18:32 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Subsite</title>
+      <link>https://johntiger1.github.io/blog/tags/subsite/</link>
+      <pubDate>Sat, 26 Oct 2019 23:18:32 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/tags/subsite/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
