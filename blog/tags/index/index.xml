@@ -18,7 +18,7 @@
       
       <guid>https://johntiger1.github.io/blog/posts/upcoming/</guid>
       <description>So without further ado, here are the posts I plan to make:
- Exotic python data structures and where to find them (heapq, OrderedDict, Deque, bisect) Onsite interview with Microsoft Reparameterization tricks: Gaussian vs gumbel The REINFORCE gradient estimator Probability notations Research itinerary Birthday post ABD, L1, and Deep learning Symposium follow-up Scale AI follow-up The supremum IS big-O notation (usually we want the TIGHTEST worst case bound) Some more reinforcement learning  See you soon!</description>
+ Exotic python data structures and where to find them (heapq, OrderedDict, Deque, bisect) Onsite interview with Microsoft Reparameterization tricks: Gaussian vs gumbel The REINFORCE gradient estimator Probability notations Research itinerary Birthday post ABD, L1, and Deep learning Symposium follow-up Scale AI follow-up The supremum IS big-O notation (usually we want the TIGHTEST worst case bound) [Some more reinforcement learning][1] [Some more reinforcement learning]1  See you soon!</description>
     </item>
     
   </channel>
