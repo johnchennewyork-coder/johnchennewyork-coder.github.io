@@ -6,10 +6,20 @@
     <description>Recent content in Posts on John&#39;s Machine Learning and Deep Learning Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 Oct 2019 15:32:39 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 27 Oct 2019 17:43:51 -0400</lastBuildDate>
     
 	<atom:link href="https://johntiger1.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Upcoming</title>
+      <link>https://johntiger1.github.io/blog/posts/upcoming/</link>
+      <pubDate>Sun, 27 Oct 2019 17:43:51 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/upcoming/</guid>
+      <description>So without further ado, here are the posts I plan to make:
+ Onsite interview with Microsoft Reparameterization tricks: Gaussian vs gumbel Probability notations Research itinerary Birthday post  See you soon!</description>
+    </item>
     
     <item>
       <title>Roadmap</title>
