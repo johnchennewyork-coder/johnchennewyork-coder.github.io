@@ -3,12 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://johntiger1.github.io/blog/tags/index/</loc>
-    <lastmod>2019-10-27T17:43:51-04:00</lastmod>
+    <loc>https://johntiger1.github.io/blog/tags/deep-learning/</loc>
+    <lastmod>2019-10-27T21:31:36-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://johntiger1.github.io/blog/</loc>
+    <lastmod>2019-10-27T21:31:36-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://johntiger1.github.io/blog/posts/</loc>
+    <lastmod>2019-10-27T21:31:36-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://johntiger1.github.io/blog/tags/</loc>
+    <lastmod>2019-10-27T21:31:36-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://johntiger1.github.io/blog/tags/todo/</loc>
+    <lastmod>2019-10-27T21:31:36-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://johntiger1.github.io/blog/posts/vae/</loc>
+    <lastmod>2019-10-27T21:31:36-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://johntiger1.github.io/blog/tags/variational-auto-encoders/</loc>
+    <lastmod>2019-10-27T21:31:36-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://johntiger1.github.io/blog/tags/index/</loc>
     <lastmod>2019-10-27T17:43:51-04:00</lastmod>
   </url>
   
@@ -18,17 +48,7 @@
   </url>
   
   <url>
-    <loc>https://johntiger1.github.io/blog/posts/</loc>
-    <lastmod>2019-10-27T17:43:51-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://johntiger1.github.io/blog/tags/roadmap/</loc>
-    <lastmod>2019-10-27T17:43:51-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://johntiger1.github.io/blog/tags/</loc>
     <lastmod>2019-10-27T17:43:51-04:00</lastmod>
   </url>
   
