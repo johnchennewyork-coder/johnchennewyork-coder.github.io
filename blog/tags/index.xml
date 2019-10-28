@@ -6,10 +6,64 @@
     <description>Recent content in Tags on John&#39;s Machine Learning and Deep Learning Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 26 Oct 2019 23:18:32 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 27 Oct 2019 21:31:36 -0400</lastBuildDate>
     
 	<atom:link href="https://johntiger1.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>deep learning</title>
+      <link>https://johntiger1.github.io/blog/tags/deep-learning/</link>
+      <pubDate>Sun, 27 Oct 2019 21:31:36 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/tags/deep-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>todo</title>
+      <link>https://johntiger1.github.io/blog/tags/todo/</link>
+      <pubDate>Sun, 27 Oct 2019 21:31:36 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/tags/todo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>variational auto encoders</title>
+      <link>https://johntiger1.github.io/blog/tags/variational-auto-encoders/</link>
+      <pubDate>Sun, 27 Oct 2019 21:31:36 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/tags/variational-auto-encoders/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>index</title>
+      <link>https://johntiger1.github.io/blog/tags/index/</link>
+      <pubDate>Sun, 27 Oct 2019 17:43:51 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/tags/index/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>plan</title>
+      <link>https://johntiger1.github.io/blog/tags/plan/</link>
+      <pubDate>Sun, 27 Oct 2019 17:43:51 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/tags/plan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>roadmap</title>
+      <link>https://johntiger1.github.io/blog/tags/roadmap/</link>
+      <pubDate>Sun, 27 Oct 2019 17:43:51 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/tags/roadmap/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Git submodules</title>

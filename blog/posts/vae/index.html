@@ -7,8 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Overview of all pages with the category #Web Programming - John&#39;s Machine Learning and Deep Learning Blog</title>
-  <meta name="description" content="Overview of all pages with the category #Web Programming, such as: How to make a Hugo Subsite">
+  <title>Variational Auto Encoder - John&#39;s Machine Learning and Deep Learning Blog</title>
+  <meta name="description" content="VAEs are autoencoders with some added randomness. The encoder network (also called recognition or inference network) outputs parameters of a probability distribution for each data point. Then, for each data point, we sample from this parametrized distribution, and feed the SAMPLE to the decoder network, which then is tasked with reconstructing the output. The training objective involves changing from an integral, into just doing optimization, hence the VAE variational objective. In particular, all we do is maximize the ELBO, which helps push up our p(x) which normally would require an integral!">
   <meta name="author" content="John Chen"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -29,14 +29,64 @@
   
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/johntiger1.github.io\/blog",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/johntiger1.github.io\/blog\/posts\/vae\/",
+          "name": "Variational auto encoder"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "John Chen"
+  },
+  "headline": "Variational Auto Encoder",
+  "description" : "VAEs are autoencoders with some added randomness. The encoder network (also called recognition or inference network) outputs parameters of a probability distribution for each data point. Then, for each data point, we sample from this parametrized distribution, and feed the SAMPLE to the decoder network, which then is tasked with reconstructing the output. The training objective involves changing from an integral, into just doing optimization, hence the VAE variational objective. In particular, all we do is maximize the ELBO, which helps push up our p(x) which normally would require an integral!",
+  "inLanguage" : "en",
+  "wordCount":  144 ,
+  "datePublished" : "2019-10-27T21:31:36",
+  "dateModified" : "2019-10-27T21:31:36",
+  "image" : "https:\/\/johntiger1.github.io\/blog\/img\/avatar-icon.png",
+  "keywords" : [ "todo, deep learning, variational auto encoders" ],
+  "mainEntityOfPage" : "https:\/\/johntiger1.github.io\/blog\/posts\/vae\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/johntiger1.github.io\/blog",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/johntiger1.github.io\/blog\/img\/avatar-icon.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
 
-<meta property="og:title" content="Web Programming" />
+<meta property="og:title" content="Variational Auto Encoder" />
+<meta property="og:description" content="VAEs are autoencoders with some added randomness. The encoder network (also called recognition or inference network) outputs parameters of a probability distribution for each data point. Then, for each data point, we sample from this parametrized distribution, and feed the SAMPLE to the decoder network, which then is tasked with reconstructing the output. The training objective involves changing from an integral, into just doing optimization, hence the VAE variational objective. In particular, all we do is maximize the ELBO, which helps push up our p(x) which normally would require an integral!">
 <meta property="og:image" content="https://johntiger1.github.io/blog/img/avatar-icon.png" />
-<meta property="og:url" content="https://johntiger1.github.io/blog/categories/web-programming/" />
+<meta property="og:url" content="https://johntiger1.github.io/blog/posts/vae/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="John&#39;s Machine Learning and Deep Learning Blog" />
 
-  <meta name="twitter:title" content="Web Programming" />
+  <meta name="twitter:title" content="Variational Auto Encoder" />
+  <meta name="twitter:description" content="VAEs are autoencoders with some added randomness. The encoder network (also called recognition or inference network) outputs parameters of a probability distribution for each data point. Then, for …">
   <meta name="twitter:image" content="https://johntiger1.github.io/blog/img/avatar-icon.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://johntiger1.github.io/blog/img/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -184,9 +234,9 @@ if (!doNotTrack) {
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="categories-heading">
+            <div class="posts-heading">
               
-                <h1>Web Programming</h1>
+                <h1>Variational Auto Encoder</h1>
               
               
                 <hr class="small">
@@ -202,70 +252,112 @@ if (!doNotTrack) {
 
 
     
-  <div class="container" role="main">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>VAEs are autoencoders with some added randomness. The encoder network (also called recognition or inference network) outputs parameters of a probability distribution for each data point. Then, for each data point, we sample from this parametrized distribution, and feed the SAMPLE to the decoder network, which then is tasked with reconstructing the output. The training objective involves changing from an integral, into just doing optimization, hence the VAE variational objective. In particular, all we do is maximize the ELBO, which helps push up our p(x) which normally would require an integral!</p>
+
+<p>Todo:
+Go over amortized inference; explain it in relation to inference networks, as well as efficiency (why exactly we can train a VAE, posterior inference, likelihood of the image p(x), and relation to ELBO [relation to variational methods; in particular, how we are in a sense avoiding integration over all the latent variables])</p>
+
+
         
-        <div class="posts-list">
+          <div class="blog-tags">
+            
+              <a href="https://johntiger1.github.io/blog/tags/todo/">todo</a>&nbsp;
+            
+              <a href="https://johntiger1.github.io/blog/tags/deep-learning/">deep learning</a>&nbsp;
+            
+              <a href="https://johntiger1.github.io/blog/tags/variational-auto-encoders/">variational auto encoders</a>&nbsp;
+            
+          </div>
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fvae%2f&amp;text=Variational%20Auto%20Encoder&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fvae%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fvae%2f&amp;title=Variational%20Auto%20Encoder" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fvae%2f&amp;title=Variational%20Auto%20Encoder" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fvae%2f&amp;title=Variational%20Auto%20Encoder" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fvae%2f&amp;description=Variational%20Auto%20Encoder" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
           
-            <article class="post-preview">
-    <a href="https://johntiger1.github.io/blog/posts/hugo-subsite/">
-        <h2 class="post-title">How to make a Hugo Subsite</h2>
-        
-        
-        
-    </a>
 
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on October 26, 2019
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;155&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Chen
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        You may have noticed that this blog exists under my main Github personal website. How did I get it to work?
- Github exposes your entire vitual directory by default. (This is why you can just put raw assets in the repo, and they will be served when queried directly) So, I just made Hugo build the entire blog subsite to a folder in my main repo!
-  In short:
-        <a href="https://johntiger1.github.io/blog/posts/hugo-subsite/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://johntiger1.github.io/blog/tags/hugo/">Hugo</a>&nbsp;
-        
-        <a href="https://johntiger1.github.io/blog/tags/subsite/">Subsite</a>&nbsp;
-        
-        <a href="https://johntiger1.github.io/blog/tags/git-submodules/">Git submodules</a>&nbsp;
-        
-    </div>
-    
-
-</article>
           
-        </div>
         
-      </div>
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://johntiger1.github.io/blog/posts/upcoming/" data-toggle="tooltip" data-placement="top" title="Upcoming">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
     </div>
   </div>
+</div>
 
       
 <footer>
@@ -276,7 +368,7 @@ if (!doNotTrack) {
           
           
           <li>
-            <a href="/blog/categories/web-programming/index.xml" title="RSS">
+            <a href="" title="RSS">
               <span class="fa-stack fa-lg">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fas fa-rss fa-stack-1x fa-inverse"></i>

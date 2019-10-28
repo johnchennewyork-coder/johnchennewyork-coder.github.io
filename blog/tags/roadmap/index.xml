@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>roadmap on John&#39;s Machine Learning and Deep Learning Blog</title>
+    <link>https://johntiger1.github.io/blog/tags/roadmap/</link>
+    <description>Recent content in roadmap on John&#39;s Machine Learning and Deep Learning Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 27 Oct 2019 17:43:51 -0400</lastBuildDate>
+    
+	<atom:link href="https://johntiger1.github.io/blog/tags/roadmap/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Upcoming</title>
+      <link>https://johntiger1.github.io/blog/posts/upcoming/</link>
+      <pubDate>Sun, 27 Oct 2019 17:43:51 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/upcoming/</guid>
+      <description>So without further ado, here are the posts I plan to make:
+ Exotic python data structures and where to find them (heapq, OrderedDict, Deque, bisect) Onsite interview with Microsoft Reparameterization tricks: Gaussian vs gumbel The REINFORCE gradient estimator Probability notations Research itinerary Birthday post ABD, L1, and Deep learning Symposium follow-up Scale AI follow-up The supremum IS big-O notation (usually we want the TIGHTEST worst case bound) Model vs Data Parallelism [Some more reinforcement learning][1] [Some more reinforcement learning]1  (Note that the markdown in preview does not exactly work with some more exotic features, like citations and references)</description>
+    </item>
+    
+  </channel>
+</rss>
