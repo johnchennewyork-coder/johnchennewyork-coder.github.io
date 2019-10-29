@@ -6,10 +6,29 @@
     <description>Recent content in Posts on John&#39;s Machine Learning and Deep Learning Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 Oct 2019 21:31:36 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 29 Oct 2019 00:27:14 -0400</lastBuildDate>
     
 	<atom:link href="https://johntiger1.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Pure Storage Coding Challenge</title>
+      <link>https://johntiger1.github.io/blog/posts/pure-storage-coding-challenge/</link>
+      <pubDate>Tue, 29 Oct 2019 00:27:14 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/pure-storage-coding-challenge/</guid>
+      <description>Just finished the Pure Storage Coding Challenge! It consists of some coding questions, and then some CS theory questions. Overall, it was a very fair coding challenge, and actually had interesting questions that test your knowledge of CS beyond just Leetcode :)
+Great test!</description>
+    </item>
+    
+    <item>
+      <title>Research Tips</title>
+      <link>https://johntiger1.github.io/blog/posts/research-tips/</link>
+      <pubDate>Mon, 28 Oct 2019 00:36:02 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/research-tips/</guid>
+      <description>Research is hard. Here are some tips I&amp;rsquo;ve picked up over the years: 1. Try to present your work to as many people who will listen. It forces you to really understand the content yourself, and serves as a reality check 2. Make dedicated time for research. As a grad student, it is easy to put research to the side, but to solve any non-trivial problem requires constant, structured attention. 3.</description>
+    </item>
     
     <item>
       <title>Variational Auto Encoder</title>

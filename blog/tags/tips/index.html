@@ -7,8 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Variational Auto Encoder - John&#39;s Machine Learning and Deep Learning Blog</title>
-  <meta name="description" content="VAEs are autoencoders with some added randomness. The encoder network (also called recognition or inference network) outputs parameters of a probability distribution for each data point. Then, for each data point, we sample from this parametrized distribution, and feed the SAMPLE to the decoder network, which then is tasked with reconstructing the output. The training objective involves changing from an integral, into just doing optimization, hence the VAE variational objective. In particular, all we do is maximize the ELBO, which helps push up our p(x) which normally would require an integral!">
+  <title>Overview of all pages with the tag #tips - John&#39;s Machine Learning and Deep Learning Blog</title>
+  <meta name="description" content="Overview of all pages with the tag #tips, such as: Research Tips">
   <meta name="author" content="John Chen"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -29,64 +29,14 @@
   
 }
 </script>
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@id": "https:\/\/johntiger1.github.io\/blog",
-          "name": "home"
-        }
-    },{
-        "@type": "ListItem",
-        "position": 3,
-        "item": {
-          "@id": "https:\/\/johntiger1.github.io\/blog\/posts\/vae\/",
-          "name": "Variational auto encoder"
-        }
-    }]
-}
-</script><script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Article",
-  "author": {
-    "name" : "John Chen"
-  },
-  "headline": "Variational Auto Encoder",
-  "description" : "VAEs are autoencoders with some added randomness. The encoder network (also called recognition or inference network) outputs parameters of a probability distribution for each data point. Then, for each data point, we sample from this parametrized distribution, and feed the SAMPLE to the decoder network, which then is tasked with reconstructing the output. The training objective involves changing from an integral, into just doing optimization, hence the VAE variational objective. In particular, all we do is maximize the ELBO, which helps push up our p(x) which normally would require an integral!",
-  "inLanguage" : "en",
-  "wordCount":  144 ,
-  "datePublished" : "2019-10-27T21:31:36",
-  "dateModified" : "2019-10-27T21:31:36",
-  "image" : "https:\/\/johntiger1.github.io\/blog\/img\/avatar-icon.png",
-  "keywords" : [ "todo, deep learning, variational auto encoders" ],
-  "mainEntityOfPage" : "https:\/\/johntiger1.github.io\/blog\/posts\/vae\/",
-  "publisher" : {
-    "@type": "Organization",
-    "name" : "https:\/\/johntiger1.github.io\/blog",
-    "logo" : {
-        "@type" : "ImageObject",
-        "url" : "https:\/\/johntiger1.github.io\/blog\/img\/avatar-icon.png",
-        "height" :  60 ,
-        "width" :  60
-    }
-  }
-}
-</script>
 
-<meta property="og:title" content="Variational Auto Encoder" />
-<meta property="og:description" content="VAEs are autoencoders with some added randomness. The encoder network (also called recognition or inference network) outputs parameters of a probability distribution for each data point. Then, for each data point, we sample from this parametrized distribution, and feed the SAMPLE to the decoder network, which then is tasked with reconstructing the output. The training objective involves changing from an integral, into just doing optimization, hence the VAE variational objective. In particular, all we do is maximize the ELBO, which helps push up our p(x) which normally would require an integral!">
+<meta property="og:title" content="tips" />
 <meta property="og:image" content="https://johntiger1.github.io/blog/img/avatar-icon.png" />
-<meta property="og:url" content="https://johntiger1.github.io/blog/posts/vae/" />
+<meta property="og:url" content="https://johntiger1.github.io/blog/tags/tips/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="John&#39;s Machine Learning and Deep Learning Blog" />
 
-  <meta name="twitter:title" content="Variational Auto Encoder" />
-  <meta name="twitter:description" content="VAEs are autoencoders with some added randomness. The encoder network (also called recognition or inference network) outputs parameters of a probability distribution for each data point. Then, for …">
+  <meta name="twitter:title" content="tips" />
   <meta name="twitter:image" content="https://johntiger1.github.io/blog/img/avatar-icon.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://johntiger1.github.io/blog/img/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -234,9 +184,9 @@ if (!doNotTrack) {
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="posts-heading">
+            <div class="tags-heading">
               
-                <h1>Variational Auto Encoder</h1>
+                <h1>tips</h1>
               
               
                 <hr class="small">
@@ -252,116 +202,66 @@ if (!doNotTrack) {
 
 
     
-<div class="container" role="main">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <article role="main" class="blog-post">
-        <p>VAEs are autoencoders with some added randomness. The encoder network (also called recognition or inference network) outputs parameters of a probability distribution for each data point. Then, for each data point, we sample from this parametrized distribution, and feed the SAMPLE to the decoder network, which then is tasked with reconstructing the output. The training objective involves changing from an integral, into just doing optimization, hence the VAE variational objective. In particular, all we do is maximize the ELBO, which helps push up our p(x) which normally would require an integral!</p>
-
-<p>Todo:
-Go over amortized inference; explain it in relation to inference networks, as well as efficiency (why exactly we can train a VAE, posterior inference, likelihood of the image p(x), and relation to ELBO [relation to variational methods; in particular, how we are in a sense avoiding integration over all the latent variables])</p>
-
-
+  <div class="container" role="main">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
-          <div class="blog-tags">
-            
-              <a href="https://johntiger1.github.io/blog/tags/todo/">todo</a>&nbsp;
-            
-              <a href="https://johntiger1.github.io/blog/tags/deep-learning/">deep learning</a>&nbsp;
-            
-              <a href="https://johntiger1.github.io/blog/tags/variational-auto-encoders/">variational auto encoders</a>&nbsp;
-            
-          </div>
-        
-
-        
-            <hr/>
-            <section id="social-share">
-              <div class="list-inline footer-links">
-                
-
-<div class="share-box" aria-hidden="true">
-    <ul class="share">
-      
-      <li>
-        <a href="//twitter.com/share?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fvae%2f&amp;text=Variational%20Auto%20Encoder&amp;via=" target="_blank" title="Share on Twitter">
-          <i class="fab fa-twitter"></i>
-        </a>
-      </li>
-  
-      
-      <li>
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fvae%2f" target="_blank" title="Share on Facebook">
-          <i class="fab fa-facebook"></i>
-        </a>
-      </li>
-  
-      
-      <li>
-        <a href="//reddit.com/submit?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fvae%2f&amp;title=Variational%20Auto%20Encoder" target="_blank" title="Share on Reddit">
-          <i class="fab fa-reddit"></i>
-        </a>
-      </li>
-  
-      
-      <li>
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fvae%2f&amp;title=Variational%20Auto%20Encoder" target="_blank" title="Share on LinkedIn">
-          <i class="fab fa-linkedin"></i>
-        </a>
-      </li>
-  
-      
-      <li>
-        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fvae%2f&amp;title=Variational%20Auto%20Encoder" target="_blank" title="Share on StumbleUpon">
-          <i class="fab fa-stumbleupon"></i>
-        </a>
-      </li>
-  
-      
-      <li>
-        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fvae%2f&amp;description=Variational%20Auto%20Encoder" target="_blank" title="Share on Pinterest">
-          <i class="fab fa-pinterest"></i>
-        </a>
-      </li>
-    </ul>
-  </div>
-  
-
-              </div>
-            </section>
-        
-
-        
+        <div class="posts-list">
           
-
-          
-        
-      </article>
-
-      
-        <ul class="pager blog-pager">
-          
-            <li class="previous">
-              <a href="https://johntiger1.github.io/blog/posts/upcoming/" data-toggle="tooltip" data-placement="top" title="Upcoming">&larr; Previous Post</a>
-            </li>
-          
-          
-            <li class="next">
-              <a href="https://johntiger1.github.io/blog/posts/research-tips/" data-toggle="tooltip" data-placement="top" title="Research Tips">Next Post &rarr;</a>
-            </li>
-          
-        </ul>
-      
-
-
-      
+            <article class="post-preview">
+    <a href="https://johntiger1.github.io/blog/posts/research-tips/">
+        <h2 class="post-title">Research Tips</h2>
         
         
-      
+        
+    </a>
 
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on October 28, 2019
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;81&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Chen
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        Research is hard. Here are some tips I&rsquo;ve picked up over the years: 1. Try to present your work to as many people who will listen. It forces you to really understand the content yourself, and serves as a reality check 2. Make dedicated time for research. As a grad student, it is easy to put research to the side, but to solve any non-trivial problem requires constant, structured attention. 3.
+        <a href="https://johntiger1.github.io/blog/posts/research-tips/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://johntiger1.github.io/blog/tags/research/">research</a>&nbsp;
+        
+        <a href="https://johntiger1.github.io/blog/tags/tips/">tips</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+        </div>
+        
+      </div>
     </div>
   </div>
-</div>
 
       
 <footer>
@@ -372,7 +272,7 @@ Go over amortized inference; explain it in relation to inference networks, as we
           
           
           <li>
-            <a href="" title="RSS">
+            <a href="/blog/tags/tips/index.xml" title="RSS">
               <span class="fa-stack fa-lg">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
