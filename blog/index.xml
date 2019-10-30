@@ -6,10 +6,31 @@
     <description>Recent content on John&#39;s Machine Learning and Deep Learning Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 29 Oct 2019 23:21:23 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 30 Oct 2019 19:42:04 -0400</lastBuildDate>
     
 	<atom:link href="https://johntiger1.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ordered Dict</title>
+      <link>https://johntiger1.github.io/blog/posts/ordered-dict/</link>
+      <pubDate>Wed, 30 Oct 2019 19:42:04 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/ordered-dict/</guid>
+      <description>An OrderedDict is a dictionary that remembers insertion order. Sweet and simple! when comparing OrderedDicts, Python will check the order of the elements, as the name suggests!
+from collections import OrderedDict od = OrderedDict() od[&amp;#34;a&amp;#34;] = 99 od[&amp;#34;b&amp;#34;] = 100 od.pop() #pops the most recently entered entry! ... It also has some minor methods relating to this order:
+od.move_to_end(&amp;#39;b&amp;#39;, last=True) # moves key b to end of ordering od.move_to_end(&amp;#39;b&amp;#39;, last=False) # moves key b to beginning of ordering</description>
+    </item>
+    
+    <item>
+      <title>Deque</title>
+      <link>https://johntiger1.github.io/blog/posts/deque/</link>
+      <pubDate>Wed, 30 Oct 2019 19:38:47 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/deque/</guid>
+      <description>A deque (pronounced &amp;ldquo;deck&amp;rdquo;) is a doubly-ended queue data structure in Python. It is just like your regular array, but it has faster append/pop operations!
+from collections import deque d = deque() d.appendleft(2) d.popleft() d.pop() d.append() It can also support rotation, and other nice features!</description>
+    </item>
     
     <item>
       <title>Interview Tips</title>

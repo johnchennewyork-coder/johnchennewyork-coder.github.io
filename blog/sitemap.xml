@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://johntiger1.github.io/blog/</loc>
+    <lastmod>2019-10-30T19:42:04-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://johntiger1.github.io/blog/posts/ordered-dict/</loc>
+    <lastmod>2019-10-30T19:42:04-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://johntiger1.github.io/blog/posts/</loc>
+    <lastmod>2019-10-30T19:42:04-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://johntiger1.github.io/blog/posts/deque/</loc>
+    <lastmod>2019-10-30T19:38:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://johntiger1.github.io/blog/tags/exotic-data-structures/</loc>
+    <lastmod>2019-10-30T19:38:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://johntiger1.github.io/blog/tags/pro-programming/</loc>
+    <lastmod>2019-10-30T19:38:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://johntiger1.github.io/blog/tags/</loc>
+    <lastmod>2019-10-30T19:38:47-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://johntiger1.github.io/blog/tags/coding-challenge/</loc>
     <lastmod>2019-10-29T23:21:23-04:00</lastmod>
   </url>
@@ -14,21 +49,6 @@
   
   <url>
     <loc>https://johntiger1.github.io/blog/tags/interviewing/</loc>
-    <lastmod>2019-10-29T23:21:23-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://johntiger1.github.io/blog/</loc>
-    <lastmod>2019-10-29T23:21:23-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://johntiger1.github.io/blog/posts/</loc>
-    <lastmod>2019-10-29T23:21:23-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://johntiger1.github.io/blog/tags/</loc>
     <lastmod>2019-10-29T23:21:23-04:00</lastmod>
   </url>
   
