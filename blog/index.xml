@@ -6,10 +6,20 @@
     <description>Recent content on John&#39;s Machine Learning and Deep Learning Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 29 Oct 2019 13:21:25 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 29 Oct 2019 21:44:00 -0400</lastBuildDate>
     
 	<atom:link href="https://johntiger1.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>G Research Data Intelligence</title>
+      <link>https://johntiger1.github.io/blog/posts/g-research-data-intelligence/</link>
+      <pubDate>Tue, 29 Oct 2019 21:44:00 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/g-research-data-intelligence/</guid>
+      <description>Just finished by G-Research Data Intelligence coding challenge! It is 90 minutes long and 4 questions. I completed the first 3 in under half an hour, then spent all my remaining time on the mammoth of the last question.
+More details to come (if there is interest :P)</description>
+    </item>
     
     <item>
       <title>Whats in a Name Review</title>
