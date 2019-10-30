@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tips on John&#39;s Machine Learning and Deep Learning Blog</title>
-    <link>https://johntiger1.github.io/blog/tags/tips/</link>
-    <description>Recent content in tips on John&#39;s Machine Learning and Deep Learning Blog</description>
+    <title>coding challenge on John&#39;s Machine Learning and Deep Learning Blog</title>
+    <link>https://johntiger1.github.io/blog/tags/coding-challenge/</link>
+    <description>Recent content in coding challenge on John&#39;s Machine Learning and Deep Learning Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 29 Oct 2019 23:21:23 -0400</lastBuildDate>
     
-	<atom:link href="https://johntiger1.github.io/blog/tags/tips/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://johntiger1.github.io/blog/tags/coding-challenge/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       <guid>https://johntiger1.github.io/blog/posts/interview-tips/</guid>
       <description>As a follow-up to my recent interview-recap on G-Research, I&amp;rsquo;ve come to some realizations on some general tips for doing well on technical interviews:
  Don&amp;rsquo;t procrastinate!  Scheduling a coding challenge might feel like scheduling a dentist appointment: why are you willingly scheduling pain for yourself?! But like scheduling a dentist appointment, it is a necessary fact of life. Schedule it soon as you have a relatively free day (I know, I know everyone is always busy!</description>
-    </item>
-    
-    <item>
-      <title>Research Tips</title>
-      <link>https://johntiger1.github.io/blog/posts/research-tips/</link>
-      <pubDate>Mon, 28 Oct 2019 00:36:02 -0400</pubDate>
-      
-      <guid>https://johntiger1.github.io/blog/posts/research-tips/</guid>
-      <description>Research is hard. Here are some tips I&amp;rsquo;ve picked up over the years: 1. Try to present your work to as many people who will listen. It forces you to really understand the content yourself, and serves as a reality check 2. Make dedicated time for research. As a grad student, it is easy to put research to the side, but to solve any non-trivial problem requires constant, structured attention. 3.</description>
     </item>
     
   </channel>
