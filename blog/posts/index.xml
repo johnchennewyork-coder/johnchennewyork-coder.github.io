@@ -6,10 +6,86 @@
     <description>Recent content in Posts on John&#39;s Machine Learning and Deep Learning Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 30 Oct 2019 19:42:04 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 09 Nov 2019 00:38:18 -0500</lastBuildDate>
     
 	<atom:link href="https://johntiger1.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Topics in Deep Learning</title>
+      <link>https://johntiger1.github.io/blog/posts/topics-in-cs/</link>
+      <pubDate>Sat, 09 Nov 2019 00:38:18 -0500</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/topics-in-cs/</guid>
+      <description>There are some new topics and muses for my study:
+ Reinforcement learning (off-policy, on-policy) Embeddings; just generally getting accustomed to the lingo!  ex. a &amp;ldquo;question&amp;rdquo; embedding, or some other use of the word &amp;ldquo;embedding&amp;rdquo;  Graph neural networks Really want to concretize MCTS + Neural networks; i.e. the Alpha Zero framework  </description>
+    </item>
+    
+    <item>
+      <title>C3</title>
+      <link>https://johntiger1.github.io/blog/posts/c3.ai/</link>
+      <pubDate>Fri, 08 Nov 2019 01:25:25 -0500</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/c3.ai/</guid>
+      <description>So I had my 1st round final interviews for c3.ai today! It was an OK experience.
+The interview consisted of 3 portions, and I thought it was a pretty good interview process!
+First interview: Let&amp;rsquo;s say you are working for Expedia. How would you build a model to predict which trips are being taken for business and which are being taken for leisure?
+Second interview: Questions on domain knowledge of ML.</description>
+    </item>
+    
+    <item>
+      <title>Microsoft Onsite</title>
+      <link>https://johntiger1.github.io/blog/posts/microsoft-onsite/</link>
+      <pubDate>Tue, 05 Nov 2019 06:39:02 -0500</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/microsoft-onsite/</guid>
+      <description>I&amp;rsquo;m currently sitting in the airport in Philadelphia, having just taken the 10:30 red-eye from Seattle. I had the entire row to myself, which enabled me to sleep rather decently, all things considered! (even better than I&amp;rsquo;m sleeping at 95 Lippincott in all honesty!)
+My onsites were earlier that day in Redmond, Washington (Microsoft Main Campus). It was quite a process interviewing with them!
+Here&amp;rsquo;s a breakdown of the entire day:</description>
+    </item>
+    
+    <item>
+      <title>Learning to Program</title>
+      <link>https://johntiger1.github.io/blog/posts/learning-to-program/</link>
+      <pubDate>Fri, 01 Nov 2019 18:40:45 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/learning-to-program/</guid>
+      <description>This week, we covered a wide variety of approaches to neural methods to program synthesis and program induction.
+The first batch of presentations: Romila, Eric and Henri Romila: we have synthesis; the most naive way is indeed one way that CAN be used to form programs: get the input space, the program space, the action space, and then try all possible combinations. Her paper talked about some sort of Monte Carlo tree search based method; alpha zero but applied to program synthesis, and she was critical as they don&amp;rsquo;t update the policy network every time.</description>
+    </item>
+    
+    <item>
+      <title>Reinforcement Learning</title>
+      <link>https://johntiger1.github.io/blog/posts/reinforcement-learning/</link>
+      <pubDate>Thu, 31 Oct 2019 23:44:55 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/reinforcement-learning/</guid>
+      <description>Today marks my first foray into reinforcement learning territory!
+Although I have studied the topic extensively academically (well, kind of) I have not had a chance to actually sit down and play around with some implementations. So without further ado, here goes!
+Observation #1: past classifications affect future performance.
+A regular ol&amp;rsquo; CNN classifier is one-shot: it makes the prediction and then that&amp;rsquo;s it. Same with a RNN, sequential though it may be.</description>
+    </item>
+    
+    <item>
+      <title>Lyft_final_interview</title>
+      <link>https://johntiger1.github.io/blog/posts/lyft_final_interview/</link>
+      <pubDate>Thu, 31 Oct 2019 21:36:28 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/lyft_final_interview/</guid>
+      <description>Wow! That was quite an intense and exhausting 3 hours!
+I just finished my (virtual) final round interviews for Lyft.
+I had 3 back-to-back interviews; the first one on coding, the second on experience and team fit (with manager) and then the third on ML domain knowledge. What did not help was the huge time difference: I started my interviews at 5:30 PM, and it went all the way to 8:30 PM Toronto time.</description>
+    </item>
+    
+    <item>
+      <title>Cross Aligned Autoencoders</title>
+      <link>https://johntiger1.github.io/blog/posts/cross-aligned-autoencoders/</link>
+      <pubDate>Thu, 31 Oct 2019 11:36:52 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/cross-aligned-autoencoders/</guid>
+      <description>How does Shen&amp;rsquo;s paper work? Well it tries to fit a cross-aligned autoencoder. This is simply an autoencoder that is also guided adversarially by a discriminator. In terms of the basics/nitty gritty technical details, we have the following:
+ We have a sequential autoencoder. This is &amp;ldquo;simply&amp;rdquo; a recurrent autoencoder: i.e. an autoencoder where the encoder accepts a sequence of states, and the decoder also generates a sequence of states. This sequential autoencoder is aligned by an adversary.</description>
+    </item>
     
     <item>
       <title>Ordered Dict</title>
@@ -20,6 +96,17 @@
       <description>An OrderedDict is a dictionary that remembers insertion order. Sweet and simple! when comparing OrderedDicts, Python will check the order of the elements, as the name suggests!
 from collections import OrderedDict od = OrderedDict() od[&amp;#34;a&amp;#34;] = 99 od[&amp;#34;b&amp;#34;] = 100 od.pop() #pops the most recently entered entry! ... It also has some minor methods relating to this order:
 od.move_to_end(&amp;#39;b&amp;#39;, last=True) # moves key b to end of ordering od.move_to_end(&amp;#39;b&amp;#39;, last=False) # moves key b to beginning of ordering</description>
+    </item>
+    
+    <item>
+      <title>Data Science and Machine Learning Review</title>
+      <link>https://johntiger1.github.io/blog/posts/datascience-review/</link>
+      <pubDate>Wed, 30 Oct 2019 19:38:53 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/datascience-review/</guid>
+      <description>As I prepare for my final Machine Learning interview with Lyft, I look back on my Data Science career and projects. I also want to give a brief overview of the subjects that are useful for machine learning and data science.
+Data science type positions: 1. Basic statistics 2. Basic probability 3. Linear Regression 4. Normal equation
+It is difficult to draw the line precisely between machine learning and data science.</description>
     </item>
     
     <item>
