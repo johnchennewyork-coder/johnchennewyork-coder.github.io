@@ -208,6 +208,56 @@ if (!doNotTrack) {
         <div class="posts-list">
           
             <article class="post-preview">
+    <a href="https://johntiger1.github.io/blog/posts/ordered-dict/">
+        <h2 class="post-title">Ordered Dict</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on October 30, 2019
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;78&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Chen
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <p>An OrderedDict is a dictionary that remembers insertion order. Sweet and simple!
+<strong>when comparing OrderedDicts, Python will check the order of the elements, as the name suggests!</strong></p>
+<div class="highlight"><pre class="chroma">from collections import OrderedDict
+od = OrderedDict()
+od[&#34;a&#34;] = 99
+od[&#34;b&#34;] = 100
+od.pop() #pops the most recently entered entry!
+...</pre></div>
+<p>It also has some minor methods relating to this order:</p>
+<div class="highlight"><pre class="chroma">od.move_to_end(&#39;b&#39;, last=True) # moves key b to end of ordering
+od.move_to_end(&#39;b&#39;, last=False) # moves key b to beginning of ordering</pre></div>
+        
+    </div>
+
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="https://johntiger1.github.io/blog/posts/datascience-review/">
         <h2 class="post-title">Data Science and Machine Learning Review</h2>
         
@@ -655,48 +705,6 @@ Overall, I have a negative opinion of this paper. It introduces a novel way of b
         <a href="https://johntiger1.github.io/blog/tags/index/">index</a>&nbsp;
         
     </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://johntiger1.github.io/blog/posts/roadmap/">
-        <h2 class="post-title">Roadmap</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on October 27, 2019
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;223&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Chen
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        What exactly is the value prop of this blog? Well I like to think that I have some interesting things going on in my life:
- Machine learning, deep learning, linear algebra, statistics. I am a student in deep learning, and am lucky enough to be exposed daily to the inspirational and amazing work being conducted in the U of T ML group, at Vector Institute. In particular, I want to talk about the awesome papers and concepts I learn about in CSC2547 and CSC2541 My research: to appear in ACL 2020 (fingers crossed!
-        <a href="https://johntiger1.github.io/blog/posts/roadmap/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
     
 
 </article>

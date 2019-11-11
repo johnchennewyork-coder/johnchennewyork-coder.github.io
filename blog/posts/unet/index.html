@@ -7,10 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Hugo New Considered Harmful - John&#39;s Machine Learning and Deep Learning Blog</title>
-  <meta name="description" content="I&rsquo;m trying to like Hugo. I really am.
-But more and more it seems to me like the only reason this static site generator exists is because, &ldquo;hey, why not?&rdquo;. In other words, I am finding that the overhead of using the SSG is quite high, and interfering with my ability to do what I want, leading to me wondering why I am using it at all.
-(For reference: as someone coming from a CS background, with some web dev experience, I could trivially make a simple and functional blog by myself, so the value prop for Hugo really seems limited)">
+  <title>Unet - John&#39;s Machine Learning and Deep Learning Blog</title>
+  <meta name="description" content="The Unet architecture is monuemental, and understanding it introduces you to so many different areas of deep learning. So I&rsquo;ve decided to dedicate an entire blog post to it.
+U-net is an architecture for semantic segmentation.
+Semantic segmentation is the following task: given an image, classify each pixel as belonging to a class. It is like regular segmentation: while regular segmentation probably looks at pixel intensities and other intrinsic image vision properties (edges, gradients, coherence, continuity, etc.">
   <meta name="author" content="John Chen"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -46,8 +46,8 @@ But more and more it seems to me like the only reason this static site generator
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/johntiger1.github.io\/blog\/posts\/hugo-new-considered-harmful\/",
-          "name": "Hugo new considered harmful"
+          "@id": "https:\/\/johntiger1.github.io\/blog\/posts\/unet\/",
+          "name": "Unet"
         }
     }]
 }
@@ -58,15 +58,15 @@ But more and more it seems to me like the only reason this static site generator
   "author": {
     "name" : "John Chen"
   },
-  "headline": "Hugo New Considered Harmful",
-  "description" : "I\x26rsquo;m trying to like Hugo. I really am.\nBut more and more it seems to me like the only reason this static site generator exists is because, \x26ldquo;hey, why not?\x26rdquo;. In other words, I am finding that the overhead of using the SSG is quite high, and interfering with my ability to do what I want, leading to me wondering why I am using it at all.\n(For reference: as someone coming from a CS background, with some web dev experience, I could trivially make a simple and functional blog by myself, so the value prop for Hugo really seems limited)",
+  "headline": "Unet",
+  "description" : "The Unet architecture is monuemental, and understanding it introduces you to so many different areas of deep learning. So I\x26rsquo;ve decided to dedicate an entire blog post to it.\nU-net is an architecture for semantic segmentation.\nSemantic segmentation is the following task: given an image, classify each pixel as belonging to a class. It is like regular segmentation: while regular segmentation probably looks at pixel intensities and other intrinsic image vision properties (edges, gradients, coherence, continuity, etc.",
   "inLanguage" : "en",
-  "wordCount":  234 ,
-  "datePublished" : "2019-11-10T19:04:31",
-  "dateModified" : "2019-11-10T19:04:31",
+  "wordCount":  497 ,
+  "datePublished" : "2019-11-10T19:13:24",
+  "dateModified" : "2019-11-10T19:13:24",
   "image" : "https:\/\/johntiger1.github.io\/blog\/img\/avatar-icon.png",
   "keywords" : [ "" ],
-  "mainEntityOfPage" : "https:\/\/johntiger1.github.io\/blog\/posts\/hugo-new-considered-harmful\/",
+  "mainEntityOfPage" : "https:\/\/johntiger1.github.io\/blog\/posts\/unet\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/johntiger1.github.io\/blog",
@@ -80,18 +80,18 @@ But more and more it seems to me like the only reason this static site generator
 }
 </script>
 
-<meta property="og:title" content="Hugo New Considered Harmful" />
-<meta property="og:description" content="I&rsquo;m trying to like Hugo. I really am.
-But more and more it seems to me like the only reason this static site generator exists is because, &ldquo;hey, why not?&rdquo;. In other words, I am finding that the overhead of using the SSG is quite high, and interfering with my ability to do what I want, leading to me wondering why I am using it at all.
-(For reference: as someone coming from a CS background, with some web dev experience, I could trivially make a simple and functional blog by myself, so the value prop for Hugo really seems limited)">
+<meta property="og:title" content="Unet" />
+<meta property="og:description" content="The Unet architecture is monuemental, and understanding it introduces you to so many different areas of deep learning. So I&rsquo;ve decided to dedicate an entire blog post to it.
+U-net is an architecture for semantic segmentation.
+Semantic segmentation is the following task: given an image, classify each pixel as belonging to a class. It is like regular segmentation: while regular segmentation probably looks at pixel intensities and other intrinsic image vision properties (edges, gradients, coherence, continuity, etc.">
 <meta property="og:image" content="https://johntiger1.github.io/blog/img/avatar-icon.png" />
-<meta property="og:url" content="https://johntiger1.github.io/blog/posts/hugo-new-considered-harmful/" />
+<meta property="og:url" content="https://johntiger1.github.io/blog/posts/unet/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="John&#39;s Machine Learning and Deep Learning Blog" />
 
-  <meta name="twitter:title" content="Hugo New Considered Harmful" />
-  <meta name="twitter:description" content="I&rsquo;m trying to like Hugo. I really am.
-But more and more it seems to me like the only reason this static site generator exists is because, &ldquo;hey, why not?&rdquo;. In other words, I am …">
+  <meta name="twitter:title" content="Unet" />
+  <meta name="twitter:description" content="The Unet architecture is monuemental, and understanding it introduces you to so many different areas of deep learning. So I&rsquo;ve decided to dedicate an entire blog post to it.
+U-net is an …">
   <meta name="twitter:image" content="https://johntiger1.github.io/blog/img/avatar-icon.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://johntiger1.github.io/blog/img/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -241,7 +241,7 @@ if (!doNotTrack) {
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="posts-heading">
               
-                <h1>Hugo New Considered Harmful</h1>
+                <h1>Unet</h1>
               
               
                 <hr class="small">
@@ -261,23 +261,27 @@ if (!doNotTrack) {
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>I&rsquo;m trying to like Hugo. I really am.</p>
+        <p>The Unet architecture is monuemental, and understanding it introduces you to so many different areas of deep learning. So I&rsquo;ve decided to dedicate an entire blog post to it.</p>
 
-<p>But more and more it seems to me like the only reason this static site generator exists is because, &ldquo;hey, why not?&rdquo;. In other words, I am finding that the overhead of using the SSG is quite high, and interfering with my ability to do what I want, leading to me wondering why I am using it at all.</p>
+<p>U-net is an architecture for semantic segmentation.</p>
 
-<p>(For reference: as someone coming from a CS background, with some web dev experience, I could trivially make a simple and functional blog by myself, so the value prop for Hugo <em>really</em> seems limited)</p>
+<p>Semantic segmentation is the following task: given an image, classify each pixel as belonging to a class. It is like regular segmentation: while regular segmentation probably looks at pixel intensities and other intrinsic image vision properties (edges, gradients, coherence, continuity, etc.), semantic segmentation is concerned with segmenting out parts of an image semantically; i.e. extracting the cat from an image.</p>
 
-<p>Here&rsquo;s one common issue I ran into recently:</p>
+<p>It&rsquo;s the process by which we can generate cool images, where we have an object &ldquo;masked out&rdquo; from its background.</p>
 
-<p>Normally, you create new posts via the <code>hugo new abc.md</code> command. However, from the command line, I try and create posts from the same directory where the <code>deploy.sh</code> script is located. Hence, I often have to specify the directory where I want to create the post: something like</p>
+<p>U-net&rsquo;s key novel contribution is in its name! It uses a neural network learning architecture that &ldquo;looks like a U&rdquo;. That is, it downsamples the image then upsamples the image. The output of the UNet architecture is a K-channel output map (generally the same size as the input image), where K represents the number of classes you want to segment out of the image.</p>
 
-<p><code>hugo new content/posts/abc.md</code></p>
+<p>A note on upsampling:
+Upsampling is not something that you just &ldquo;do&rdquo; (unlike downsampling :P). Upsampling is a very difficult task: given an image at lower resolution, make it an image at higher resolution! This is an entire research field, and entire companies are dedicated to solving this type of problem (just like how I thought recommender systems were &ldquo;just another topic&rdquo;; boy was I wrong). Upsampling can be implemented in various ways: mode-filling, nearest-neighbour, simple billinear interpolation etc. (These are analogous to the way we can fill in time-series data). But the hot topic of the day is upsampling through learned weights in a neural network, equivalently known as upconvolution, deconvolution, fractionally-strided convolution and transpose convolution.</p>
 
-<p>As you can probably guess, the issue I encountered was I created the posts in a wrong location. What is double plus bad is that when I do this, sometimes the deploy step fails completely, with a cryptic error message.</p>
-<div class="highlight"><pre class="chroma">Building sites … ERROR 2019/11/10 18:52:22 failed to load data: failed to load data: &#34;C:\my_long_path\hugo_site\data\posts\Hugo-vs-Jekyll.md:1:1&#34;: unmarshal of format &#34;&#34; is not supported</pre></div>
-<p>It takes a sharp eye to find <code>\data\posts\</code> !</p>
+<p>What is Transpose convolution?
+Normally, convolution reduces the spatial extent of our image, while expanding the number of filters/feature maps we get. The transpose convolution does the &ldquo;transpose&rdquo; operation: it expands the spatial extent of our image. Note that the transpose name  comes more from our matrix formulation of convoluton: generally, we transpose that convolution matrix (the dimensions, not necessarily the same matrix) to do the expansion. Transpose convolution can be implemented as simply as mega padding an image and then running a regular convolution on the input; this causes a larger image than our original iamge, due to the copious padding we put.</p>
 
-<p>Anyways, rant over.</p>
+<p>Some applications:
+When we do semantic segmentation, we can probably also use it for regular old segmentation. So for instance, with the circle problem dataset, then we just need to do U-Net with K=2; where we predict both the circle and the background. Once we do this segmentation, we can either do RANSAC to fit a functional circle, or we can compute the area numerically (from the counts of pixels).</p>
+
+<p>Todo:
+Bottomless pit topics: these topics all seem at the same level of complexity, but then one of them actually is a bottomless pit of depth</p>
 
 
         
@@ -292,42 +296,42 @@ if (!doNotTrack) {
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fhugo-new-considered-harmful%2f&amp;text=Hugo%20New%20Considered%20Harmful&amp;via=" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2funet%2f&amp;text=Unet&amp;via=" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fhugo-new-considered-harmful%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2funet%2f" target="_blank" title="Share on Facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//reddit.com/submit?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fhugo-new-considered-harmful%2f&amp;title=Hugo%20New%20Considered%20Harmful" target="_blank" title="Share on Reddit">
+        <a href="//reddit.com/submit?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2funet%2f&amp;title=Unet" target="_blank" title="Share on Reddit">
           <i class="fab fa-reddit"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fhugo-new-considered-harmful%2f&amp;title=Hugo%20New%20Considered%20Harmful" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2funet%2f&amp;title=Unet" target="_blank" title="Share on LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fhugo-new-considered-harmful%2f&amp;title=Hugo%20New%20Considered%20Harmful" target="_blank" title="Share on StumbleUpon">
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2funet%2f&amp;title=Unet" target="_blank" title="Share on StumbleUpon">
           <i class="fab fa-stumbleupon"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fhugo-new-considered-harmful%2f&amp;description=Hugo%20New%20Considered%20Harmful" target="_blank" title="Share on Pinterest">
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2funet%2f&amp;description=Unet" target="_blank" title="Share on Pinterest">
           <i class="fab fa-pinterest"></i>
         </a>
       </li>
@@ -350,13 +354,9 @@ if (!doNotTrack) {
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://johntiger1.github.io/blog/posts/topics-in-cs/" data-toggle="tooltip" data-placement="top" title="Topics in Deep Learning">&larr; Previous Post</a>
+              <a href="https://johntiger1.github.io/blog/posts/hugo-new-considered-harmful/" data-toggle="tooltip" data-placement="top" title="Hugo New Considered Harmful">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="https://johntiger1.github.io/blog/posts/unet/" data-toggle="tooltip" data-placement="top" title="Unet">Next Post &rarr;</a>
-            </li>
           
         </ul>
       
