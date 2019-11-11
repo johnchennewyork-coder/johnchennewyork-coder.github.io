@@ -214,6 +214,90 @@ if (!doNotTrack) {
           
           
             <article class="post-preview">
+    <a href="https://johntiger1.github.io/blog/posts/hugo-vs-jekyll/">
+        <h2 class="post-title">Hugo vs Jekyll</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on October 31, 2019
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;5&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Chen
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <p>Seems like Jekyll wins!
+<a href="https://github.blog/2016-05-10-better-discoverability-for-github-pages-sites/">https://github.blog/2016-05-10-better-discoverability-for-github-pages-sites/</a></p>
+
+        
+    </div>
+
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://johntiger1.github.io/blog/posts/cross-aligned-autoencoders/">
+        <h2 class="post-title">Cross Aligned Autoencoders</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on October 31, 2019
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;154&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Chen
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        How does Shen&rsquo;s paper work? Well it tries to fit a cross-aligned autoencoder. This is simply an autoencoder that is also guided adversarially by a discriminator. In terms of the basics/nitty gritty technical details, we have the following:
+ We have a sequential autoencoder. This is &ldquo;simply&rdquo; a recurrent autoencoder: i.e. an autoencoder where the encoder accepts a sequence of states, and the decoder also generates a sequence of states. This sequential autoencoder is aligned by an adversary.
+        <a href="https://johntiger1.github.io/blog/posts/cross-aligned-autoencoders/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="https://johntiger1.github.io/blog/posts/ordered-dict/">
         <h2 class="post-title">Ordered Dict</h2>
         
@@ -606,109 +690,6 @@ Overall, I have a negative opinion of this paper. It introduces a novel way of b
         <a href="https://johntiger1.github.io/blog/tags/research/">research</a>&nbsp;
         
         <a href="https://johntiger1.github.io/blog/tags/tips/">tips</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://johntiger1.github.io/blog/posts/vae/">
-        <h2 class="post-title">Variational Auto Encoder</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on October 27, 2019
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;144&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Chen
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        VAEs are autoencoders with some added randomness. The encoder network (also called recognition or inference network) outputs parameters of a probability distribution for each data point. Then, for each data point, we sample from this parametrized distribution, and feed the SAMPLE to the decoder network, which then is tasked with reconstructing the output. The training objective involves changing from an integral, into just doing optimization, hence the VAE variational objective. In particular, all we do is maximize the ELBO, which helps push up our p(x) which normally would require an integral!
-        <a href="https://johntiger1.github.io/blog/posts/vae/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://johntiger1.github.io/blog/tags/todo/">todo</a>&nbsp;
-        
-        <a href="https://johntiger1.github.io/blog/tags/deep-learning/">deep learning</a>&nbsp;
-        
-        <a href="https://johntiger1.github.io/blog/tags/variational-auto-encoders/">variational auto encoders</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://johntiger1.github.io/blog/posts/upcoming/">
-        <h2 class="post-title">Upcoming</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on October 27, 2019
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;106&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Chen
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        So without further ado, here are the posts I plan to make:
- Exotic python data structures and where to find them (heapq, OrderedDict, Deque, bisect) Onsite interview with Microsoft Reparameterization tricks: Gaussian vs gumbel The REINFORCE gradient estimator Probability notations Research itinerary Birthday post ABD, L1, and Deep learning Symposium follow-up Scale AI follow-up The supremum IS big-O notation (usually we want the TIGHTEST worst case bound) Model vs Data Parallelism [Some more reinforcement learning][1] [Some more reinforcement learning]1  (Note that the markdown in preview does not exactly work with some more exotic features, like citations and references)
-        <a href="https://johntiger1.github.io/blog/posts/upcoming/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://johntiger1.github.io/blog/tags/roadmap/">roadmap</a>&nbsp;
-        
-        <a href="https://johntiger1.github.io/blog/tags/plan/">plan</a>&nbsp;
-        
-        <a href="https://johntiger1.github.io/blog/tags/index/">index</a>&nbsp;
         
     </div>
     
