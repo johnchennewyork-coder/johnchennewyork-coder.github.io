@@ -6,10 +6,32 @@
     <description>Recent content on John&#39;s Machine Learning and Deep Learning Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Nov 2019 16:45:47 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 16 Nov 2019 16:11:59 -0500</lastBuildDate>
     
 	<atom:link href="https://johntiger1.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vector Calc Primer</title>
+      <link>https://johntiger1.github.io/blog/posts/vector-calc-primer/</link>
+      <pubDate>Sat, 16 Nov 2019 16:11:59 -0500</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/vector-calc-primer/</guid>
+      <description>Vector calculus generally means multivariate calculus.
+A function f(x,y) = z denotes a surface in 3-dimensional space.
+IF we FIX z to a specific value, then note that we just have two variables now! Then, we are looking at a 2D-CURVE. This is equivalent to &amp;ldquo;looking at the surface from the top&amp;rdquo;, or fixing the height to a specific value, and seeing which points on the surface correspond to that height.</description>
+    </item>
+    
+    <item>
+      <title>Goldman Sachs</title>
+      <link>https://johntiger1.github.io/blog/posts/goldman-sachs/</link>
+      <pubDate>Mon, 11 Nov 2019 16:53:09 -0500</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/goldman-sachs/</guid>
+      <description>Recently completed the GS technical assessment. It was not bad! I liked the programming bits (in that I got the questions, and they were straightforward), but the math section was pleasantly challenging and refreshing.
+The math section provided an opportunity to review and refresh lots of topics I have learnt throughout university and high school, including calculus (multivariable), combinatorics and counting, linear algebra, and statistics.
+In particular, it was fun reminiscing about Lagrange Multipliers, and all that!</description>
+    </item>
     
     <item>
       <title>Common Programming Interview Tips</title>

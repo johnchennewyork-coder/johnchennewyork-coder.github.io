@@ -7,9 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Common Programming Interview Tips - John&#39;s Machine Learning and Deep Learning Blog</title>
-  <meta name="description" content="Here are some tips I have found to be quite useful while doing programming interviews:
- Have a whiteboard nearby (really helps to draw out your thoughts!)  Here are some technical tips: 1. A common theme is iterating down the columns of a 2D list of lists (without using numpy!) 2. Graphs! Many problems are just waiting to be solved using graphs. But the translation from the problem into the graph has some flexibility (which affects the runtime, and everything really): 1.">
+  <title>Vector Calc Primer - John&#39;s Machine Learning and Deep Learning Blog</title>
+  <meta name="description" content="Vector calculus generally means multivariate calculus.
+A function f(x,y) = z denotes a surface in 3-dimensional space.
+IF we FIX z to a specific value, then note that we just have two variables now! Then, we are looking at a 2D-CURVE. This is equivalent to &ldquo;looking at the surface from the top&rdquo;, or fixing the height to a specific value, and seeing which points on the surface correspond to that height.">
   <meta name="author" content="John Chen"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -45,8 +46,8 @@
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/johntiger1.github.io\/blog\/posts\/common-programming-interview-tips\/",
-          "name": "Common programming interview tips"
+          "@id": "https:\/\/johntiger1.github.io\/blog\/posts\/vector-calc-primer\/",
+          "name": "Vector calc primer"
         }
     }]
 }
@@ -57,15 +58,15 @@
   "author": {
     "name" : "John Chen"
   },
-  "headline": "Common Programming Interview Tips",
-  "description" : "Here are some tips I have found to be quite useful while doing programming interviews:\n Have a whiteboard nearby (really helps to draw out your thoughts!)  Here are some technical tips: 1. A common theme is iterating down the columns of a 2D list of lists (without using numpy!) 2. Graphs! Many problems are just waiting to be solved using graphs. But the translation from the problem into the graph has some flexibility (which affects the runtime, and everything really): 1.",
+  "headline": "Vector Calc Primer",
+  "description" : "Vector calculus generally means multivariate calculus.\nA function f(x,y) = z denotes a surface in 3-dimensional space.\nIF we FIX z to a specific value, then note that we just have two variables now! Then, we are looking at a 2D-CURVE. This is equivalent to \x26ldquo;looking at the surface from the top\x26rdquo;, or fixing the height to a specific value, and seeing which points on the surface correspond to that height.",
   "inLanguage" : "en",
-  "wordCount":  202 ,
-  "datePublished" : "2019-11-11T16:45:47",
-  "dateModified" : "2019-11-11T16:45:47",
+  "wordCount":  354 ,
+  "datePublished" : "2019-11-16T16:11:59",
+  "dateModified" : "2019-11-16T16:11:59",
   "image" : "https:\/\/johntiger1.github.io\/blog\/img\/avatar-icon.png",
   "keywords" : [ "" ],
-  "mainEntityOfPage" : "https:\/\/johntiger1.github.io\/blog\/posts\/common-programming-interview-tips\/",
+  "mainEntityOfPage" : "https:\/\/johntiger1.github.io\/blog\/posts\/vector-calc-primer\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/johntiger1.github.io\/blog",
@@ -79,17 +80,19 @@
 }
 </script>
 
-<meta property="og:title" content="Common Programming Interview Tips" />
-<meta property="og:description" content="Here are some tips I have found to be quite useful while doing programming interviews:
- Have a whiteboard nearby (really helps to draw out your thoughts!)  Here are some technical tips: 1. A common theme is iterating down the columns of a 2D list of lists (without using numpy!) 2. Graphs! Many problems are just waiting to be solved using graphs. But the translation from the problem into the graph has some flexibility (which affects the runtime, and everything really): 1.">
+<meta property="og:title" content="Vector Calc Primer" />
+<meta property="og:description" content="Vector calculus generally means multivariate calculus.
+A function f(x,y) = z denotes a surface in 3-dimensional space.
+IF we FIX z to a specific value, then note that we just have two variables now! Then, we are looking at a 2D-CURVE. This is equivalent to &ldquo;looking at the surface from the top&rdquo;, or fixing the height to a specific value, and seeing which points on the surface correspond to that height.">
 <meta property="og:image" content="https://johntiger1.github.io/blog/img/avatar-icon.png" />
-<meta property="og:url" content="https://johntiger1.github.io/blog/posts/common-programming-interview-tips/" />
+<meta property="og:url" content="https://johntiger1.github.io/blog/posts/vector-calc-primer/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="John&#39;s Machine Learning and Deep Learning Blog" />
 
-  <meta name="twitter:title" content="Common Programming Interview Tips" />
-  <meta name="twitter:description" content="Here are some tips I have found to be quite useful while doing programming interviews:
- Have a whiteboard nearby (really helps to draw out your thoughts!)  Here are some technical tips: 1. A common …">
+  <meta name="twitter:title" content="Vector Calc Primer" />
+  <meta name="twitter:description" content="Vector calculus generally means multivariate calculus.
+A function f(x,y) = z denotes a surface in 3-dimensional space.
+IF we FIX z to a specific value, then note that we just have two variables now! …">
   <meta name="twitter:image" content="https://johntiger1.github.io/blog/img/avatar-icon.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://johntiger1.github.io/blog/img/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -239,7 +242,7 @@ if (!doNotTrack) {
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="posts-heading">
               
-                <h1>Common Programming Interview Tips</h1>
+                <h1>Vector Calc Primer</h1>
               
               
                 <hr class="small">
@@ -259,23 +262,33 @@ if (!doNotTrack) {
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>Here are some tips I have found to be quite useful while doing programming interviews:</p>
+        <p>Vector calculus generally means multivariate calculus.</p>
 
-<ol>
-<li>Have a whiteboard nearby (really helps to draw out your thoughts!)</li>
-</ol>
+<p>A function f(x,y) = z denotes a surface in 3-dimensional space.</p>
 
-<p>Here are some technical tips:
-1. A common theme is iterating down the columns of a 2D list of lists (without using numpy!)
-2. Graphs! Many problems are just waiting to be solved using graphs. But the translation from the problem into the graph has some flexibility (which affects the runtime, and everything really):
-   1.  For instance, do we represent the graph as an adjacency matrix, or an adjacency list?
-       1.  I had been a big proponent of adjacency matrices, but find that adjacency lists are really quite useful these days: they take less memory, and can support sets (which allow for very quick indexing and membership lookup)
-   2. Have BFS/DFS in the back of your head constantly.
-3. Use special data structures: sets, deques, heapq, OrderedDicts, DefaultDicts etc.
-   1. Side note: if I ever teach a CSC263 course, one of my assignments will be to empirically compare these data structures in real life with the Python data structure
-4. Hashmap, regex, indexing with arrays, all of this is useful.</p>
+<p>IF we FIX z to a specific value, then note that we just have two variables now! Then, we are looking at a 2D-CURVE. This is equivalent to &ldquo;looking at the surface from the top&rdquo;, or fixing the height to a specific value, and seeing which points on the surface correspond to that height. Or you can view it as taking slices of the surface, for each setting of the height that you are interested in.</p>
 
-<p>Still upcoming: solving knapsack problem etc.</p>
+<p>This is why these level curves are also called height curves, contours, etc.</p>
+
+<p>Relationship to convexity:
+If the multivariable function in non-convex, then we will have non-overlapping, non-encapsulating sets of level curves. That is, if we graph a few values of the level curves, then, invariably, we will find that one &ldquo;cluster&rdquo; exists for a given value k. Yet this closed level curve will also appear again elsewhere.</p>
+
+<p>Takeaway:
+A function with domain of n variables (and codomain in the single, final variable) represents a surface in n+1 dimensional space.</p>
+
+<p><strong>In more math-y terms:</strong>
+A function of n variables represents a manifold in n+1 dimensional space. This is equivalently called a hypersurface.</p>
+
+<p>For a real-valued function defined over a space with ambient dimension n+1, its manifold or hypersurface is the collection of all points satisfying that function.</p>
+
+<p>A real valued function in an ambient space of dimension n+1 defines a hypersurface or manifold in n dimensions.</p>
+
+<p>Some takeaways:
+manifold == curve/surface (there are some  caveats here; a manifold is a very precise type of mathematical object; strictly more restrictive than just a surface)
+ambient space == what context, or dimensional space we are studying the object in
+Ambient space in particular concretizes a powerful paradigm: we have a mathematical concept, yet it depends on what we are studying wrt
+In particular: when we have expectation of a random variable, it depends on the underlying (joint) distribution and probability space it is defined over.
+The RV may be embedded in p_x, or it may be embedded in p_x,p_y,&hellip; (infinite dimensional ambient space)</p>
 
 
         
@@ -290,42 +303,42 @@ if (!doNotTrack) {
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fcommon-programming-interview-tips%2f&amp;text=Common%20Programming%20Interview%20Tips&amp;via=" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fvector-calc-primer%2f&amp;text=Vector%20Calc%20Primer&amp;via=" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fcommon-programming-interview-tips%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fvector-calc-primer%2f" target="_blank" title="Share on Facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//reddit.com/submit?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fcommon-programming-interview-tips%2f&amp;title=Common%20Programming%20Interview%20Tips" target="_blank" title="Share on Reddit">
+        <a href="//reddit.com/submit?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fvector-calc-primer%2f&amp;title=Vector%20Calc%20Primer" target="_blank" title="Share on Reddit">
           <i class="fab fa-reddit"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fcommon-programming-interview-tips%2f&amp;title=Common%20Programming%20Interview%20Tips" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fvector-calc-primer%2f&amp;title=Vector%20Calc%20Primer" target="_blank" title="Share on LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fcommon-programming-interview-tips%2f&amp;title=Common%20Programming%20Interview%20Tips" target="_blank" title="Share on StumbleUpon">
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fvector-calc-primer%2f&amp;title=Vector%20Calc%20Primer" target="_blank" title="Share on StumbleUpon">
           <i class="fab fa-stumbleupon"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fcommon-programming-interview-tips%2f&amp;description=Common%20Programming%20Interview%20Tips" target="_blank" title="Share on Pinterest">
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fvector-calc-primer%2f&amp;description=Vector%20Calc%20Primer" target="_blank" title="Share on Pinterest">
           <i class="fab fa-pinterest"></i>
         </a>
       </li>
@@ -348,13 +361,9 @@ if (!doNotTrack) {
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://johntiger1.github.io/blog/posts/set/" data-toggle="tooltip" data-placement="top" title="Set">&larr; Previous Post</a>
+              <a href="https://johntiger1.github.io/blog/posts/goldman-sachs/" data-toggle="tooltip" data-placement="top" title="Goldman Sachs">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="https://johntiger1.github.io/blog/posts/goldman-sachs/" data-toggle="tooltip" data-placement="top" title="Goldman Sachs">Next Post &rarr;</a>
-            </li>
           
         </ul>
       
