@@ -6,10 +6,23 @@
     <description>Recent content on John&#39;s Machine Learning and Deep Learning Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Nov 2019 12:58:41 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 18 Nov 2019 21:58:46 -0500</lastBuildDate>
     
 	<atom:link href="https://johntiger1.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Slurm</title>
+      <link>https://johntiger1.github.io/blog/posts/slurm/</link>
+      <pubDate>Mon, 18 Nov 2019 21:58:46 -0500</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/slurm/</guid>
+      <description>SLURM is a job scheduler for cluster computing.
+You can run commands via srun (interactive mode) and sbatch (batch processing).
+There are tons of flags you can set. Some of these will change whether or not you get output (specifically, if you get it in a file, or piped to the shell)!
+Importantly, when you submit a job, you get access to variables relating to it!
+You get access to SLURM environment variables</description>
+    </item>
     
     <item>
       <title>Bi Directional Bfs Research</title>
