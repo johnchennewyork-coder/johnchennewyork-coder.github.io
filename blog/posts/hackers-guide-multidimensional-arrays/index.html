@@ -7,12 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Slurm - John&#39;s Machine Learning and Deep Learning Blog</title>
-  <meta name="description" content="SLURM is a job scheduler for cluster computing.
-You can run commands via srun (interactive mode) and sbatch (batch processing).
-There are tons of flags you can set. Some of these will change whether or not you get output (specifically, if you get it in a file, or piped to the shell)!
-Importantly, when you submit a job, you get access to variables relating to it!
-You get access to SLURM environment variables">
+  <title>Hackers Guide Multidimensional Arrays - John&#39;s Machine Learning and Deep Learning Blog</title>
+  <meta name="description" content="Let&rsquo;s say we have an array of 3 x 1 x 6 x 8. Then we can quickly make some assertions and inferences: 1. The &ldquo;smallest&rdquo; level elements of this MD array are size 8.
+When we do broadcasting, we are just doing expand_dims operations, and then working on two huge cubes that are the same size!
+When we do unsqueezing, we can get a real flavour of how Torch/numpy actually stores the values in the underlying memory addresses.">
   <meta name="author" content="John Chen"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -48,8 +46,8 @@ You get access to SLURM environment variables">
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/johntiger1.github.io\/blog\/posts\/slurm\/",
-          "name": "Slurm"
+          "@id": "https:\/\/johntiger1.github.io\/blog\/posts\/hackers-guide-multidimensional-arrays\/",
+          "name": "Hackers guide multidimensional arrays"
         }
     }]
 }
@@ -60,15 +58,15 @@ You get access to SLURM environment variables">
   "author": {
     "name" : "John Chen"
   },
-  "headline": "Slurm",
-  "description" : "SLURM is a job scheduler for cluster computing.\nYou can run commands via srun (interactive mode) and sbatch (batch processing).\nThere are tons of flags you can set. Some of these will change whether or not you get output (specifically, if you get it in a file, or piped to the shell)!\nImportantly, when you submit a job, you get access to variables relating to it!\nYou get access to SLURM environment variables",
+  "headline": "Hackers Guide Multidimensional Arrays",
+  "description" : "Let\x26rsquo;s say we have an array of 3 x 1 x 6 x 8. Then we can quickly make some assertions and inferences: 1. The \x26ldquo;smallest\x26rdquo; level elements of this MD array are size 8.\nWhen we do broadcasting, we are just doing expand_dims operations, and then working on two huge cubes that are the same size!\nWhen we do unsqueezing, we can get a real flavour of how Torch\/numpy actually stores the values in the underlying memory addresses.",
   "inLanguage" : "en",
-  "wordCount":  85 ,
-  "datePublished" : "2019-11-18T21:58:46",
-  "dateModified" : "2019-11-18T21:58:46",
+  "wordCount":  181 ,
+  "datePublished" : "2019-11-29T19:11:03",
+  "dateModified" : "2019-11-29T19:11:03",
   "image" : "https:\/\/johntiger1.github.io\/blog\/img\/avatar-icon.png",
   "keywords" : [ "" ],
-  "mainEntityOfPage" : "https:\/\/johntiger1.github.io\/blog\/posts\/slurm\/",
+  "mainEntityOfPage" : "https:\/\/johntiger1.github.io\/blog\/posts\/hackers-guide-multidimensional-arrays\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/johntiger1.github.io\/blog",
@@ -82,21 +80,18 @@ You get access to SLURM environment variables">
 }
 </script>
 
-<meta property="og:title" content="Slurm" />
-<meta property="og:description" content="SLURM is a job scheduler for cluster computing.
-You can run commands via srun (interactive mode) and sbatch (batch processing).
-There are tons of flags you can set. Some of these will change whether or not you get output (specifically, if you get it in a file, or piped to the shell)!
-Importantly, when you submit a job, you get access to variables relating to it!
-You get access to SLURM environment variables">
+<meta property="og:title" content="Hackers Guide Multidimensional Arrays" />
+<meta property="og:description" content="Let&rsquo;s say we have an array of 3 x 1 x 6 x 8. Then we can quickly make some assertions and inferences: 1. The &ldquo;smallest&rdquo; level elements of this MD array are size 8.
+When we do broadcasting, we are just doing expand_dims operations, and then working on two huge cubes that are the same size!
+When we do unsqueezing, we can get a real flavour of how Torch/numpy actually stores the values in the underlying memory addresses.">
 <meta property="og:image" content="https://johntiger1.github.io/blog/img/avatar-icon.png" />
-<meta property="og:url" content="https://johntiger1.github.io/blog/posts/slurm/" />
+<meta property="og:url" content="https://johntiger1.github.io/blog/posts/hackers-guide-multidimensional-arrays/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="John&#39;s Machine Learning and Deep Learning Blog" />
 
-  <meta name="twitter:title" content="Slurm" />
-  <meta name="twitter:description" content="SLURM is a job scheduler for cluster computing.
-You can run commands via srun (interactive mode) and sbatch (batch processing).
-There are tons of flags you can set. Some of these will change whether …">
+  <meta name="twitter:title" content="Hackers Guide Multidimensional Arrays" />
+  <meta name="twitter:description" content="Let&rsquo;s say we have an array of 3 x 1 x 6 x 8. Then we can quickly make some assertions and inferences: 1. The &ldquo;smallest&rdquo; level elements of this MD array are size 8.
+When we do …">
   <meta name="twitter:image" content="https://johntiger1.github.io/blog/img/avatar-icon.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://johntiger1.github.io/blog/img/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -246,7 +241,7 @@ if (!doNotTrack) {
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="posts-heading">
               
-                <h1>Slurm</h1>
+                <h1>Hackers Guide Multidimensional Arrays</h1>
               
               
                 <hr class="small">
@@ -266,20 +261,31 @@ if (!doNotTrack) {
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>SLURM is a job scheduler for cluster computing.</p>
+        <p>Let&rsquo;s say we have an array of 3 x 1 x 6 x 8. Then we can quickly make some assertions and inferences:
+1. The &ldquo;smallest&rdquo; level elements of this MD array are size 8.</p>
 
-<p>You can run commands via <code>srun</code> (interactive mode) and <code>sbatch</code> (batch processing).</p>
+<p>When we do broadcasting, we are just doing expand_dims operations, and then working on two huge cubes that are the same size!</p>
 
-<p>There are tons of flags you can set. Some of these will change whether or not you get output (specifically, if you get it in a file, or piped to the shell)!</p>
+<p>When we do unsqueezing, we can get a real flavour of how Torch/numpy actually stores the values in the underlying memory addresses.</p>
 
-<p>Importantly, when you submit a job, you get access to variables relating to it!</p>
+<p>Additionally:
+if we perform an expand_dims operation. It does it explicitly in the memory-layout view as we know from before! In particular, 2 x 1 x 3, and then doing an expand to ((2,3,3)) means that we will get 3x3 arrays. The 1x3 arrays are simply copied.</p>
 
-<p><strong>You get access to SLURM environment variables</strong></p>
+<p>For instance:
+[ # 2 elements
+    [ # 1 element
+        [ # 3 elements
+            1,2,3]],
+    [[4,5,6]]
+]</p>
 
-<p>This provides a crucial logging and attribution utility.</p>
+<p>Goes to:
+[</p>
+<div class="highlight"><pre class="chroma">[[1,2,3],[1,2,3],[1,2,3] ],
+[[4,5,6],[4,5,6],[4,5,6]] #nice, an expand is just a duplicate in the approriate dimension</pre></div>
+<p>]</p>
 
-<p>Super useful resource:
-<a href="https://github.com/abalter/slurm-tutorial/wiki/lesson-2:-submitting-jobs">https://github.com/abalter/slurm-tutorial/wiki/lesson-2:-submitting-jobs</a></p>
+<p>This explains why when we expand/unsqueeze in the right most dimension, we get the lengthening of the &ldquo;internal&rdquo;/lowest list elements.</p>
 
 
         
@@ -294,42 +300,42 @@ if (!doNotTrack) {
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fslurm%2f&amp;text=Slurm&amp;via=" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fhackers-guide-multidimensional-arrays%2f&amp;text=Hackers%20Guide%20Multidimensional%20Arrays&amp;via=" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fslurm%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fhackers-guide-multidimensional-arrays%2f" target="_blank" title="Share on Facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//reddit.com/submit?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fslurm%2f&amp;title=Slurm" target="_blank" title="Share on Reddit">
+        <a href="//reddit.com/submit?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fhackers-guide-multidimensional-arrays%2f&amp;title=Hackers%20Guide%20Multidimensional%20Arrays" target="_blank" title="Share on Reddit">
           <i class="fab fa-reddit"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fslurm%2f&amp;title=Slurm" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fhackers-guide-multidimensional-arrays%2f&amp;title=Hackers%20Guide%20Multidimensional%20Arrays" target="_blank" title="Share on LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fslurm%2f&amp;title=Slurm" target="_blank" title="Share on StumbleUpon">
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fhackers-guide-multidimensional-arrays%2f&amp;title=Hackers%20Guide%20Multidimensional%20Arrays" target="_blank" title="Share on StumbleUpon">
           <i class="fab fa-stumbleupon"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fslurm%2f&amp;description=Slurm" target="_blank" title="Share on Pinterest">
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fhackers-guide-multidimensional-arrays%2f&amp;description=Hackers%20Guide%20Multidimensional%20Arrays" target="_blank" title="Share on Pinterest">
           <i class="fab fa-pinterest"></i>
         </a>
       </li>
@@ -352,12 +358,12 @@ if (!doNotTrack) {
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://johntiger1.github.io/blog/posts/bi-directional-bfs-research/" data-toggle="tooltip" data-placement="top" title="Bi Directional Bfs Research">&larr; Previous Post</a>
+              <a href="https://johntiger1.github.io/blog/posts/conflict-resolution/" data-toggle="tooltip" data-placement="top" title="Conflict Resolution">&larr; Previous Post</a>
             </li>
           
           
             <li class="next">
-              <a href="https://johntiger1.github.io/blog/posts/choose-your-own-adv/" data-toggle="tooltip" data-placement="top" title="Choose Your Own Adv">Next Post &rarr;</a>
+              <a href="https://johntiger1.github.io/blog/posts/blog-post-of-the-day/blog-post-of-the-day/" data-toggle="tooltip" data-placement="top" title="Blog Post of the Day">Next Post &rarr;</a>
             </li>
           
         </ul>

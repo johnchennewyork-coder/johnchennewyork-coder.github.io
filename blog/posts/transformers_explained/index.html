@@ -7,12 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Slurm - John&#39;s Machine Learning and Deep Learning Blog</title>
-  <meta name="description" content="SLURM is a job scheduler for cluster computing.
-You can run commands via srun (interactive mode) and sbatch (batch processing).
-There are tons of flags you can set. Some of these will change whether or not you get output (specifically, if you get it in a file, or piped to the shell)!
-Importantly, when you submit a job, you get access to variables relating to it!
-You get access to SLURM environment variables">
+  <title>Transformers_explained - John&#39;s Machine Learning and Deep Learning Blog</title>
+  <meta name="description" content="Transformers are one of the crucial building blocks of modern day NLP. There has been much confusion on them, even though thousands of blog posts, animations exist. I finally clarified my understanding after a short 5 minute conversation!
+So here is my brief, opinionated explanation of a transformer!
+Transfomer:
+ Is a parallelizable, and efficient way of performing neural language modelling Dispenses with RNNs; uses only attention Is non-autoregressive, and autoregressive  Because of those last two points, the architecture deals with inputs in a very special way!">
   <meta name="author" content="John Chen"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -48,8 +47,8 @@ You get access to SLURM environment variables">
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/johntiger1.github.io\/blog\/posts\/slurm\/",
-          "name": "Slurm"
+          "@id": "https:\/\/johntiger1.github.io\/blog\/posts\/transformers_explained\/",
+          "name": "Transformers explained"
         }
     }]
 }
@@ -60,15 +59,15 @@ You get access to SLURM environment variables">
   "author": {
     "name" : "John Chen"
   },
-  "headline": "Slurm",
-  "description" : "SLURM is a job scheduler for cluster computing.\nYou can run commands via srun (interactive mode) and sbatch (batch processing).\nThere are tons of flags you can set. Some of these will change whether or not you get output (specifically, if you get it in a file, or piped to the shell)!\nImportantly, when you submit a job, you get access to variables relating to it!\nYou get access to SLURM environment variables",
+  "headline": "Transformers_explained",
+  "description" : "Transformers are one of the crucial building blocks of modern day NLP. There has been much confusion on them, even though thousands of blog posts, animations exist. I finally clarified my understanding after a short 5 minute conversation!\nSo here is my brief, opinionated explanation of a transformer!\nTransfomer:\n Is a parallelizable, and efficient way of performing neural language modelling Dispenses with RNNs; uses only attention Is non-autoregressive, and autoregressive  Because of those last two points, the architecture deals with inputs in a very special way!",
   "inLanguage" : "en",
-  "wordCount":  85 ,
-  "datePublished" : "2019-11-18T21:58:46",
-  "dateModified" : "2019-11-18T21:58:46",
+  "wordCount":  609 ,
+  "datePublished" : "2019-11-28T09:54:25",
+  "dateModified" : "2019-11-28T09:54:25",
   "image" : "https:\/\/johntiger1.github.io\/blog\/img\/avatar-icon.png",
   "keywords" : [ "" ],
-  "mainEntityOfPage" : "https:\/\/johntiger1.github.io\/blog\/posts\/slurm\/",
+  "mainEntityOfPage" : "https:\/\/johntiger1.github.io\/blog\/posts\/transformers_explained\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/johntiger1.github.io\/blog",
@@ -82,21 +81,18 @@ You get access to SLURM environment variables">
 }
 </script>
 
-<meta property="og:title" content="Slurm" />
-<meta property="og:description" content="SLURM is a job scheduler for cluster computing.
-You can run commands via srun (interactive mode) and sbatch (batch processing).
-There are tons of flags you can set. Some of these will change whether or not you get output (specifically, if you get it in a file, or piped to the shell)!
-Importantly, when you submit a job, you get access to variables relating to it!
-You get access to SLURM environment variables">
+<meta property="og:title" content="Transformers_explained" />
+<meta property="og:description" content="Transformers are one of the crucial building blocks of modern day NLP. There has been much confusion on them, even though thousands of blog posts, animations exist. I finally clarified my understanding after a short 5 minute conversation!
+So here is my brief, opinionated explanation of a transformer!
+Transfomer:
+ Is a parallelizable, and efficient way of performing neural language modelling Dispenses with RNNs; uses only attention Is non-autoregressive, and autoregressive  Because of those last two points, the architecture deals with inputs in a very special way!">
 <meta property="og:image" content="https://johntiger1.github.io/blog/img/avatar-icon.png" />
-<meta property="og:url" content="https://johntiger1.github.io/blog/posts/slurm/" />
+<meta property="og:url" content="https://johntiger1.github.io/blog/posts/transformers_explained/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="John&#39;s Machine Learning and Deep Learning Blog" />
 
-  <meta name="twitter:title" content="Slurm" />
-  <meta name="twitter:description" content="SLURM is a job scheduler for cluster computing.
-You can run commands via srun (interactive mode) and sbatch (batch processing).
-There are tons of flags you can set. Some of these will change whether …">
+  <meta name="twitter:title" content="Transformers_explained" />
+  <meta name="twitter:description" content="Transformers are one of the crucial building blocks of modern day NLP. There has been much confusion on them, even though thousands of blog posts, animations exist. I finally clarified my …">
   <meta name="twitter:image" content="https://johntiger1.github.io/blog/img/avatar-icon.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://johntiger1.github.io/blog/img/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -246,7 +242,7 @@ if (!doNotTrack) {
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="posts-heading">
               
-                <h1>Slurm</h1>
+                <h1>Transformers_explained</h1>
               
               
                 <hr class="small">
@@ -266,20 +262,38 @@ if (!doNotTrack) {
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>SLURM is a job scheduler for cluster computing.</p>
+        <p>Transformers are one of the crucial building blocks of modern day NLP. There has been much confusion on them, even though thousands of blog posts, animations exist. I finally clarified my understanding after a short 5 minute conversation!</p>
 
-<p>You can run commands via <code>srun</code> (interactive mode) and <code>sbatch</code> (batch processing).</p>
+<p>So here is my brief, opinionated explanation of a transformer!</p>
 
-<p>There are tons of flags you can set. Some of these will change whether or not you get output (specifically, if you get it in a file, or piped to the shell)!</p>
+<p>Transfomer:</p>
 
-<p>Importantly, when you submit a job, you get access to variables relating to it!</p>
+<ul>
+<li>Is a parallelizable, and efficient way of performing neural language modelling</li>
+<li>Dispenses with RNNs; uses only attention</li>
+<li>Is non-autoregressive, and autoregressive</li>
+</ul>
 
-<p><strong>You get access to SLURM environment variables</strong></p>
+<p>Because of those last two points, the architecture deals with inputs in a very special way!</p>
 
-<p>This provides a crucial logging and attribution utility.</p>
+<p>Input: an entire sequence at once. Unlike an RNN, tokens are NOT fed one-by-one! For this reason, we do require a positional encoding!</p>
 
-<p>Super useful resource:
-<a href="https://github.com/abalter/slurm-tutorial/wiki/lesson-2:-submitting-jobs">https://github.com/abalter/slurm-tutorial/wiki/lesson-2:-submitting-jobs</a></p>
+<p>Output: A single token. The transformer will look at the entire input sequence, as well as the previous words that it decoded/generated. <strong>This means that it is non-autoregressive in the input sequence; it can operate on the entire sequence at once. Hence why it requires an entire input sequence</strong></p>
+
+<p>Some notes: During training, it can be trained in a very rapid way. Since most models are generally trained using teacher forcing anyways, we actually do not care about what tokens the transformer previously generated. Hence, during training time, we are essentially just maximizing the probability of producing a specific token (the next one, at time step t) conditioned on the input sequence, and the <em>groud truth</em> decoded output sequence 0 to t-1 , which are provided. This is where the causal triangular masking comes into play; where we hide the output from next step of the transformer; this is so we can train quickly (in a batched fashion; without waiting for the transformer to decode itself). Note this is also why we have an output positional embedding! This is so the transformer is able to correctly make sense of the ordering of its tokens.</p>
+
+<p>However, during testing/inference/generation, it must be trained in a slow, autoregressive fashion.
+This is because here, we do not have access to the ground truth tokens! In order to generate N tokens, we must run N forward passes (of the decoder; we can cache the model when run on the input sequence). This is similar to how a regular seq2seq model generates, as it moves the sliding window left to right. (kind of; depending on the architecture, a seq2seq can also &lsquo;just&rsquo; require N passes of the decoder)</p>
+
+<p>We have all the regular generation details when running the forward pass of the decoder: it is a function $d(x<em>t, h</em>{t-1})$, which takes in the previous token just generated, and the previous hidden state(s) and then generates the output probabilities for the next token. Then, we run some max or other discrete to get the actual token generated at that timestep, and then we feed it in to the decoder at the next time step (probably going through a positional encoding as well)</p>
+
+<p>Commentary:
+Humans do not necessarily read exactly left to right. There is evidence that we do some type of convolution/high level scan of the words, at a high level, and then we go into more detail/precision (character by character) when we need. This could be another research idea too! (Hierarchical NLP)</p>
+
+<p>Deep fake text generation has the potential to change the world in the future. We can solve this problem, via occupying the gap!</p>
+
+<p>Recall the steps to writing the proposal
+Overall, yesterday I learnt a lot of stuff! Went to the RL talk (on hierarchical reinforcement learning; where we have multiple agents each responsible for a single task; constrained state space, but shared action space), and then also went to the ARIA, where had great discussions with Pricing Optimization, Transformer, and the RL project.</p>
 
 
         
@@ -294,42 +308,42 @@ if (!doNotTrack) {
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fslurm%2f&amp;text=Slurm&amp;via=" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2ftransformers_explained%2f&amp;text=Transformers_explained&amp;via=" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fslurm%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2ftransformers_explained%2f" target="_blank" title="Share on Facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//reddit.com/submit?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fslurm%2f&amp;title=Slurm" target="_blank" title="Share on Reddit">
+        <a href="//reddit.com/submit?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2ftransformers_explained%2f&amp;title=Transformers_explained" target="_blank" title="Share on Reddit">
           <i class="fab fa-reddit"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fslurm%2f&amp;title=Slurm" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2ftransformers_explained%2f&amp;title=Transformers_explained" target="_blank" title="Share on LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fslurm%2f&amp;title=Slurm" target="_blank" title="Share on StumbleUpon">
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2ftransformers_explained%2f&amp;title=Transformers_explained" target="_blank" title="Share on StumbleUpon">
           <i class="fab fa-stumbleupon"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fslurm%2f&amp;description=Slurm" target="_blank" title="Share on Pinterest">
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2ftransformers_explained%2f&amp;description=Transformers_explained" target="_blank" title="Share on Pinterest">
           <i class="fab fa-pinterest"></i>
         </a>
       </li>
@@ -352,12 +366,12 @@ if (!doNotTrack) {
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://johntiger1.github.io/blog/posts/bi-directional-bfs-research/" data-toggle="tooltip" data-placement="top" title="Bi Directional Bfs Research">&larr; Previous Post</a>
+              <a href="https://johntiger1.github.io/blog/posts/reproduction-headaches/" data-toggle="tooltip" data-placement="top" title="Reproduction Headaches">&larr; Previous Post</a>
             </li>
           
           
             <li class="next">
-              <a href="https://johntiger1.github.io/blog/posts/choose-your-own-adv/" data-toggle="tooltip" data-placement="top" title="Choose Your Own Adv">Next Post &rarr;</a>
+              <a href="https://johntiger1.github.io/blog/posts/conflict-resolution/" data-toggle="tooltip" data-placement="top" title="Conflict Resolution">Next Post &rarr;</a>
             </li>
           
         </ul>
