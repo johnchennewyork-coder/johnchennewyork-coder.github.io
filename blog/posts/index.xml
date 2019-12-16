@@ -6,10 +6,42 @@
     <description>Recent content in Posts on John&#39;s Machine Learning and Deep Learning Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 30 Nov 2019 01:34:51 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 16 Dec 2019 00:57:26 -0500</lastBuildDate>
     
 	<atom:link href="https://johntiger1.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>RL Curriculum</title>
+      <link>https://johntiger1.github.io/blog/posts/rl_curriculum/</link>
+      <pubDate>Mon, 16 Dec 2019 00:57:26 -0500</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/rl_curriculum/</guid>
+      <description>Finally, the pieces of RL are starting to really crystallize in my head. It only took til the end of CSC2547, and my first semester of grad school to get it!
+Here is an ordering I found useful for studying:
+ http://www.cs.toronto.edu/~rgrosse/courses/csc411_f18/ to lay the framework for machine learning. http://www.cs.toronto.edu/~rgrosse/courses/csc421_2019/ to lay the framework for deep learning. Policy gradient, REINFORCE is reinforced here ;)s http://karpathy.github.io/2016/05/31/rl/ to connect RL in the context of supervised learning; and the practicalities of training it https://lilianweng.</description>
+    </item>
+    
+    <item>
+      <title>Active Learning</title>
+      <link>https://johntiger1.github.io/blog/posts/active-learning/</link>
+      <pubDate>Sun, 08 Dec 2019 18:17:38 -0500</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/active-learning/</guid>
+      <description>A thorny and universal open problem that continues to plague deep learning is the scarcity of labelled data. Unlabelled data can be transformed to labelled data in a procedure that is costly, labour-intensive time-consuming, and not scalable. Active learning thus deals with picking \textit{good} data points from the unlabelled dataset to label. This discrete choice of unlabelled data points is called a \textit{query} and there are several heuristics for selecting the best query, including max entropy, diversity sampling and others.</description>
+    </item>
+    
+    <item>
+      <title>Cuda Guide</title>
+      <link>https://johntiger1.github.io/blog/posts/cuda-guide/</link>
+      <pubDate>Sun, 08 Dec 2019 18:15:28 -0500</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/cuda-guide/</guid>
+      <description>Step 1: Check if cuda is available, and if the user wants to enable it. Save this into a config variable, e.g. args.device
+Step 2: Write device agnostic code.
+Use torch.tensor((1,2), device=args.device) Use x = model().to(device=args.device)
+That&amp;rsquo;s it!</description>
+    </item>
     
     <item>
       <title>Blog Post of the Day</title>

@@ -3,17 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://johntiger1.github.io/blog/posts/blog-post-of-the-day/blog-post-of-the-day/</loc>
-    <lastmod>2019-11-30T01:34:51-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://johntiger1.github.io/blog/</loc>
-    <lastmod>2019-11-30T01:34:51-05:00</lastmod>
+    <lastmod>2019-12-16T00:57:26-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://johntiger1.github.io/blog/posts/</loc>
+    <lastmod>2019-12-16T00:57:26-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://johntiger1.github.io/blog/posts/rl_curriculum/</loc>
+    <lastmod>2019-12-16T00:57:26-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://johntiger1.github.io/blog/posts/active-learning/</loc>
+    <lastmod>2019-12-08T18:17:38-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://johntiger1.github.io/blog/posts/cuda-guide/</loc>
+    <lastmod>2019-12-08T18:15:28-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://johntiger1.github.io/blog/posts/blog-post-of-the-day/blog-post-of-the-day/</loc>
     <lastmod>2019-11-30T01:34:51-05:00</lastmod>
   </url>
   
