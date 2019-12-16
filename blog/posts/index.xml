@@ -6,10 +6,32 @@
     <description>Recent content in Posts on John&#39;s Machine Learning and Deep Learning Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Dec 2019 00:57:26 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 16 Dec 2019 14:05:30 -0500</lastBuildDate>
     
 	<atom:link href="https://johntiger1.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The_gap</title>
+      <link>https://johntiger1.github.io/blog/posts/the_gap/</link>
+      <pubDate>Mon, 16 Dec 2019 14:05:30 -0500</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/the_gap/</guid>
+      <description>The Gap is something that exists between what you learn in your DS and Algos course, and how you actually implement it in Python/Leetcode.
+Graphs are a big one.
+But even bigger are hashmaps.
+In general, when we have $h(k_1) = h(k_2)$ we cannot conclude $k_1 = k_2$. But in Python we can (kind of).</description>
+    </item>
+    
+    <item>
+      <title>RL example</title>
+      <link>https://johntiger1.github.io/blog/posts/rl_example/</link>
+      <pubDate>Mon, 16 Dec 2019 01:03:29 -0500</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/rl_example/</guid>
+      <description>Here are my thoughts on trying to provide an example of RL.
+ Policy gradient &amp;ldquo;Standing derivative&amp;rdquo;, weighted by the return Instead, we should do Q-learning  </description>
+    </item>
     
     <item>
       <title>RL Curriculum</title>
