@@ -6,10 +6,20 @@
     <description>Recent content on John&#39;s Machine Learning and Deep Learning Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 27 Dec 2019 20:51:19 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jan 2020 20:14:23 -0500</lastBuildDate>
     
 	<atom:link href="https://johntiger1.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Learning Chinese</title>
+      <link>https://johntiger1.github.io/blog/posts/learning-chinese/</link>
+      <pubDate>Fri, 03 Jan 2020 20:14:23 -0500</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/learning-chinese/</guid>
+      <description>Nearly after a decade and a half after I stopped attending Chinese Saturday school, I am making a concious and concerted effort to learn the $belle$ language.
+As an analytical thinker, I am always interested in quickly seeing the big picture, and identifying high-information patterns that can be quickly and easily applied repeatedly within and across domains. So when you learn Chinese, there is the traditional method of learning, character-by-character, in a rote memorization way.</description>
+    </item>
     
     <item>
       <title>Expectation Ambiguity</title>
