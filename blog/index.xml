@@ -6,10 +6,88 @@
     <description>Recent content on John&#39;s Machine Learning and Deep Learning Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Jan 2020 20:14:23 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 19 Feb 2020 12:49:50 -0500</lastBuildDate>
     
 	<atom:link href="https://johntiger1.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>We are all going south</title>
+      <link>https://johntiger1.github.io/blog/posts/rich-sutton/</link>
+      <pubDate>Wed, 19 Feb 2020 12:49:50 -0500</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/rich-sutton/</guid>
+      <description>Attended the Rich Sutton talk today at Vector. It was a great talk, where he soliloquized about his research agenda and motivation, and used this to motivate his work on SuperDyna, a general intelligence framework based on his work on options.
+At the end of this post are some rough notes from the presentation. But I wanted to discuss the key takeaways I got. I had the opportunity to talk with him personally briefly for a few moments as well over lunch.</description>
+    </item>
+    
+    <item>
+      <title>Making Imperfect Decisions</title>
+      <link>https://johntiger1.github.io/blog/posts/making-imperfect-decisions/</link>
+      <pubDate>Mon, 27 Jan 2020 15:07:56 -0500</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/making-imperfect-decisions/</guid>
+      <description>Sorry for the long hiatus everyone. I am refraining from blogging so much while I figure out some infrastructure related details: i.e. how to write inline latex effectively in the blog, how to use pictures, and importantly how to categorize things by date, etc. so that this doesn&amp;rsquo;t blow up.
+(In partciular, you can already see how the number of posts will grow linearly with time: not good).
+The paradox of graduate school: learning how to make imperfect decisions So now I have been in grad school for over a semester.</description>
+    </item>
+    
+    <item>
+      <title>Regressions</title>
+      <link>https://johntiger1.github.io/blog/posts/regressions/</link>
+      <pubDate>Mon, 20 Jan 2020 22:19:18 -0500</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/regressions/</guid>
+      <description>There is a powerful, and statistical way of thinking about all regressions. Instead of viewing regression as simply &amp;ldquo;minimizing the least squares error&amp;rdquo;, or some type of MLE, we can instead think about the statistical, generative model of our process.
+This is the approach to regression that talks about $\Beta$, normal distribution, and the residuals are normally distributed!
+Essentially, Poisson regression simply makes a different modelling assumption/perspective: that we look at a $ln$ viewpoint!</description>
+    </item>
+    
+    <item>
+      <title>Research Topics and Conferences</title>
+      <link>https://johntiger1.github.io/blog/posts/research-topics-and-conferences/</link>
+      <pubDate>Mon, 20 Jan 2020 11:54:47 -0500</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/research-topics-and-conferences/</guid>
+      <description>As important as actually doing the research, is finding a good place to publish it.
+Here, we see some areas that I would be interested in: https://dl.acm.org/doi/abs/10.1145/3308558.3313485
+(this involves: deep learning for clinical note prediction using incorporation of wikipedia)</description>
+    </item>
+    
+    <item>
+      <title>Adobe</title>
+      <link>https://johntiger1.github.io/blog/posts/adobe/</link>
+      <pubDate>Wed, 08 Jan 2020 17:59:55 -0500</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/adobe/</guid>
+      <description>Remember when I said interviewing season was over?
+Well, not quite.
+Just finished the interview with Adobe. This was one of the more frazzled experiences, and it did not go as planned.
+To start off, I forgot my laptop at home, and this caused me to almost be late for the interview.
+Second, I kept on having connection problems during the interview. I was constantly disconnecting from the collabedit, which made it hard to concentrate/focus.</description>
+    </item>
+    
+    <item>
+      <title>Research Log</title>
+      <link>https://johntiger1.github.io/blog/posts/research-log/</link>
+      <pubDate>Tue, 07 Jan 2020 22:40:02 -0500</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/research-log/</guid>
+      <description>Worked on the RL project again today.
+I implemented: 1. More updates (to the policy network) 2. Dynamic reward baselining, with rolling average of past rewards
+I am also working in the oracle clusters paradigm. If we know the actual labels, we should be able to pick optimally. Yet somehow, we are unable to. We keep falling into policy collapse, due to the attractors (local minima) in the RL process.</description>
+    </item>
+    
+    <item>
+      <title>Being Honest</title>
+      <link>https://johntiger1.github.io/blog/posts/being-honest/</link>
+      <pubDate>Fri, 03 Jan 2020 20:21:12 -0500</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/being-honest/</guid>
+      <description>I like to have fun.
+I like to go out on Fridays! I like to go out on the weekends!
+For a long time, I have denied myself this truth. Whether it was due to school work, no plans, or just not feeling it, I have spent many a Friday night or weekend wondering what to do. But from now on, I will be honest with myself and try to actively plan for fun on Friday nights.</description>
+    </item>
     
     <item>
       <title>Learning Chinese</title>
