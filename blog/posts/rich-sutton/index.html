@@ -60,7 +60,7 @@ At the end of this post are some rough notes from the presentation. But I wanted
   "headline": "We are all going south",
   "description" : "Attended the Rich Sutton talk today at Vector. It was a great talk, where he soliloquized about his research agenda and motivation, and used this to motivate his work on SuperDyna, a general intelligence framework based on his work on options.\nAt the end of this post are some rough notes from the presentation. But I wanted to discuss the key takeaways I got. I had the opportunity to talk with him personally briefly for a few moments as well over lunch.",
   "inLanguage" : "en",
-  "wordCount":  295 ,
+  "wordCount":  330 ,
   "datePublished" : "2020-02-19T12:49:50",
   "dateModified" : "2020-02-19T12:49:50",
   "image" : "https:\/\/johntiger1.github.io\/blog\/img\/avatar-icon.png",
@@ -264,13 +264,21 @@ if (!doNotTrack) {
 I had the opportunity to talk with him personally briefly for a few moments as well over lunch. Some really salient points:</p>
 
 <ol>
-<li>Sutton believes that Reinforcement Learning can explain all intelligence. This is in contrast to Yann LeCun&rsquo;s cake analogy.</li>
-<li>Sutton is a true generalist. He is pretty disdainful of building in prior knowledge/biases into our models, instead preferring the model to learn by itself.</li>
-<li>This goes against the current trend in machine learning, where researchers and practitioners are incentivized and rewarded for achieving incremental advances. Usually, this is via building in domain knowledge, and other &ldquo;tricks&rdquo;.</li>
-<li>To achieve true intelligence, we want the model to learn all of these knowledges and priors itself.</li>
-<li>Sutton believes that intelligence must arise from the setting of a goal. That is, intelligence is defined only wrt a goal.</li>
-<li>Sutton views evolution and learning as two separate processes! &ndash; when I asked him what the goal of an AGI might be. I believe the immediate corollary is that AGI</li>
-<li>Sutton&rsquo;s view of &ldquo;safety&rdquo; in RL is safety for the robot!</li>
+<li><p>Sutton believes that Reinforcement Learning can explain all intelligence. In other words, intelligence can be elegantly and precisely formulated using RL.  This is in contrast to Yann LeCun&rsquo;s cake analogy ![Yann LeCun&rsquo;s cake analogy][<a href="https://miro.medium.com/max/1568/0*sQmcKODThlssh2V5.png">https://miro.medium.com/max/1568/0*sQmcKODThlssh2V5.png</a>].</p></li>
+
+<li><p>Sutton is a true generalist. He is pretty disdainful of building in prior knowledge/biases into our models, instead preferring the model to learn by itself.</p></li>
+
+<li><p>This goes against the current trend in machine learning, where researchers and practitioners are incentivized and rewarded for achieving incremental advances. Usually, this is via building in domain knowledge, and other &ldquo;tricks&rdquo;.</p></li>
+
+<li><p>As Sutton puts it, &ldquo;we are all going south&rdquo;, when the true direction of research towards AGI is north!</p></li>
+
+<li><p>To achieve true intelligence, we want the model to learn all of these knowledges and priors itself.</p></li>
+
+<li><p>Sutton believes that intelligence must arise from the setting of a goal. That is, intelligence is defined only wrt a goal.</p></li>
+
+<li><p>Sutton views evolution and learning as two separate processes! &ndash; when I asked him what the goal of an AGI might be. I believe the immediate corollary is that AGI</p></li>
+
+<li><p>Sutton&rsquo;s view of &ldquo;safety&rdquo; in RL is safety for the robot!</p></li>
 </ol>
 
 <p>My own view is that while I agree abstractly with Sutton&rsquo;s viewpoint of generality, we must still have some level of pragmatism. We can do a brute force enumeration over the entire search space, and this is the most general solution, but in general is infeasible. So balancing the two should be our goal.</p>
