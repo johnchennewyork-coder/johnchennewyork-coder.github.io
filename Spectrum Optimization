@@ -1,1 +1,53 @@
-<mxfile host="www.draw.io" modified="2020-02-28T05:16:22.551Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.122 Safari/537.36" version="12.7.9" etag="UnVqXZRk5W_3Ys-pQtyn" type="github"><diagram id="QciXBh3Qc0l-w2iPzIRb">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="www.draw.io" modified="2020-02-28T05:25:01.736Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.122 Safari/537.36" etag="yC1T8VeKJY1PYAM2Pktb" version="12.7.9" type="github">
+  <diagram id="QciXBh3Qc0l-w2iPzIRb" name="Page-1">
+    <mxGraphModel dx="1038" dy="1680" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ejyl6jH7yzctw7NsA3X--5" value="Complexity of &lt;i&gt;B&lt;/i&gt;" style="shape=flexArrow;endArrow=classic;html=1;width=33;endSize=12.87;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="220" y="320" as="sourcePoint" />
+            <mxPoint x="580" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ejyl6jH7yzctw7NsA3X--17" value="First Order &lt;br&gt;Methods" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Garamond;fontStyle=1" vertex="1" connectable="0" parent="ejyl6jH7yzctw7NsA3X--5">
+          <mxGeometry x="-0.9233" y="3" relative="1" as="geometry">
+            <mxPoint x="6" y="-77" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ejyl6jH7yzctw7NsA3X--8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ejyl6jH7yzctw7NsA3X--6" target="ejyl6jH7yzctw7NsA3X--7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ejyl6jH7yzctw7NsA3X--6" value="Identity &lt;i&gt;B&lt;/i&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="220" y="270" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ejyl6jH7yzctw7NsA3X--7" value="Gradient Descent" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="220" y="370" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ejyl6jH7yzctw7NsA3X--9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ejyl6jH7yzctw7NsA3X--10" target="ejyl6jH7yzctw7NsA3X--11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ejyl6jH7yzctw7NsA3X--10" value="&lt;i&gt;B &lt;/i&gt;Hessian" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="480" y="270" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ejyl6jH7yzctw7NsA3X--11" value="Newton&#39;s Method" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="480" y="370" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ejyl6jH7yzctw7NsA3X--14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ejyl6jH7yzctw7NsA3X--15" target="ejyl6jH7yzctw7NsA3X--16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ejyl6jH7yzctw7NsA3X--15" value="&lt;font face=&quot;Garamond&quot;&gt;Third-order methods&amp;nbsp;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="560" y="220" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ejyl6jH7yzctw7NsA3X--16" value="? (not in scope)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="560" y="370" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ejyl6jH7yzctw7NsA3X--18" value="Second Order &lt;br&gt;Methods" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontFamily=Garamond;fontStyle=1" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="360" y="180" as="geometry">
+            <mxPoint x="7" y="-171" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
