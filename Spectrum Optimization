@@ -1,4 +1,4 @@
-<mxfile host="www.draw.io" modified="2020-02-28T05:34:34.530Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.122 Safari/537.36" etag="aaUGrT5Vh6wOmTqW69ZU" version="12.7.9" type="github">
+<mxfile host="www.draw.io" modified="2020-02-28T05:35:45.454Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.122 Safari/537.36" etag="fXX-FerLIXqztqOIm51f" version="12.7.9" type="github">
   <diagram id="QciXBh3Qc0l-w2iPzIRb" name="Page-1">
     <mxGraphModel dx="1038" dy="580" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -49,9 +49,6 @@
         </mxCell>
         <mxCell id="_pttRSBH6WIXCwTRcyi2-7" value="&lt;font face=&quot;Garamond&quot;&gt;Quasi-Newton Methods&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
           <mxGeometry x="345" y="230" width="80" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="_pttRSBH6WIXCwTRcyi2-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="_pttRSBH6WIXCwTRcyi2-9" target="_pttRSBH6WIXCwTRcyi2-10">
-          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="_pttRSBH6WIXCwTRcyi2-9" value="Diagonal B" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="305" y="270" width="40" height="20" as="geometry" />
