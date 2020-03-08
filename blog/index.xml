@@ -18,7 +18,7 @@
       
       <guid>https://johntiger1.github.io/blog/posts/intro-group-theory/</guid>
       <description>I am becoming more interested in rigorizing my knowledge of mathematics.
-A group is a set of elements $G$ and an operation $\bigotimes$. It satisfies the following four properties:
+A group is a set of elements $$G$$ and an operation $$\bigotimes$$. It satisfies the following four properties:
  Closure Associativity Neutral Element Inverse Element  From Groups to Vector Spaces: If we enhance our group with an outer operation, then we get a vector space! Roughly, this outer operation takes an element from inside our set, and an external element from a field (such as the reals) and then gives us a way of combining the inner element with the external element.</description>
     </item>
     
