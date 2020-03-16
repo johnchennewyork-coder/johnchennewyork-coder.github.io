@@ -6,10 +6,20 @@
     <description>Recent content on John&#39;s Machine Learning and Deep Learning Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 07 Mar 2020 18:40:30 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 14 Mar 2020 10:52:45 -0400</lastBuildDate>
     
 	<atom:link href="https://johntiger1.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Elements of Web Programming</title>
+      <link>https://johntiger1.github.io/blog/posts/ewp/</link>
+      <pubDate>Sat, 14 Mar 2020 10:52:45 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/ewp/</guid>
+      <description>I have long believed that Web programming is one of the most difficult parts of practical, software development. As the name suggests, full-stack web development encapsulates all levels of programming, from database to backend to frontend.
+Not only is there breadth across the stack, but there is also breadth across the different types of stacks. For instance, PHP web development is completely different from modern Node ES6 development is completely different from C# web development.</description>
+    </item>
     
     <item>
       <title>Introduction to Group Theory</title>
