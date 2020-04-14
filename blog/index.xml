@@ -6,10 +6,34 @@
     <description>Recent content on John&#39;s Machine Learning and Deep Learning Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Mar 2020 10:52:45 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2020 17:38:21 -0400</lastBuildDate>
     
 	<atom:link href="https://johntiger1.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Amazon Interview</title>
+      <link>https://johntiger1.github.io/blog/posts/amazon-interview/</link>
+      <pubDate>Tue, 14 Apr 2020 17:38:21 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/amazon-interview/</guid>
+      <description>Addicted to interviewing.
+Just finished the Amazon interview. It was a shadowing interview, so there was a bonus interviewer!
+Surprisingly, it was not a coding challenge! Instead they asked (quite a few) questions about my machine learning knowledge.
+Things I did well: Answered the first LP question nicely (overall). Tell me about a time when you went outside your scope to improve something.
+Should have mentioned I got an award for that.</description>
+    </item>
+    
+    <item>
+      <title>Vector Compute Guide</title>
+      <link>https://johntiger1.github.io/blog/posts/vector-guide/</link>
+      <pubDate>Sun, 22 Mar 2020 15:16:10 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/vector-guide/</guid>
+      <description>Vector has two computing servers. One is the MaRS cluster, while the other is the Vaughan cluster.
+You can access the Vaughan cluster, via vremote.vectorinstitute.ai You can access the MaRS cluster, vi q.vectorinstitute.ai
+The power of e-mail inboxing. And making sure things get done!</description>
+    </item>
     
     <item>
       <title>Elements of Web Programming</title>
