@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Choose Your Own Adv - John&#39;s Machine Learning and Deep Learning Blog</title>
+  <meta name="description" content="You do training on only 5k examples of a dataset. (the first 5k indices) You notice an improvement in training.
+Do you follow this? Or do you ignore this?
+Generally, I would ignore it. It could be (and is very like to be) noise. If I really think this is a promising area, I would need a theory (curriculum learning), and then I would explore as a contribution to this field.">
+  <meta name="author" content="John Chen"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "John\x27s Machine Learning and Deep Learning Blog",
+    
+    "url": "https:\/\/johntiger1.github.io\/blog"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/johntiger1.github.io\/blog"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/johntiger1.github.io\/blog",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/johntiger1.github.io\/blog\/posts\/choose-your-own-adv\/",
+          "name": "Choose your own adv"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "John Chen"
+  },
+  "headline": "Choose Your Own Adv",
+  "description" : "You do training on only 5k examples of a dataset. (the first 5k indices) You notice an improvement in training.\nDo you follow this? Or do you ignore this?\nGenerally, I would ignore it. It could be (and is very like to be) noise. If I really think this is a promising area, I would need a theory (curriculum learning), and then I would explore as a contribution to this field.",
+  "inLanguage" : "en",
+  "wordCount":  535 ,
+  "datePublished" : "2019-11-19T23:29:21",
+  "dateModified" : "2019-11-19T23:29:21",
+  "image" : "https:\/\/johntiger1.github.io\/blog\/img\/avatar-icon.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "https:\/\/johntiger1.github.io\/blog\/posts\/choose-your-own-adv\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/johntiger1.github.io\/blog",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/johntiger1.github.io\/blog\/img\/avatar-icon.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Choose Your Own Adv" />
+<meta property="og:description" content="You do training on only 5k examples of a dataset. (the first 5k indices) You notice an improvement in training.
+Do you follow this? Or do you ignore this?
+Generally, I would ignore it. It could be (and is very like to be) noise. If I really think this is a promising area, I would need a theory (curriculum learning), and then I would explore as a contribution to this field.">
+<meta property="og:image" content="https://johntiger1.github.io/blog/img/avatar-icon.png" />
+<meta property="og:url" content="https://johntiger1.github.io/blog/posts/choose-your-own-adv/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="John&#39;s Machine Learning and Deep Learning Blog" />
+
+  <meta name="twitter:title" content="Choose Your Own Adv" />
+  <meta name="twitter:description" content="You do training on only 5k examples of a dataset. (the first 5k indices) You notice an improvement in training.
+Do you follow this? Or do you ignore this?
+Generally, I would ignore it. It could be …">
+  <meta name="twitter:image" content="https://johntiger1.github.io/blog/img/avatar-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <link href='https://johntiger1.github.io/blog/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.59.0" />
+  <link rel="alternate" href="https://johntiger1.github.io/blog/index.xml" type="application/rss+xml" title="John&#39;s Machine Learning and Deep Learning Blog"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://johntiger1.github.io/blog/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://johntiger1.github.io/blog/css/highlight.min.css" /><link rel="stylesheet" href="https://johntiger1.github.io/blog/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-150888192-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://johntiger1.github.io/blog">John&#39;s Machine Learning and Deep Learning Blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/blog">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/blog/page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/blog/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="John&#39;s Machine Learning and Deep Learning Blog" href="https://johntiger1.github.io/blog">
+            <img class="avatar-img" src="https://johntiger1.github.io/blog/img/avatar-icon.png" alt="John&#39;s Machine Learning and Deep Learning Blog" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>Choose Your Own Adv</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>You do training on only 5k examples of a dataset. (the first 5k indices)
+You notice an improvement in training.</p>
+
+<p>Do you follow this? Or do you ignore this?</p>
+
+<p>Generally, I would ignore it. It could be (and is very like to be) noise. If I really think this is a promising area, I would need a theory (curriculum learning), and then I would explore as a contribution to this field.</p>
+
+<p>Some reasons why it might improve: it shifts our UNLABELLED indices too.</p>
+
+<p>As it turns out:
+1. When we say our dataset is smaller, then we have fewer indices for both the labelled and the unlabelled.
+2. I do some training on the labelled dataset. (as part of the task learner)<br />
+3. However, our testing dataset, is unaffected.</p>
+
+<p>Hence it IS surprising, that using fewer number of examples (in a sorted order), means that we have better performance. But chalk it up to non convergence. If we never see examples again, then we don&rsquo;t really learn fast enough to adjust our gradient.</p>
+
+<p>Ultimately, this is the line of thinking!
+If we set lower number of images, then we are sampling from a smaller sorted range. This HAS an effect on the number of unlabelled images too, and which ones we select. But the tested images are always the same
+On the other hand, if we set the regular number of images and lower budget, then we are sampling from the wide range.</p>
+
+<p>This has implications both on the images we sample, as well as the images we give to the VAE.</p>
+
+<p>Q: why does it take so long to iterate through, even with few iterations? Avoid iterating through the ENTIprRE dataset&hellip;?
+When we used the og query dataloader, it took forever!</p>
+
+<p>So here is the answer:
+when we use all the images, then we need to get the unlabelled ones as well. This is costly, expensive and pointless if we have tons of unlabelled images to start off with, and if we only label a few images each time.</p>
+
+<p>OK, so the new strategy:
+We should have a function which shifts the labels; so that we are considering a different interval. For now, we can just use eric&rsquo;s method still. And let&rsquo;s quickly wrap up and move on to things like CSC2541.</p>
+
+<p>(but when we try query dataloader, it DOES take a long time)</p>
+
+<p>But they also have a problem on their hands: it is possible to <code>next()</code> beyond the number of train iterations!</p>
+
+<p>Some experiments:
+1. testing the length of a dataset, when a sampler has been applied to it
+2. testing if we can iterate through the dataset, when we have exhausted the amount of data in it
+   1. (Due to their iteration, generator patten, this cannot happen interestingly!)</p>
+
+<ol>
+<li>the labelled dataset is smaller, then we have fewer images to help</li>
+</ol>
+
+<p>Wrap up:
+problems with scope, framing are some of the most difficult issues; and indeed the essence of research
+from the VAAL paper, we could look at scoping <em>within</em> the VAAL universe. Look at things like correlated batch improvement etc.</p>
+
+<p>But we could also take a step back, and say the VAAL is just one approach and talk about other heads!</p>
+
+
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fchoose-your-own-adv%2f&amp;text=Choose%20Your%20Own%20Adv&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fchoose-your-own-adv%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fchoose-your-own-adv%2f&amp;title=Choose%20Your%20Own%20Adv" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fchoose-your-own-adv%2f&amp;title=Choose%20Your%20Own%20Adv" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fchoose-your-own-adv%2f&amp;title=Choose%20Your%20Own%20Adv" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fchoose-your-own-adv%2f&amp;description=Choose%20Your%20Own%20Adv" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://johntiger1.github.io/blog/posts/slurm/" data-toggle="tooltip" data-placement="top" title="Slurm">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://johntiger1.github.io/blog/posts/divisibility/" data-toggle="tooltip" data-placement="top" title="Divisibility">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              John Chen
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2020
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://johntiger1.github.io/blog">John&#39;s Machine Learning and Deep Learning Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.59.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://johntiger1.github.io/blog/js/main.js"></script>
+<script src="https://johntiger1.github.io/blog/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://johntiger1.github.io/blog/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

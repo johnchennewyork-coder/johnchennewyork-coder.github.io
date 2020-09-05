@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>csc2547 on John&#39;s Machine Learning and Deep Learning Blog</title>
+    <link>https://johntiger1.github.io/blog/tags/csc2547/</link>
+    <description>Recent content in csc2547 on John&#39;s Machine Learning and Deep Learning Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Nov 2019 18:40:45 -0400</lastBuildDate>
+    
+	<atom:link href="https://johntiger1.github.io/blog/tags/csc2547/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Learning to Program</title>
+      <link>https://johntiger1.github.io/blog/posts/learning-to-program/</link>
+      <pubDate>Fri, 01 Nov 2019 18:40:45 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/learning-to-program/</guid>
+      <description>This week, we covered a wide variety of approaches to neural methods to program synthesis and program induction.
+The first batch of presentations: Romila, Eric and Henri Romila: we have synthesis; the most naive way is indeed one way that CAN be used to form programs: get the input space, the program space, the action space, and then try all possible combinations. Her paper talked about some sort of Monte Carlo tree search based method; alpha zero but applied to program synthesis, and she was critical as they don&amp;rsquo;t update the policy network every time.</description>
+    </item>
+    
+  </channel>
+</rss>

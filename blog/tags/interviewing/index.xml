@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>interviewing on John&#39;s Machine Learning and Deep Learning Blog</title>
+    <link>https://johntiger1.github.io/blog/tags/interviewing/</link>
+    <description>Recent content in interviewing on John&#39;s Machine Learning and Deep Learning Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 29 Oct 2019 23:21:23 -0400</lastBuildDate>
+    
+	<atom:link href="https://johntiger1.github.io/blog/tags/interviewing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Interview Tips</title>
+      <link>https://johntiger1.github.io/blog/posts/interview-tips/</link>
+      <pubDate>Tue, 29 Oct 2019 23:21:23 -0400</pubDate>
+      
+      <guid>https://johntiger1.github.io/blog/posts/interview-tips/</guid>
+      <description>As a follow-up to my recent interview-recap on G-Research, I&amp;rsquo;ve come to some realizations on some general tips for doing well on technical interviews:
+ Don&amp;rsquo;t procrastinate!  Scheduling a coding challenge might feel like scheduling a dentist appointment: why are you willingly scheduling pain for yourself?! But like scheduling a dentist appointment, it is a necessary fact of life. Schedule it soon as you have a relatively free day (I know, I know everyone is always busy!</description>
+    </item>
+    
+  </channel>
+</rss>

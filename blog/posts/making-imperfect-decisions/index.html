@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Making Imperfect Decisions - John&#39;s Machine Learning and Deep Learning Blog</title>
+  <meta name="description" content="Sorry for the long hiatus everyone. I am refraining from blogging so much while I figure out some infrastructure related details: i.e. how to write inline latex effectively in the blog, how to use pictures, and importantly how to categorize things by date, etc. so that this doesn&rsquo;t blow up.
+(In partciular, you can already see how the number of posts will grow linearly with time: not good).
+The paradox of graduate school: learning how to make imperfect decisions So now I have been in grad school for over a semester.">
+  <meta name="author" content="John Chen"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "John\x27s Machine Learning and Deep Learning Blog",
+    
+    "url": "https:\/\/johntiger1.github.io\/blog"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/johntiger1.github.io\/blog"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/johntiger1.github.io\/blog",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/johntiger1.github.io\/blog\/posts\/making-imperfect-decisions\/",
+          "name": "Making imperfect decisions"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "John Chen"
+  },
+  "headline": "Making Imperfect Decisions",
+  "description" : "Sorry for the long hiatus everyone. I am refraining from blogging so much while I figure out some infrastructure related details: i.e. how to write inline latex effectively in the blog, how to use pictures, and importantly how to categorize things by date, etc. so that this doesn\x26rsquo;t blow up.\n(In partciular, you can already see how the number of posts will grow linearly with time: not good).\nThe paradox of graduate school: learning how to make imperfect decisions So now I have been in grad school for over a semester.",
+  "inLanguage" : "en",
+  "wordCount":  300 ,
+  "datePublished" : "2020-01-27T15:07:56",
+  "dateModified" : "2020-01-27T15:07:56",
+  "image" : "https:\/\/johntiger1.github.io\/blog\/img\/avatar-icon.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "https:\/\/johntiger1.github.io\/blog\/posts\/making-imperfect-decisions\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/johntiger1.github.io\/blog",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/johntiger1.github.io\/blog\/img\/avatar-icon.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Making Imperfect Decisions" />
+<meta property="og:description" content="Sorry for the long hiatus everyone. I am refraining from blogging so much while I figure out some infrastructure related details: i.e. how to write inline latex effectively in the blog, how to use pictures, and importantly how to categorize things by date, etc. so that this doesn&rsquo;t blow up.
+(In partciular, you can already see how the number of posts will grow linearly with time: not good).
+The paradox of graduate school: learning how to make imperfect decisions So now I have been in grad school for over a semester.">
+<meta property="og:image" content="https://johntiger1.github.io/blog/img/avatar-icon.png" />
+<meta property="og:url" content="https://johntiger1.github.io/blog/posts/making-imperfect-decisions/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="John&#39;s Machine Learning and Deep Learning Blog" />
+
+  <meta name="twitter:title" content="Making Imperfect Decisions" />
+  <meta name="twitter:description" content="Sorry for the long hiatus everyone. I am refraining from blogging so much while I figure out some infrastructure related details: i.e. how to write inline latex effectively in the blog, how to use …">
+  <meta name="twitter:image" content="https://johntiger1.github.io/blog/img/avatar-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <link href='https://johntiger1.github.io/blog/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.59.0" />
+  <link rel="alternate" href="https://johntiger1.github.io/blog/index.xml" type="application/rss+xml" title="John&#39;s Machine Learning and Deep Learning Blog"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://johntiger1.github.io/blog/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://johntiger1.github.io/blog/css/highlight.min.css" /><link rel="stylesheet" href="https://johntiger1.github.io/blog/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-150888192-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://johntiger1.github.io/blog">John&#39;s Machine Learning and Deep Learning Blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/blog">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/blog/page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/blog/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="John&#39;s Machine Learning and Deep Learning Blog" href="https://johntiger1.github.io/blog">
+            <img class="avatar-img" src="https://johntiger1.github.io/blog/img/avatar-icon.png" alt="John&#39;s Machine Learning and Deep Learning Blog" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>Making Imperfect Decisions</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>Sorry for the long hiatus everyone. I am refraining from blogging so much while I figure out some infrastructure related details: i.e. how to write inline latex effectively in the blog, how to use pictures, and importantly how to categorize things by date, etc. so that this doesn&rsquo;t blow up.</p>
+
+<p>(In partciular, you can already see how the number of posts will grow linearly with time: not good).</p>
+
+<h1 id="the-paradox-of-graduate-school-learning-how-to-make-imperfect-decisions">The paradox of graduate school: learning how to make imperfect decisions</h1>
+
+<p>So now I have been in grad school for over a semester. Things are going well, but I am finally able to describe a certain phenomenon that has been bothering me.</p>
+
+<p>Simply put, I have too much time on my hands.</p>
+
+<p>Paradoxically, with too much time on my hands, I find that I don&rsquo;t have enough of it. Even simple decisions that I should be quickly able to address I find are taking me ages to get over.</p>
+
+<p>This theory explains why I procrastinate: rather than going with an OK solution, I wait to find a great solution (since in fact, the solution quality in general DOES improve with time). This is the same isue with essay writing that I find, spending copious amounts of time to find <em>le mot juste</em></p>
+
+<p>Unfortunately, while this method can be good, in my opinion in life there are very few things that <em>not</em> time-sensitive. Almost every task that can be done at 110% using 10 units of time, is almost much better done at 80% using 2 units of time.</p>
+
+<p>And importantly, if you take too long to make a decision, it often gets made for you.</p>
+
+<h1 id="the-solution-make-imperfect-decisions">The solution: make imperfect decisions</h1>
+
+<p>The solution, unsurprisingly, is to make imperfect decisions. Yes, you read it correctly: make <em>provably</em> suboptimal decisions. But make them quickly!</p>
+
+<p>John</p>
+
+
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fmaking-imperfect-decisions%2f&amp;text=Making%20Imperfect%20Decisions&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fmaking-imperfect-decisions%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fmaking-imperfect-decisions%2f&amp;title=Making%20Imperfect%20Decisions" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fmaking-imperfect-decisions%2f&amp;title=Making%20Imperfect%20Decisions" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fmaking-imperfect-decisions%2f&amp;title=Making%20Imperfect%20Decisions" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fjohntiger1.github.io%2fblog%2fposts%2fmaking-imperfect-decisions%2f&amp;description=Making%20Imperfect%20Decisions" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://johntiger1.github.io/blog/posts/regressions/" data-toggle="tooltip" data-placement="top" title="Regressions">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://johntiger1.github.io/blog/posts/rich-sutton/" data-toggle="tooltip" data-placement="top" title="We are all going south">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              John Chen
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2020
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://johntiger1.github.io/blog">John&#39;s Machine Learning and Deep Learning Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.59.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://johntiger1.github.io/blog/js/main.js"></script>
+<script src="https://johntiger1.github.io/blog/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://johntiger1.github.io/blog/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+
