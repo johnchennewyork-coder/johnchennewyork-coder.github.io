@@ -1,4 +1,10 @@
 
+.export-image{
+    max-height: 50vh;
+    overflow: auto;
+
+}
+
 /*@import url('https://fonts.googleapis.com/css?family=Just+Another+Hand');*/
 html, body {
     background:url('../../resources/img/light_back.jpg') center center no-repeat;
