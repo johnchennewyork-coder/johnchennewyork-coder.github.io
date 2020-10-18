@@ -1,3 +1,7 @@
+In case any final reconciliation needs to go on:
+https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site
+
+
 Todo:
 
 Add more porjects/the rest of the sections
