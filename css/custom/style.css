@@ -179,3 +179,26 @@ section{
           background-position: 12.5rem top; /*200px*/
       }
   }
+
+  .centered-div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .centered-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .centered-image img {
+    max-width: 100%;
+    max-height: auto;
+    object-fit: contain;
+  }
+
+  h1 {
+    text-align: center;
+  }
