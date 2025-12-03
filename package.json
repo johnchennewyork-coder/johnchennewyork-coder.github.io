@@ -11,6 +11,7 @@
     "typed.js": "^2.0.7"
   },
   "devDependencies": {
+    "@types/typed.js": "^2.0.9",
     "typescript": "^5.3.3",
     "vite": "^5.0.8"
   }

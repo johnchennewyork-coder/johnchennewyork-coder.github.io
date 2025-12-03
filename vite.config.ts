@@ -59,6 +59,7 @@ const copyResourcesPlugin = (): Plugin => {
 };
 
 export default defineConfig({
+  base: '/', // GitHub Pages base path (use '/' for username.github.io repos)
   root: '.',
   // Resources will be copied by plugin, but we also serve it during dev
   publicDir: false,
@@ -67,12 +68,6 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        journalGPT: resolve(__dirname, 'journalGPT.html'),
-        cropper: resolve(__dirname, 'cropper.html'),
-        experimental: resolve(__dirname, 'experimental.html'),
-        adversity: resolve(__dirname, 'adversity.html'),
-        radiantai: resolve(__dirname, 'radiantai.html'),
-        ulti: resolve(__dirname, 'ulti.html'),
       },
     },
   },
