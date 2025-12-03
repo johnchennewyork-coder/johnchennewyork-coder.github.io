@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const appElement = document.getElementById('app');
   
   if (appElement) {
-    const typed = new Typed(appElement, {
+    new Typed(appElement, {
       strings: [
         'data scientist',
         'AI researcher',
