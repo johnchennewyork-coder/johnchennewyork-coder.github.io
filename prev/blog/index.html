@@ -1,53 +1,743 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/custom/style.css" type="text/css"/>
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans|Cutive" rel="stylesheet">
-    <title>Blog - John Chen</title>
-</head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="../">John Chen</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="../">Home</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Blog <span class="sr-only">(current)</span></a>
-            </li>
-        </ul>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>John&#39;s Machine Learning and Deep Learning Blog - John&#39;s Machine Learning and Deep Learning Blog</title>
+  <meta name="author" content="John Chen"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "John\x27s Machine Learning and Deep Learning Blog",
+    
+    "url": "https:\/\/johntiger1.github.io\/blog"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/johntiger1.github.io\/blog"
+  
+  
+  
+  
+}
+</script>
+
+<meta property="og:title" content="John&#39;s Machine Learning and Deep Learning Blog" />
+<meta property="og:image" content="https://johntiger1.github.io/blog/img/avatar-icon.png" />
+<meta property="og:url" content="https://johntiger1.github.io/blog/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="John&#39;s Machine Learning and Deep Learning Blog" />
+
+  <meta name="twitter:title" content="John&#39;s Machine Learning and Deep Learning Blog" />
+  <meta name="twitter:image" content="https://johntiger1.github.io/blog/img/avatar-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <link href='https://johntiger1.github.io/blog/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.59.0" />
+  <link rel="alternate" href="https://johntiger1.github.io/blog/index.xml" type="application/rss+xml" title="John&#39;s Machine Learning and Deep Learning Blog"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://johntiger1.github.io/blog/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://johntiger1.github.io/blog/css/highlight.min.css" /><link rel="stylesheet" href="https://johntiger1.github.io/blog/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-150888192-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://johntiger1.github.io/blog">John&#39;s Machine Learning and Deep Learning Blog</a>
     </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/blog">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/blog/page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/blog/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="John&#39;s Machine Learning and Deep Learning Blog" href="https://johntiger1.github.io/blog">
+            <img class="avatar-img" src="https://johntiger1.github.io/blog/img/avatar-icon.png" alt="John&#39;s Machine Learning and Deep Learning Blog" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
 </nav>
 
-<section id="intro">
-    <div class="container" style="padding-top: 80px;">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h1 class="text-center" style="font-family: 'Cutive', serif; font-size: 2.5rem; margin-bottom: 40px;">Blog</h1>
-                
-                <div class="alert alert-info">
-                    <p>Welcome to my blog! Stay tuned for posts about machine learning, NLP, research, and more.</p>
-                </div>
 
-                <p class="text-center" style="font-size: 1.1rem; color: #666;">Blog posts coming soon...</p>
-            </div>
-        </div>
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
     </div>
-</section>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
 
-<footer class="bg-dark text-white text-center py-4">
-    <p>&copy; 2025 John Chen. All rights reserved.</p>
-</footer>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GasSVmnTL7Sj98m" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe5JZfKk+ORe9P+liqLFVnDj3CbMTMP7eb2gLsLlJ" crossorigin="anonymous"></script>
-</body>
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              
+                <h1>John&#39;s Machine Learning and Deep Learning Blog</h1>
+              
+              
+                <hr class="small">
+              
+              
+                
+                  <span class="page-subheading">Musings of a grad student </span>
+                
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div role="main" class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+
+        <div class="posts-list">
+          
+          
+            <article class="post-preview">
+    <a href="https://johntiger1.github.io/blog/posts/amazon-interview/">
+        <h2 class="post-title">Amazon Interview</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on April 14, 2020
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;524&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Chen
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        Addicted to interviewing.
+Just finished the Amazon interview. It was a shadowing interview, so there was a bonus interviewer!
+Surprisingly, it was not a coding challenge! Instead they asked (quite a few) questions about my machine learning knowledge.
+Things I did well: Answered the first LP question nicely (overall). Tell me about a time when you went outside your scope to improve something.
+Should have mentioned I got an award for that.
+        <a href="https://johntiger1.github.io/blog/posts/amazon-interview/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://johntiger1.github.io/blog/posts/vector-guide/">
+        <h2 class="post-title">Vector Compute Guide</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on March 22, 2020
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;44&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Chen
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <p>Vector has two computing servers. One is the MaRS cluster, while the other is the Vaughan cluster.</p>
+
+<p>You can access the Vaughan cluster, via <code>vremote.vectorinstitute.ai</code>
+You can access the MaRS cluster, vi <code>q.vectorinstitute.ai</code></p>
+
+<p>The power of e-mail inboxing. And making sure things get done!</p>
+
+        
+    </div>
+
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://johntiger1.github.io/blog/posts/ewp/">
+        <h2 class="post-title">Elements of Web Programming</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on March 14, 2020
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;176&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Chen
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        I have long believed that Web programming is one of the most difficult parts of practical, software development. As the name suggests, full-stack web development encapsulates all levels of programming, from database to backend to frontend.
+Not only is there breadth across the stack, but there is also breadth across the different types of stacks. For instance, PHP web development is completely different from modern Node ES6 development is completely different from C# web development.
+        <a href="https://johntiger1.github.io/blog/posts/ewp/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://johntiger1.github.io/blog/posts/intro-group-theory/">
+        <h2 class="post-title">Introduction to Group Theory</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on March 7, 2020
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;250&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Chen
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        I am becoming more interested in rigorizing my knowledge of mathematics.
+A group is a set of elements $$G$$ and an operation $$\bigotimes$$. It satisfies the following four properties:
+ Closure Associativity Neutral Element Inverse Element  From Groups to Vector Spaces: If we enhance our group with an outer operation, then we get a vector space! Roughly, this outer operation takes an element from inside our set, and an external element from a field (such as the reals) and then gives us a way of combining the inner element with the external element.
+        <a href="https://johntiger1.github.io/blog/posts/intro-group-theory/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://johntiger1.github.io/blog/posts/rich-sutton/">
+        <h2 class="post-title">We are all going south</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on February 19, 2020
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;335&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Chen
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        Attended the Rich Sutton talk today at Vector. It was a great talk, where he soliloquized about his research agenda and motivation, and used this to motivate his work on SuperDyna, a general intelligence framework based on his work on options.
+At the end of this post are some rough notes from the presentation. But I wanted to discuss the key takeaways I got. I had the opportunity to talk with him personally briefly for a few moments as well over lunch.
+        <a href="https://johntiger1.github.io/blog/posts/rich-sutton/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://johntiger1.github.io/blog/posts/making-imperfect-decisions/">
+        <h2 class="post-title">Making Imperfect Decisions</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 27, 2020
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;300&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Chen
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        Sorry for the long hiatus everyone. I am refraining from blogging so much while I figure out some infrastructure related details: i.e. how to write inline latex effectively in the blog, how to use pictures, and importantly how to categorize things by date, etc. so that this doesn&rsquo;t blow up.
+(In partciular, you can already see how the number of posts will grow linearly with time: not good).
+The paradox of graduate school: learning how to make imperfect decisions So now I have been in grad school for over a semester.
+        <a href="https://johntiger1.github.io/blog/posts/making-imperfect-decisions/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://johntiger1.github.io/blog/posts/regressions/">
+        <h2 class="post-title">Regressions</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 20, 2020
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;90&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Chen
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        There is a powerful, and statistical way of thinking about all regressions. Instead of viewing regression as simply &ldquo;minimizing the least squares error&rdquo;, or some type of MLE, we can instead think about the statistical, generative model of our process.
+This is the approach to regression that talks about $\Beta$, normal distribution, and the residuals are normally distributed!
+Essentially, Poisson regression simply makes a different modelling assumption/perspective: that we look at a $ln$ viewpoint!
+        <a href="https://johntiger1.github.io/blog/posts/regressions/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://johntiger1.github.io/blog/posts/research-topics-and-conferences/">
+        <h2 class="post-title">Research Topics and Conferences</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 20, 2020
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;39&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Chen
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <p>As important as actually doing the research, is finding a good place to publish it.</p>
+
+<p>Here, we see some areas that I would be interested in:
+<a href="https://dl.acm.org/doi/abs/10.1145/3308558.3313485">https://dl.acm.org/doi/abs/10.1145/3308558.3313485</a></p>
+
+<p>(this involves: deep learning for clinical note prediction using incorporation of wikipedia)</p>
+
+        
+    </div>
+
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://johntiger1.github.io/blog/posts/adobe/">
+        <h2 class="post-title">Adobe</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 8, 2020
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;191&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Chen
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        Remember when I said interviewing season was over?
+Well, not quite.
+Just finished the interview with Adobe. This was one of the more frazzled experiences, and it did not go as planned.
+To start off, I forgot my laptop at home, and this caused me to almost be late for the interview.
+Second, I kept on having connection problems during the interview. I was constantly disconnecting from the collabedit, which made it hard to concentrate/focus.
+        <a href="https://johntiger1.github.io/blog/posts/adobe/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://johntiger1.github.io/blog/posts/research-log/">
+        <h2 class="post-title">Research Log</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 7, 2020
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;94&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Chen
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        Worked on the RL project again today.
+I implemented: 1. More updates (to the policy network) 2. Dynamic reward baselining, with rolling average of past rewards
+I am also working in the oracle clusters paradigm. If we know the actual labels, we should be able to pick optimally. Yet somehow, we are unable to. We keep falling into policy collapse, due to the attractors (local minima) in the RL process.
+        <a href="https://johntiger1.github.io/blog/posts/research-log/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+
+</article>
+          
+        </div>
+
+        
+          <ul class="pager main-pager">
+            
+            
+              <li class="next">
+                <a href="https://johntiger1.github.io/blog/page/2/">Older Posts &rarr;</a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+
+      
+    <div class="page-meta">
+  
+  
+  
+</div>
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+          <li>
+            <a href="/blog/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              John Chen
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2020
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://johntiger1.github.io/blog">John&#39;s Machine Learning and Deep Learning Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.59.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://johntiger1.github.io/blog/js/main.js"></script>
+<script src="https://johntiger1.github.io/blog/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://johntiger1.github.io/blog/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
 </html>
+

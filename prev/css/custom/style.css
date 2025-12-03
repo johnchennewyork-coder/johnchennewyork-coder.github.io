@@ -1,247 +1,204 @@
-/* General Styling */
-body {
-    font-family: 'PT Sans', sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    overflow-x: hidden;
+
+.export-image{
+    max-height: 50vh;
+    overflow: auto;
+
 }
 
-html {
-    scroll-behavior: smooth;
+/*@import url('https://fonts.googleapis.com/css?family=Just+Another+Hand');*/
+html, body {
+    background:url('../../resources/img/light_back.jpg') center center no-repeat;
+    height: 100%;
+    background-attachment: fixed;
+    background-size:cover;
 }
 
-/* Navigation */
-.navbar {
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+#logo img {
+    margin:0 auto !important;
+    padding-top:20px;
 }
 
-.navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-/* Logo Section */
-#logo {
-    padding-top: 80px;
-    padding-bottom: 40px;
-    background: linear-gradient(135deg, #f5f5f5 0%, #fff 100%);
+#resume {
+    /* font-weight: bold !important; */
+    /* color: red; */
 }
 
 #profile {
-    max-width: 300px;
-    border-radius: 50%;
-    border: 5px solid #333;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
+    border-radius: 50%; /*once this is a square, it will become a circle */
 }
 
-#profile:hover {
-    transform: scale(1.05);
+#intro p {
+    /*color: white;*/
+    text-align:center;
+    /*font-family: 'Just Another Hand', cursive;*/
+    font-size:1.5em;
+    /*max-width: 50%;*/
+    /*vertical-align: middle;*/
 }
-
-/* Typewriter Effect */
-#app {
+#counter .countdown {
+    text-align:center;
+    color:white;
     font-family: 'Amatic SC', cursive;
-    font-size: 3rem;
-    font-weight: bold;
-    margin: 30px 0;
-    color: #333;
-    animation: fadeIn 1s ease-in;
+    font-size:3em;
+    margin:-15px 0 0;
 }
 
-/* Intro Section */
-#intro {
-    padding: 40px 0;
-    background-color: #fff;
+#icons {
+    text-align:center;
+    margin-top: 3em;
+}
+#icons .fa {
+    color:deepskyblue;
+    margin:5px 15px;
+    position:relative;
+    bottom:0;
+    transition:all 0.2s ease-in-out;
+}
+
+#icons .twitter:hover {
+    color:#6cadde;
+    bottom:5px;
+}
+#icons .facebook:hover {
+    color:#3b5998;
+    bottom:5px;
+}
+#icons .google:hover {
+    color:#ea4335;
+    bottom:5px;
+}
+#icons .instagram:hover {
+    color:#517fa6;
+    bottom:5px;
+}
+
+#icons .linkedin:hover{
+    color: #c69500;
+    bottom: 5px;
+
+}
+/*look up what exactly the hover is */
+#icons .github:hover {
+    color: #545b62;
+    bottom: 5px;
+
+}
+#signup {
+    text-align: center;
+}
+#signup .form-inline {
+    display: block;
+}
+
+#signup .btn {
+    background-color: rgba(161,186,226,0.5);
+    color: white;
+}
+#signup .btn:hover {
+    background-color:rgba(37,165,82,1);
 }
 
 #name_title {
-    font-family: 'Just Another Hand', cursive;
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 30px;
-    color: #333;
+    font-family: 'Nunito', serif !important; /*Not sure why this has to be overridden*/
+    font-variant: all-petite-caps;
+    color: black;
+    letter-spacing: 0.2em;
+    text-align:center;
+    /*font-family: 'Just Another Hand', cursive;*/
+    font-size:3em;
 }
 
-/* News Section */
-#News {
-    margin-bottom: 50px;
-    padding: 30px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    border-left: 4px solid #007bff;
+.centerME{
+    margin: 0 auto; /*figure out why this is the only working solution*/
 }
 
-#News h1 {
-    font-family: 'Cutive', serif;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333;
+section{
+
+    padding: 2em 0em;
 }
 
-#News p {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #555;
+.card{
+    margin: 2em 0em;
+
 }
 
-#News b {
-    color: #007bff;
+.card:hover img {
+    opacity: 0.7;
+    transition: 1s ease;
 }
 
-/* About Section */
-#about {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 20px;
+
+.carousel-inner > .carousel-item {
+    height: 90vh;
+    width: 90vw;
+    /*max-width: 90vw;*/
+    /*overflow: hidden;*/
 }
 
-#intro h1 {
-    font-family: 'Cutive', serif;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333;
+.carousel-inner > .carousel-item > img {
+
+    max-height: 90vh;
+
+
 }
 
-#intro ul {
-    list-style: none;
-    padding-left: 0;
+#app{
+    color: #e83e8c;
 }
 
-#intro li {
-    margin-bottom: 15px;
-    padding-left: 25px;
-    position: relative;
-}
+/*x*/
 
-#intro li:before {
-    content: "→";
+
+.shimmer {
+    display: inline-block;
+    color:white;
+    
+    background: #acacac -webkit-gradient(linear, 100% 0, 0 0, from(#acacac), color-stop(0.5, #ffffff), to(#acacac));
+    
+    background-position: -4rem top; /*50px*/
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation-name: shimmer;
+    -webkit-animation-duration: 2.2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-background-size: 4rem 100%; /*50px*/
+    
+  }
+  
+  @-webkit-keyframes shimmer {
+      0% {
+          background-position: -4rem top; /*50px*/
+      }
+  
+      70% {
+          background-position: 12.5rem top; /*200px*/
+      }
+  
+      100% {
+          background-position: 12.5rem top; /*200px*/
+      }
+  }
+
+  .centered-div {
     position: absolute;
-    left: 0;
-    color: #007bff;
-    font-weight: bold;
-}
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
-#intro a {
-    color: #007bff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-#intro a:hover {
-    color: #0056b3;
-    text-decoration: underline;
-}
-
-/* Projects Section */
-#Projects {
-    margin-bottom: 50px;
-    padding: 30px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    border-left: 4px solid #28a745;
-}
-
-#Projects h1,
-#Hackathons h1 {
-    font-family: 'Cutive', serif;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-/* Hackathons Section */
-#Hackathons {
-    margin-bottom: 50px;
-    padding: 30px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    border-left: 4px solid #ffc107;
-}
-
-/* Center utility */
-.centerME {
+  .centered-image {
     display: flex;
-    align-items: center;
     justify-content: center;
-}
+    align-items: center;
+  }
 
-.text-center {
-    text-align: center !important;
-}
+  .centered-image img {
+    max-width: 100%;
+    max-height: auto;
+    object-fit: contain;
+  }
 
-/* Footer */
-footer {
-    margin-top: 50px;
-    border-top: 1px solid #e0e0e0;
-}
-
-footer p {
-    margin-bottom: 0;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    #app {
-        font-size: 2rem;
-    }
-
-    #name_title {
-        font-size: 1.8rem;
-    }
-
-    #News, #Projects, #Hackathons {
-        padding: 20px;
-    }
-
-    #profile {
-        max-width: 200px;
-    }
-}
-
-/* Custom Navbar Link Styling */
-.nav-link {
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-    color: #007bff !important;
-}
-
-/* Resume and Blog Links */
-#resume, #blog {
-    background-color: #007bff;
-    border-radius: 4px;
-    padding: 8px 16px !important;
-    margin-left: 10px;
-}
-
-#resume:hover, #blog:hover {
-    background-color: #0056b3;
-    color: #fff !important;
-}
-
-/* Utility Classes */
-.col-sm-offset-3 {
-    margin-left: 25%;
-}
-
-@media (max-width: 768px) {
-    .col-sm-offset-3 {
-        margin-left: 0;
-    }
-}
+  h1 {
+    text-align: center;
+  }

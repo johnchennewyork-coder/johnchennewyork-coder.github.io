@@ -1,0 +1,15 @@
+{
+  "hash": "87335b3b",
+  "configHash": "03fe218d",
+  "lockfileHash": "d8c5f8b0",
+  "browserHash": "cd0c3957",
+  "optimized": {
+    "typed.js": {
+      "src": "../../node_modules/typed.js/lib/typed.js",
+      "file": "typed__js.js",
+      "fileHash": "4dafcc5e",
+      "needsInterop": true
+    }
+  },
+  "chunks": {}
+}
