@@ -1,46 +1,36 @@
 <!doctype html>
 <html lang="en">
 <head>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150888192-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-150888192-1');
-</script>
-
-<!-- One day, we hope this app+web will work... -->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DPNKKLV0YM"></script>
+    <!-- Google Analytics 4 (GA4) - Removed deprecated Universal Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DPNKKLV0YM"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-DPNKKLV0YM');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DPNKKLV0YM');
     </script>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/custom/style.css" type="text/css"/>
-    <!--<link href="https://fonts.googleapis.com/css?family=Just+Another+Hand" rel="stylesheet">-->
-    <link href="https://fonts.googleapis.com/css?family=Just+Another+Hand" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Cutive" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Modern font loading with preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cutive&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
 
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
-    <script src="js/typewriter/typewriter.js"></script>
-    <!--<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/ee16accfc2f8e0bca656b0a25/a8b53c63458894df22e84b2fc.js");</script>-->
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/custom/style.css" type="text/css"/>
 
     <title>John Chen</title>
 </head>
@@ -48,14 +38,14 @@
 <!--we really need to set the class active to the correct one-->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
     <a class="navbar-brand" href="#">John Chen</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav me-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#">Home <span class="visually-hidden">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#Projects">Projects</a>
@@ -128,7 +118,7 @@ Use rows to create horizontal groups of columns. Each horizontal row of bootstra
 
         </div>
         <div class="row">
-            <div class="col-sm-8 col-sm-offset-3 centerME" id="News">
+            <div class="col-sm-8 offset-sm-3 centerME" id="News">
                 <h1 class="text-center"> News </h1>
 
                 <h3 class="">  </h3>
@@ -158,7 +148,7 @@ Use rows to create horizontal groups of columns. Each horizontal row of bootstra
         </div>
 
         <div class="row">
-            <div class="col-sm-8 col-sm-offset-3 centerME">
+            <div class="col-sm-8 offset-sm-3 centerME">
                 <h1 class="text-center">About </h1>
                 <p id="about">
                 Hi! My name is John Chen and I am a second year medical student at McGill University, currently on leave. Previously, I completed my Master's and Bachelor's degree in Computer Science at University of Toronto, St. George Campus 
@@ -411,8 +401,8 @@ Use rows to create horizontal groups of columns. Each horizontal row of bootstra
 
             <div class="col-md-12">
                 <ul class="list-inline">
-                    <a href="https://www.linkedin.com/in/johnn-chen/" target="blank"><li class="list-inline-item"><i class="fa linkedin fa-linkedin fa-3x" aria-hidden="true"></i></li></a>
-                    <a href="https://github.com/johntiger1/" target="blank"><li class="list-inline-item"><i class="fa github fa-github fa-3x" aria-hidden="true"></i></li></a>
+                    <a href="https://www.linkedin.com/in/johnn-chen/" target="blank"><li class="list-inline-item"><i class="fa-brands fa-linkedin fa-3x linkedin" aria-hidden="true"></i></li></a>
+                    <a href="https://github.com/johntiger1/" target="blank"><li class="list-inline-item"><i class="fa-brands fa-github fa-3x github" aria-hidden="true"></i></li></a>
                     <!--To add: stackoverflow, instagram, email etc.-->
                     <!--as per the CI pipeline, this will constitute a first release-->
                 </ul>
@@ -426,56 +416,11 @@ Use rows to create horizontal groups of columns. Each horizontal row of bootstra
 
 
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<!-- Bootstrap 5 JavaScript Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
-<script type="text/javascript" src="js/countdown-2.2.0/dest/jquery.countdown.js"></script>
-<script src="node_modules/typed.js/src/typed.js"></script>
-<script src="js/typewriter_usage.js"></script>
-
-<script>
-
-    $(document).ready(function() {
-        $(document).on('click', '.nav-item a', function (e) {
-            $(this).parent().addClass('active').siblings().removeClass('active');
-        });
-    });
-</script>
-<script>
-
-    $(window).on('load', function()
-    {
-
-        $(function() {
-            $('.countdown').countdown({
-                date: "June 7, 2087 15:03:26"
-            });
-        });
-    });
-</script>
-
-
-<!--move the logo below the nav_bar-->
-<script>
-    $(document).ready(function()
-    {
-
-
-        $('#logo').css('margin-top', $('.navbar').css('height'));
-    })
-</script>
-<!--<script>-->
-    <!--$(function() {-->
-        <!--$('.countdown').countdown({-->
-            <!--date: "June 7, 2087 15:03:26"-->
-        <!--});-->
-    <!--});-->
-<!--</script>-->
+<!-- Vite entry point for TypeScript modules -->
+<script type="module" src="/src/main.ts"></script>
 
 <footer>
 
