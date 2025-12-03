@@ -1,0 +1,247 @@
+/* General Styling */
+body {
+    font-family: 'PT Sans', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navigation */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Logo Section */
+#logo {
+    padding-top: 80px;
+    padding-bottom: 40px;
+    background: linear-gradient(135deg, #f5f5f5 0%, #fff 100%);
+}
+
+#profile {
+    max-width: 300px;
+    border-radius: 50%;
+    border: 5px solid #333;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+#profile:hover {
+    transform: scale(1.05);
+}
+
+/* Typewriter Effect */
+#app {
+    font-family: 'Amatic SC', cursive;
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 30px 0;
+    color: #333;
+    animation: fadeIn 1s ease-in;
+}
+
+/* Intro Section */
+#intro {
+    padding: 40px 0;
+    background-color: #fff;
+}
+
+#name_title {
+    font-family: 'Just Another Hand', cursive;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* News Section */
+#News {
+    margin-bottom: 50px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+}
+
+#News h1 {
+    font-family: 'Cutive', serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#News p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+#News b {
+    color: #007bff;
+}
+
+/* About Section */
+#about {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+#intro h1 {
+    font-family: 'Cutive', serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#intro ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#intro li {
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+}
+
+#intro li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #007bff;
+    font-weight: bold;
+}
+
+#intro a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#intro a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Projects Section */
+#Projects {
+    margin-bottom: 50px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border-left: 4px solid #28a745;
+}
+
+#Projects h1,
+#Hackathons h1 {
+    font-family: 'Cutive', serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Hackathons Section */
+#Hackathons {
+    margin-bottom: 50px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border-left: 4px solid #ffc107;
+}
+
+/* Center utility */
+.centerME {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    border-top: 1px solid #e0e0e0;
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #app {
+        font-size: 2rem;
+    }
+
+    #name_title {
+        font-size: 1.8rem;
+    }
+
+    #News, #Projects, #Hackathons {
+        padding: 20px;
+    }
+
+    #profile {
+        max-width: 200px;
+    }
+}
+
+/* Custom Navbar Link Styling */
+.nav-link {
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #007bff !important;
+}
+
+/* Resume and Blog Links */
+#resume, #blog {
+    background-color: #007bff;
+    border-radius: 4px;
+    padding: 8px 16px !important;
+    margin-left: 10px;
+}
+
+#resume:hover, #blog:hover {
+    background-color: #0056b3;
+    color: #fff !important;
+}
+
+/* Utility Classes */
+.col-sm-offset-3 {
+    margin-left: 25%;
+}
+
+@media (max-width: 768px) {
+    .col-sm-offset-3 {
+        margin-left: 0;
+    }
+}

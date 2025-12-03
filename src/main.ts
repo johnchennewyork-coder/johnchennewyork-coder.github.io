@@ -2,6 +2,8 @@
 import './scripts/nav-active';
 import './scripts/logo-positioning';
 import './scripts/typewriter';
+import './scripts/theme-toggle';
+import './scripts/scroll-animations';
 import './styles/main.css';
 
 // Initialize Bootstrap if needed (Bootstrap 5 doesn't require jQuery)

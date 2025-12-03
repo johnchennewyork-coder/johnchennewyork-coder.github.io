@@ -1,11 +1,11 @@
 // Replace jQuery logo positioning with vanilla TypeScript
 document.addEventListener('DOMContentLoaded', () => {
-  const logo = document.getElementById('logo');
+  const hero = document.getElementById('hero');
   const navbar = document.querySelector('.navbar');
   
-  if (logo && navbar) {
+  if (hero && navbar) {
     const navbarHeight = navbar.getBoundingClientRect().height;
-    (logo as HTMLElement).style.marginTop = `${navbarHeight}px`;
+    (hero as HTMLElement).style.marginTop = `${navbarHeight}px`;
   }
 });
 

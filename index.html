@@ -17,11 +17,7 @@
     <!-- Modern font loading with preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cutive&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -29,14 +25,18 @@
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/custom/style.css" type="text/css"/>
+    <!-- Custom CSS will be loaded via Vite -->
 
     <title>John Chen</title>
 </head>
 <body>
-<!--we really need to set the class active to the correct one-->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+<!-- Theme Toggle Button -->
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+    <i class="fas fa-moon" id="themeIcon"></i>
+</button>
+
+<!-- Navigation Bar with Glassmorphism -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <a class="navbar-brand" href="#">John Chen</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -80,32 +80,22 @@
     </div>
 </nav>
 
-    <section id="logo">
+    <section id="hero">
         <div class="container">
             <div class="row">
-
                 <div class="col-md-12 text-center">
-                    <img id="profile" src="resources/img/jchen2@loyalty.com.jpg" class="img-fluid"/>
+                    <img id="profile" src="resources/img/jchen2@loyalty.com.jpg" class="img-fluid" alt="John Chen Profile"/>
+                    <h1 id="app" class="text-center"> hacker </h1>
+                    <h1 id="name_title">John Chen</h1>
                 </div>
-
-
             </div>
-
         </div>
-
     </section>
-
-<h1 id="app" class="centerME text-center"> hacker </h1>
 
 <section id="intro">
     <div class="container">
 
         <div class="row">
-
-            <div class="col-md-12">
-                <h1 id="name_title">John Chen</h1>
-
-            </div>
 
             <!--
 Use rows to create horizontal groups of columns. Each horizontal row of bootstrap is a set of columns-->
@@ -117,41 +107,11 @@ Use rows to create horizontal groups of columns. Each horizontal row of bootstra
                 <!--courses at UTSG. </p>-->
 
         </div>
-        <div class="row">
-            <div class="col-sm-8 offset-sm-3 centerME" id="News">
-                <h1 class="text-center"> News </h1>
-
-                <h3 class="">  </h3>
-                <p><b>September 2023:</b> I have made the decision to return to academia and am actively searching for a PhD position! 
-                    I am primarily focused on fairness in multimodal foundational models for clinical medicine. I am also interested in 
-                    general training dynamics of multimodal LLMs as well as their applied use cases (debiasing, ECG classification, etc.). 
-                    Please e-mail me at johnc dot cs dot toronto dot edu to collaborate!
-            </p>
-
-            <!-- <h3 class=""> September 2023 </h3>
-                <p>I have made the decision to return to academia and am actively searching for a PhD position! 
-                    I am primarily focused on fairness in multimodal foundational models for clinical medicine. I am also interested in 
-                    general training dynamics of multimodal LLMs as well as their applied use cases (debiasing, ECG classification, etc.). 
-                    Please e-mail me at johnc dot cs dot toronto dot edu to collaborate!
-            </p>
-
-
-                <h3 class=""> September 2020 </h3>
-
-                <p>
-                    Two accepted papers at EMNLP 2020! <br/>
-                    My paper <em> <a href="resources/publications/fairness-clinical-nlp.pdf"> Exploring Text Specific and Blackbox Fairness Algorithms in Multimodal Clinical NLP </a></em>  was awarded "Best Paper" award at Clinical NLP workshop! <br/>
-                    Our paper <em> <a href="https://www.aclweb.org/anthology/2020.sdp-1.4"> A Smart System to Generate and Validate Question Answer Pairs for COVID-19 Literature </a></em> was accepted as an oral presentation at Scholarly Document Processing workshop!
-                </p> -->
-
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-8 offset-sm-3 centerME">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10 col-sm-12 glass" style="padding: var(--space-xl); margin: var(--space-xl) 0;">
                 <h1 class="text-center">About </h1>
                 <p id="about">
-                Hi! My name is John Chen and I am a second year medical student at McGill University, currently on leave. Previously, I completed my Master's and Bachelor's degree in Computer Science at University of Toronto, St. George Campus 
+                Hi! My name is John Chen and I am a Research Engineer at Meta SuperIntelligence Labs, where I work on Llama4 posttraining for cascaded MetaAI voice systems. Previously, I completed my Master's and Bachelor's degree in Computer Science at University of Toronto, St. George Campus 
                 and Vector Institute under the supervision of Frank Rudzicz. During my time at U of T, I focused on a variety of topics in NLP, speech and fairness. Here are some of my selected publications:
 
                 
@@ -203,7 +163,7 @@ Use rows to create horizontal groups of columns. Each horizontal row of bootstra
             <div class="col-sm-10 centerME">
 
 
-                <div class="card">
+                <div class="card" style="--animation-delay: 0s;">
 
                     <!--Card image-->
                     <a href="https://github.com/johntiger1/cllm_rnn/" target="_blank">
@@ -228,11 +188,11 @@ Use rows to create horizontal groups of columns. Each horizontal row of bootstra
 
             </div>
                 <div class="col-sm-6 ">
-                <div class="card">
+                <div class="card" style="--animation-delay: 0.1s;">
 
                     <a href="https://github.com/johntiger1/UTSPANHacks" target="_blank">
                     <!--Card image-->
-                    <img class="img-fluid" src="resources/img/spanhacks.PNG" alt="Card image cap">
+                    <img class="img-fluid" src="resources/img/spanhacks.PNG" alt="SPANHacks Data Analysis">
                     </a>
                     <!--Card content-->
                     <div class="card-body">
@@ -247,11 +207,11 @@ Use rows to create horizontal groups of columns. Each horizontal row of bootstra
                 </div>
             </div>
             <div class="col-sm-6 ">
-                <div class="card">
+                <div class="card" style="--animation-delay: 0.2s;">
 
                     <a href="https://www.flickr.com/photos/bemyapp/albums/72157668237953192/page2" target="_blank">
                     <!--Card image-->
-                    <img class="img-fluid" src="https://farm8.staticflickr.com/7694/27065743246_58aaa1c853_k.jpg" alt="Card image cap">
+                    <img class="img-fluid" src="https://farm8.staticflickr.com/7694/27065743246_58aaa1c853_k.jpg" alt="Talk to Plant IoT System">
                     </a>
                     <!--Card content-->
                     <div class="card-body">
@@ -264,6 +224,27 @@ Use rows to create horizontal groups of columns. Each horizontal row of bootstra
                         <a href="https://github.com/m47jiang/T2P" target="_blank" class="btn btn-primary">Github</a>
                     </div>
 
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-sm-10 centerME">
+                <div class="card" style="--animation-delay: 0.3s;">
+                    <!--Card image-->
+                    <a href="https://bobalearn.org/" target="_blank">
+                    <img class="img-fluid" src="resources/img/bobalearn.png" alt="BobaLearn.org - Chinese Language Learning Platform" onerror="this.style.display='none'">
+                    </a>
+                    <!--Card content-->
+                    <div class="card-body">
+                        <!--Title-->
+                        <h4 class="card-title">BobaLearn.org</h4>
+                        <!--Text-->
+                        <p class="card-text">An interactive learning platform vibecoded using Cursor and deployed with modern cloud infrastructure. 
+                        Built with Supabase for backend services, integrated Google Gemini API for AI-powered features, and deployed on Vercel 
+                        for optimal performance and scalability. The platform provides an engaging educational experience with cutting-edge technology.</p>
+                        <a href="https://bobalearn.org/" target="_blank" class="btn btn-primary">Visit Site</a>
+                    </div>
                 </div>
             </div>
             <!--<div class="col-sm-6 ">-->
@@ -292,10 +273,10 @@ Use rows to create horizontal groups of columns. Each horizontal row of bootstra
 
     <a id="Hackathons">
 
-        <div class="container ">
+        <div class="container">
 
-            <div class="row ">
-                <div class="col-sm-10 centerME">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10 col-sm-12 glass" style="padding: var(--space-xl); margin: var(--space-xl) 0;">
                     <h1 class="text-center"> Hackathons </h1>
 
                     <p> I've been lucky enough to attend the following hackathons! I am a big fan of hackathons as I feel
@@ -326,11 +307,14 @@ Use rows to create horizontal groups of columns. Each horizontal row of bootstra
 
     </a>
     <div class="container">
-
-        <h1>Visitor Map</h1>
-        <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=XTxl2z3SR1oiNg-USv-rhhqpASj_Fe089hcZW7gVlDw&cl=ffffff&w=a"></script>
-
-
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10 col-sm-12 glass" style="padding: var(--space-xl); margin: var(--space-xl) 0;">
+                <h1 class="text-center">Visitor Map</h1>
+                <div class="text-center">
+                    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=XTxl2z3SR1oiNg-USv-rhhqpASj_Fe089hcZW7gVlDw&cl=ffffff&w=a"></script>
+                </div>
+            </div>
+        </div>
     </div>
 
 
