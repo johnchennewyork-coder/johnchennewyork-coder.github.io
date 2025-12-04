@@ -112,73 +112,38 @@ The build output will be in the `dist/` folder, ready for deployment.
 
 ### GitHub Pages (Recommended)
 
-This repository is configured for GitHub Pages deployment. Here are the steps:
+This repository is **already configured** with GitHub Actions for automatic deployment. The workflow file (`.github/workflows/deploy.yml`) is set up and ready to use.
 
-#### Option 1: Automatic Deployment (GitHub Actions)
+#### ⚠️ Important: Configure GitHub Pages Source
 
-1. **Create a GitHub Actions workflow** (`.github/workflows/deploy.yml`):
+**Before your site will work correctly, you MUST configure GitHub Pages to use GitHub Actions:**
 
-```yaml
-name: Deploy to GitHub Pages
+1. **Go to repository settings:**
+   - Navigate to: `Settings` → `Pages` in your GitHub repository
+   - Or visit: `https://github.com/johnchennewyork-coder/johnchennewyork-coder.github.io/settings/pages`
 
-on:
-  push:
-    branches: [ main ]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-      
-      - name: Install dependencies
-        run: npm ci
-      
-      - name: Build
-        run: npm run build
-      
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-      
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './dist'
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-```
-
-2. **Configure GitHub Pages settings:**
-   - Go to your repository → Settings → Pages
-   - Under "Source", select "GitHub Actions"
+2. **Change the source:**
+   - Under "Source", select **"GitHub Actions"** (NOT "Deploy from a branch")
    - Save the settings
 
-3. **Push to main branch:**
-   ```bash
-   git push origin main
-   ```
-   The workflow will automatically build and deploy your site.
+3. **Why this matters:**
+   - If GitHub Pages is set to "Deploy from a branch", it will serve your raw source files
+   - This causes CSS/JS to break because it tries to load `/src/main.ts` instead of the built assets
+   - With "GitHub Actions" selected, it serves the built `dist/` folder with properly bundled assets
+
+#### How It Works
+
+1. **Automatic deployment:**
+   - Every push to the `main` branch automatically triggers the workflow
+   - The workflow builds your site and deploys it to GitHub Pages
+
+2. **Manual deployment:**
+   - You can also trigger deployments manually from the Actions tab
+   - Click "Run workflow" on the "Deploy to GitHub Pages" workflow
+
+3. **Monitor deployments:**
+   - Check the [Actions tab](https://github.com/johnchennewyork-coder/johnchennewyork-coder.github.io/actions) to see build and deployment status
+   - The site will be live at `https://johnchennewyork-coder.github.io/` after successful deployment
 
 #### Option 2: Manual Deployment
 
@@ -229,10 +194,10 @@ The `dist/` folder can be deployed to any static hosting service:
 ### Vite Configuration
 
 The `vite.config.ts` file contains:
+- **Base path:** Set to `/` for GitHub Pages (correct for `username.github.io` repos)
 - Build output directory (`dist/`)
-- Multiple HTML entry points
-- Custom plugin to copy `resources/` directory
-- Development server configuration
+- Custom plugin to copy `resources/` directory to `dist/resources/`
+- Development server configuration (port 3000)
 
 ### TypeScript Configuration
 
@@ -267,6 +232,27 @@ npm install
 - Ensure all dependencies are installed: `npm install`
 - Check that `resources/` directory exists
 - Verify Node.js version is 18+ (check with `node --version`)
+
+### CSS/JS not loading on GitHub Pages?
+
+**This is the most common issue!** If your site loads but CSS/JS is broken:
+
+1. **Check GitHub Pages source:**
+   - Go to repository `Settings` → `Pages`
+   - Ensure "Source" is set to **"GitHub Actions"** (NOT "Deploy from a branch")
+   - If it's set to a branch, change it to "GitHub Actions" and save
+
+2. **Verify the workflow ran:**
+   - Check the [Actions tab](https://github.com/johnchennewyork-coder/johnchennewyork-coder.github.io/actions)
+   - Ensure both "build" and "deploy" jobs completed successfully
+
+3. **Clear browser cache:**
+   - Hard refresh: `Cmd+Shift+R` (Mac) or `Ctrl+Shift+R` (Windows)
+   - Or open in an incognito/private window
+
+4. **Wait for propagation:**
+   - GitHub Pages can take 1-2 minutes to update after deployment
+   - Check the deployment status in the Actions tab
 
 ### Port 3000 already in use?
 
@@ -304,5 +290,5 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-**Last Updated:** January 2025
+**Last Updated:** December 2025
 
