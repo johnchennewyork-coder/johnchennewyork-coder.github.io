@@ -7,10 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (appElement) {
     new Typed(appElement, {
       strings: [
-        'data scientist',
+        'research engineer',
         'AI researcher',
-        'Full stack developer',
-        'PhD student'
+        'vibe coder',
       ],
       typeSpeed: 75,
       backSpeed: 25,
