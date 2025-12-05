@@ -110,51 +110,60 @@ The build output will be in the `dist/` folder, ready for deployment.
 
 ## 🚢 Deployment
 
-### GitHub Pages (Recommended)
+### GitHub Pages (Automatic via GitHub Actions) ✅
 
-This repository is **already configured** with GitHub Actions for automatic deployment. The workflow file (`.github/workflows/deploy.yml`) is set up and ready to use.
+This repository is **fully configured** with GitHub Actions for automatic deployment. The workflow automatically builds and deploys your site whenever you push to the `main` branch.
 
-#### ⚠️ Important: Configure GitHub Pages Source
+#### ⚠️ Critical: Configure GitHub Pages Source
 
-**Before your site will work correctly, you MUST configure GitHub Pages to use GitHub Actions:**
+**IMPORTANT:** Before your site will work correctly, you MUST configure GitHub Pages to use GitHub Actions:
 
 1. **Go to repository settings:**
    - Navigate to: `Settings` → `Pages` in your GitHub repository
-   - Or visit: `https://github.com/johnchennewyork-coder/johnchennewyork-coder.github.io/settings/pages`
+   - Direct link: `https://github.com/johnchennewyork-coder/johnchennewyork-coder.github.io/settings/pages`
 
 2. **Change the source:**
    - Under "Source", select **"GitHub Actions"** (NOT "Deploy from a branch")
-   - Save the settings
+   - Click **Save**
 
-3. **Why this matters:**
-   - If GitHub Pages is set to "Deploy from a branch", it will serve your raw source files
-   - This causes CSS/JS to break because it tries to load `/src/main.ts` instead of the built assets
-   - With "GitHub Actions" selected, it serves the built `dist/` folder with properly bundled assets
+3. **Why this is critical:**
+   - ❌ If set to "Deploy from a branch", GitHub Pages serves raw source files
+   - ❌ This breaks CSS/JS because it tries to load `/src/main.ts` instead of built assets
+   - ✅ With "GitHub Actions", it serves the built `dist/` folder with properly bundled assets
 
-#### How It Works
+#### How Automatic Deployment Works
 
-1. **Automatic deployment:**
-   - Every push to the `main` branch automatically triggers the workflow
-   - The workflow builds your site and deploys it to GitHub Pages
+The workflow (`.github/workflows/deploy.yml`) does the following:
 
-2. **Manual deployment:**
-   - You can also trigger deployments manually from the Actions tab
-   - Click "Run workflow" on the "Deploy to GitHub Pages" workflow
+1. **Builds your site:**
+   - Installs dependencies (`npm ci`)
+   - Compiles TypeScript to JavaScript
+   - Bundles and minifies assets with Vite
+   - Copies `resources/` directory to `dist/resources/`
 
-3. **Monitor deployments:**
-   - Check the [Actions tab](https://github.com/johnchennewyork-coder/johnchennewyork-coder.github.io/actions) to see build and deployment status
-   - The site will be live at `https://johnchennewyork-coder.github.io/` after successful deployment
+2. **Deploys to GitHub Pages:**
+   - Uploads the `dist/` folder as a Pages artifact
+   - Deploys it to `https://johnchennewyork-coder.github.io/`
 
-#### Option 2: Manual Deployment
+3. **Triggers automatically:**
+   - Every push to `main` branch
+   - Can also be triggered manually from the Actions tab
+
+4. **Monitor deployments:**
+   - View status: [Actions tab](https://github.com/johnchennewyork-coder/johnchennewyork-coder.github.io/actions)
+   - Both "build" and "deploy" jobs must complete successfully
+   - Site updates within 1-2 minutes after deployment completes
+
+### Alternative: Manual Deployment (Not Recommended)
+
+If you prefer manual deployment instead of GitHub Actions:
 
 1. **Build the project:**
    ```bash
    npm run build
    ```
 
-2. **Deploy the `dist/` folder:**
-   
-   **Option A: Using gh-pages branch**
+2. **Deploy using gh-pages:**
    ```bash
    npm install --save-dev gh-pages
    ```
@@ -169,17 +178,13 @@ This repository is **already configured** with GitHub Actions for automatic depl
    npm run deploy
    ```
 
-   **Option B: Manual push to gh-pages branch**
-   ```bash
-   npm run build
-   git subtree push --prefix dist origin gh-pages
-   ```
-
 3. **Configure GitHub Pages:**
    - Go to repository Settings → Pages
-   - Select source branch: `gh-pages` (or `main` if using root)
-   - Select folder: `/ (root)` or `/dist` depending on your setup
+   - Select source branch: `gh-pages`
+   - Select folder: `/ (root)`
    - Save
+
+**Note:** GitHub Actions is recommended as it's automatic and ensures consistent builds.
 
 ### Other Hosting Options
 
@@ -233,24 +238,33 @@ npm install
 - Check that `resources/` directory exists
 - Verify Node.js version is 18+ (check with `node --version`)
 
-### CSS/JS not loading on GitHub Pages?
+### CSS/JS not loading on GitHub Pages? 🔴
 
-**This is the most common issue!** If your site loads but CSS/JS is broken:
+**This is the #1 most common issue!** If your site loads but CSS/JS is broken:
 
-1. **Check GitHub Pages source:**
+1. **✅ Check GitHub Pages source (MOST IMPORTANT):**
    - Go to repository `Settings` → `Pages`
-   - Ensure "Source" is set to **"GitHub Actions"** (NOT "Deploy from a branch")
-   - If it's set to a branch, change it to "GitHub Actions" and save
+   - **MUST be set to "GitHub Actions"** (NOT "Deploy from a branch")
+   - If it shows a branch name, change it to "GitHub Actions" and save
+   - This is the root cause 99% of the time!
 
-2. **Verify the workflow ran:**
+2. **Verify the workflow completed:**
    - Check the [Actions tab](https://github.com/johnchennewyork-coder/johnchennewyork-coder.github.io/actions)
-   - Ensure both "build" and "deploy" jobs completed successfully
+   - Look for the latest "Deploy to GitHub Pages" workflow run
+   - Both "build" and "deploy" jobs must show green checkmarks ✅
+   - If either failed, click on it to see error details
 
-3. **Clear browser cache:**
+3. **Check what's being served:**
+   - Visit your site and view page source
+   - Look for `<script type="module" src="/src/main.ts">` ❌ (wrong - raw source)
+   - Should see `<script src="/assets/main-XXXXX.js">` ✅ (correct - built assets)
+   - If you see `/src/main.ts`, GitHub Pages is serving raw files instead of built files
+
+4. **Clear browser cache:**
    - Hard refresh: `Cmd+Shift+R` (Mac) or `Ctrl+Shift+R` (Windows)
    - Or open in an incognito/private window
 
-4. **Wait for propagation:**
+5. **Wait for propagation:**
    - GitHub Pages can take 1-2 minutes to update after deployment
    - Check the deployment status in the Actions tab
 
@@ -291,4 +305,6 @@ This project is open source and available under the [MIT License](LICENSE).
 ---
 
 **Last Updated:** December 2025
+
+**Deployment Status:** ✅ Configured with GitHub Actions - Automatic deployment on push to `main` branch
 
