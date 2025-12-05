@@ -1,5 +1,7 @@
 // Control Panel UI Component
 
+import { TooltipManager } from './tooltip-manager';
+
 export interface HyperparameterConfig {
   learningRate?: { min: number; max: number; step: number; default: number };
   discountFactor?: { min: number; max: number; step: number; default: number };
@@ -44,6 +46,10 @@ export class ControlPanel {
     valueSpan.id = `${key}-value`;
     valueSpan.textContent = config.default.toFixed(3);
     labelEl.appendChild(valueSpan);
+    
+    // Add info icon with tooltip
+    const infoIcon = TooltipManager.createInfoIcon(key, 'top');
+    labelEl.appendChild(infoIcon);
     
     const slider = document.createElement('input');
     slider.type = 'range';

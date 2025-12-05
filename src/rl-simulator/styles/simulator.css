@@ -86,6 +86,85 @@
   background: transparent;
 }
 
+/* Tooltip Icon Styles */
+.tooltip-icon {
+  margin-left: 6px;
+  color: var(--text-secondary);
+  font-size: 0.85em;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all var(--transition-fast);
+  vertical-align: middle;
+}
+
+.tooltip-icon:hover,
+.tooltip-icon:focus {
+  color: var(--accent);
+  opacity: 1;
+  transform: scale(1.1);
+  outline: none;
+}
+
+.tooltip-icon:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Customize Bootstrap Tooltip to match glassmorphism theme */
+.tooltip {
+  font-size: 0.875rem;
+}
+
+.tooltip .tooltip-inner {
+  background: var(--glass-bg-current);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  padding: 10px 14px;
+  border-radius: 8px;
+  box-shadow: var(--glass-shadow-current);
+  max-width: 300px;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.tooltip .tooltip-inner strong {
+  color: var(--accent);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.tooltip .tooltip-arrow {
+  width: 0;
+  height: 0;
+}
+
+.tooltip .tooltip-arrow::before {
+  border-color: var(--glass-border);
+}
+
+.bs-tooltip-top .tooltip-arrow::before,
+.bs-tooltip-auto[data-popper-placement^="top"] .tooltip-arrow::before {
+  border-top-color: var(--glass-border);
+}
+
+.bs-tooltip-bottom .tooltip-arrow::before,
+.bs-tooltip-auto[data-popper-placement^="bottom"] .tooltip-arrow::before {
+  border-bottom-color: var(--glass-border);
+}
+
+.bs-tooltip-start .tooltip-arrow::before,
+.bs-tooltip-auto[data-popper-placement^="left"] .tooltip-arrow::before {
+  border-left-color: var(--glass-border);
+}
+
+.bs-tooltip-end .tooltip-arrow::before,
+.bs-tooltip-auto[data-popper-placement^="right"] .tooltip-arrow::before {
+  border-right-color: var(--glass-border);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .simulator-container {
@@ -98,6 +177,12 @@
   
   #env-canvas {
     height: 300px;
+  }
+
+  .tooltip .tooltip-inner {
+    max-width: 250px;
+    font-size: 0.8rem;
+    padding: 8px 12px;
   }
 }
 
