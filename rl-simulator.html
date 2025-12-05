@@ -84,6 +84,17 @@
                                 <option value="td3">TD3</option>
                             </optgroup>
                         </select>
+                        <!-- Paradigm Indicator -->
+                        <div class="mt-2">
+                            <small class="text-muted">
+                                <strong>Paradigm:</strong> <span id="paradigm-indicator">Value-Based (Off-Policy)</span>
+                                <i class="fas fa-info-circle tooltip-icon" data-tooltip="paradigm" data-tooltip-placement="top" aria-label="Information" role="button" tabindex="0"></i>
+                            </small>
+                            <br>
+                            <small class="text-muted">
+                                <strong>Learns:</strong> <span id="learns-indicator">Q-values (Q(s,a))</span>
+                            </small>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
@@ -94,6 +105,39 @@
                             <option value="cartpole">CartPole</option>
                             <option value="pendulum">Pendulum</option>
                         </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Policy Transformation Controls (for Value-Based methods) -->
+            <div class="row mb-4" id="policy-transform-section" style="display: none;">
+                <div class="col-12">
+                    <div class="glass p-3">
+                        <h5>Transform to Policy Network</h5>
+                        <p class="text-muted small mb-3">
+                            Value-based methods learn Q-values. This transformation converts Q-values to a policy using softmax: 
+                            <code>π(a|s) = softmax(Q(s,a) / τ)</code>
+                        </p>
+                        <div class="row">
+                            <div class="col-md-4 mb-2">
+                                <button id="transform-policy-btn" class="btn btn-primary w-100">Transform to Policy</button>
+                            </div>
+                            <div class="col-md-4 mb-2">
+                                <label for="temperature-slider" class="form-label">
+                                    Temperature (τ): <span id="temperature-value">1.0</span>
+                                    <i class="fas fa-info-circle tooltip-icon" data-tooltip="temperature" data-tooltip-placement="top" aria-label="Information" role="button" tabindex="0"></i>
+                                </label>
+                                <input type="range" class="form-range" id="temperature-slider" min="0.1" max="5.0" step="0.1" value="1.0">
+                                <small class="text-muted">
+                                    Lower = more deterministic (closer to argmax), Higher = more uniform
+                                </small>
+                            </div>
+                            <div class="col-md-4 mb-2">
+                                <div class="mt-4">
+                                    <strong>Current View:</strong> <span id="view-mode-indicator">Q-Values</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -137,7 +181,7 @@
                 <!-- Charts -->
                 <div class="col-lg-6 mb-4">
                     <div class="glass p-3">
-                        <h5>Learning Curve</h5>
+                        <h5>Learning Curve <i class="fas fa-info-circle tooltip-icon" data-tooltip="learningCurve" data-tooltip-placement="top" aria-label="Information" role="button" tabindex="0"></i></h5>
                         <div id="learning-curve-chart" style="height: 250px;"></div>
                     </div>
                 </div>
@@ -147,7 +191,7 @@
                 <!-- Q-Values / Policy Visualization -->
                 <div class="col-lg-6 mb-4">
                     <div class="glass p-3">
-                        <h5 id="q-values-title">Q-Values</h5>
+                        <h5 id="q-values-title">Q-Values <i class="fas fa-info-circle tooltip-icon" data-tooltip="qValues" data-tooltip-placement="top" aria-label="Information" role="button" tabindex="0"></i></h5>
                         <div id="q-values-chart" style="height: 250px;"></div>
                     </div>
                 </div>
@@ -155,8 +199,52 @@
                 <!-- Loss / TD Error -->
                 <div class="col-lg-6 mb-4">
                     <div class="glass p-3">
-                        <h5 id="loss-title">Loss / TD Error</h5>
+                        <h5 id="loss-title">Loss / TD Error <i class="fas fa-info-circle tooltip-icon" data-tooltip="tdError" data-tooltip-placement="top" aria-label="Information" role="button" tabindex="0"></i></h5>
                         <div id="loss-chart" style="height: 250px;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reward Function Configuration (for GridWorld/Q-Learning) -->
+            <div class="row" id="reward-config-section" style="display: none;">
+                <div class="col-12">
+                    <div class="glass p-3">
+                        <h5>Reward Function Configuration</h5>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="goal-reward" class="form-label">Goal Reward: <span id="goal-reward-value">10.0</span></label>
+                                <input type="range" class="form-range" id="goal-reward" min="-50" max="50" step="0.5" value="10">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="obstacle-penalty" class="form-label">Obstacle Penalty: <span id="obstacle-penalty-value">-1.0</span></label>
+                                <input type="range" class="form-range" id="obstacle-penalty" min="-10" max="0" step="0.1" value="-1">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="step-penalty" class="form-label">Step Penalty: <span id="step-penalty-value">-0.1</span></label>
+                                <input type="range" class="form-range" id="step-penalty" min="-2" max="0" step="0.05" value="-0.1">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="time-penalty" class="form-label">Time Penalty (after threshold): <span id="time-penalty-value">-0.5</span></label>
+                                <input type="range" class="form-range" id="time-penalty" min="-5" max="0" step="0.1" value="-0.5">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="time-threshold" class="form-label">Time Penalty Threshold (steps): <span id="time-threshold-value">20</span></label>
+                                <input type="range" class="form-range" id="time-threshold" min="5" max="100" step="1" value="20">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <button id="apply-reward-btn" class="btn btn-primary w-100 mt-4">Apply Reward Changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reward Function Visualization -->
+            <div class="row" id="reward-viz-section" style="display: none;">
+                <div class="col-12">
+                    <div class="glass p-3">
+                        <h5>Reward Function Visualization</h5>
+                        <canvas id="reward-canvas" style="width: 100%; max-width: 400px; border: 1px solid var(--glass-border); border-radius: 8px;"></canvas>
                     </div>
                 </div>
             </div>
@@ -169,15 +257,19 @@
                         <div id="stats-display" class="row">
                             <div class="col-md-3">
                                 <strong>Episode:</strong> <span id="episode-count">0</span>
+                                <i class="fas fa-info-circle tooltip-icon" data-tooltip="episode" data-tooltip-placement="top" aria-label="Information" role="button" tabindex="0"></i>
                             </div>
                             <div class="col-md-3">
                                 <strong>Total Steps:</strong> <span id="step-count">0</span>
+                                <i class="fas fa-info-circle tooltip-icon" data-tooltip="totalSteps" data-tooltip-placement="top" aria-label="Information" role="button" tabindex="0"></i>
                             </div>
                             <div class="col-md-3">
                                 <strong>Average Reward:</strong> <span id="avg-reward">0.00</span>
+                                <i class="fas fa-info-circle tooltip-icon" data-tooltip="averageReward" data-tooltip-placement="top" aria-label="Information" role="button" tabindex="0"></i>
                             </div>
                             <div class="col-md-3">
                                 <strong>Current Reward:</strong> <span id="current-reward">0.00</span>
+                                <i class="fas fa-info-circle tooltip-icon" data-tooltip="currentReward" data-tooltip-placement="top" aria-label="Information" role="button" tabindex="0"></i>
                             </div>
                         </div>
                     </div>

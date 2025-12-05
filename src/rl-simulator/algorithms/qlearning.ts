@@ -93,5 +93,22 @@ export class QLearning implements RLAlgorithm {
     if (params.discountFactor !== undefined) this.discountFactor = params.discountFactor;
     if (params.epsilon !== undefined) this.epsilon = params.epsilon;
   }
+
+  isValueBased(): boolean {
+    return true;
+  }
+
+  getPolicyProbabilities(state: GridWorldState, temperature: number = 1.0): number[] {
+    const qValues = this.getQValues(state);
+    return this.softmax(qValues, temperature);
+  }
+
+  private softmax(values: number[], temperature: number): number[] {
+    const scaled = values.map(v => v / temperature);
+    const maxScaled = Math.max(...scaled);
+    const expValues = scaled.map(v => Math.exp(v - maxScaled));
+    const sum = expValues.reduce((a, b) => a + b, 0);
+    return expValues.map(v => v / sum);
+  }
 }
 

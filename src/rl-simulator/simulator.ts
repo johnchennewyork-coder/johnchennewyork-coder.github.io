@@ -1,5 +1,7 @@
 // Main Simulator Controller
 
+declare const bootstrap: any;
+
 import { GridWorld } from './environments/gridworld';
 import { CartPole } from './environments/cartpole';
 import { Pendulum } from './environments/pendulum';
@@ -22,7 +24,9 @@ import { PlotlyManager } from './visualizations/plotly-manager';
 import { ControlPanel, HyperparameterConfig } from './ui/control-panel';
 import { AlgorithmSelector } from './ui/algorithm-selector';
 import { EnvironmentViewer } from './ui/environment-viewer';
-import { RLAlgorithm } from './algorithms/base';
+import { RLAlgorithm, RLParadigm } from './algorithms/base';
+import { PolicyTransformer } from './ui/policy-transformer';
+import { TooltipManager } from './ui/tooltip-manager';
 
 export class Simulator {
   private currentEnv: GridWorld | CartPole | Pendulum | null = null;
@@ -31,12 +35,23 @@ export class Simulator {
   private controlPanel: ControlPanel;
   private algorithmSelector: AlgorithmSelector;
   private environmentViewer: EnvironmentViewer;
+  private policyTransformer: PolicyTransformer;
   private environmentSelect: HTMLSelectElement;
   private trainBtn: HTMLButtonElement;
   private stopBtn: HTMLButtonElement;
   private resetBtn: HTMLButtonElement;
   private speedSlider: HTMLInputElement;
   private speedValue: HTMLElement;
+  private rewardConfigSection: HTMLElement;
+  private rewardVizSection: HTMLElement;
+  private rewardCanvas: HTMLCanvasElement;
+  private policyTransformSection: HTMLElement;
+  private transformPolicyBtn: HTMLButtonElement;
+  private temperatureSlider: HTMLInputElement;
+  private temperatureValue: HTMLElement;
+  private paradigmIndicator: HTMLElement;
+  private learnsIndicator: HTMLElement;
+  private viewModeIndicator: HTMLElement;
   
   private isTraining: boolean = false;
   private trainingInterval: number | null = null;
@@ -51,6 +66,10 @@ export class Simulator {
     this.plotlyManager = new PlotlyManager();
     this.controlPanel = new ControlPanel();
     this.environmentViewer = new EnvironmentViewer();
+    
+    this.policyTransformer = new PolicyTransformer((_state) => {
+      this.updatePolicyVisualization();
+    });
     
     this.algorithmSelector = new AlgorithmSelector('algorithm-select', (algorithm) => {
       this.onAlgorithmChange(algorithm);
@@ -75,20 +94,190 @@ export class Simulator {
       this.speedValue.textContent = `${this.currentSpeed.toFixed(1)}x`;
     });
 
+    // Reward configuration UI
+    this.rewardConfigSection = document.getElementById('reward-config-section')!;
+    this.rewardVizSection = document.getElementById('reward-viz-section')!;
+    this.rewardCanvas = document.getElementById('reward-canvas') as HTMLCanvasElement;
+    
+    // Policy transformation UI
+    this.policyTransformSection = document.getElementById('policy-transform-section')!;
+    this.transformPolicyBtn = document.getElementById('transform-policy-btn') as HTMLButtonElement;
+    this.temperatureSlider = document.getElementById('temperature-slider') as HTMLInputElement;
+    this.temperatureValue = document.getElementById('temperature-value')!;
+    this.paradigmIndicator = document.getElementById('paradigm-indicator')!;
+    this.learnsIndicator = document.getElementById('learns-indicator')!;
+    this.viewModeIndicator = document.getElementById('view-mode-indicator')!;
+    
+    this.setupRewardConfigUI();
+    this.setupPolicyTransformUI();
+
+    // Initialize tooltips for static HTML elements
+    this.initializeTooltips();
+
     // Initialize with default
     this.onAlgorithmChange(this.algorithmSelector.getSelectedAlgorithm());
   }
 
+  private initializeTooltips(): void {
+    // Wait for Bootstrap to be available, then initialize tooltips
+    if (typeof (window as any).bootstrap !== 'undefined') {
+      TooltipManager.initializeAllTooltips();
+    } else {
+      // If Bootstrap isn't ready yet, wait a bit and try again
+      setTimeout(() => {
+        if (typeof (window as any).bootstrap !== 'undefined') {
+          TooltipManager.initializeAllTooltips();
+        }
+      }, 100);
+    }
+  }
+
+  private setupPolicyTransformUI(): void {
+    this.transformPolicyBtn.addEventListener('click', () => {
+      this.policyTransformer.toggleTransformation();
+      const state = this.policyTransformer.getState();
+      this.transformPolicyBtn.textContent = state.isTransformed ? 'Transform to Q-Values' : 'Transform to Policy';
+      this.updatePolicyVisualization();
+    });
+
+    this.temperatureSlider.addEventListener('input', () => {
+      const temp = parseFloat(this.temperatureSlider.value);
+      this.temperatureValue.textContent = temp.toFixed(1);
+      this.policyTransformer.setTemperature(temp);
+      this.updatePolicyVisualization();
+    });
+  }
+
+  private setupRewardConfigUI(): void {
+    const goalRewardSlider = document.getElementById('goal-reward') as HTMLInputElement;
+    const obstaclePenaltySlider = document.getElementById('obstacle-penalty') as HTMLInputElement;
+    const stepPenaltySlider = document.getElementById('step-penalty') as HTMLInputElement;
+    const timePenaltySlider = document.getElementById('time-penalty') as HTMLInputElement;
+    const timeThresholdSlider = document.getElementById('time-threshold') as HTMLInputElement;
+    const applyBtn = document.getElementById('apply-reward-btn') as HTMLButtonElement;
+
+    const goalRewardValue = document.getElementById('goal-reward-value')!;
+    const obstaclePenaltyValue = document.getElementById('obstacle-penalty-value')!;
+    const stepPenaltyValue = document.getElementById('step-penalty-value')!;
+    const timePenaltyValue = document.getElementById('time-penalty-value')!;
+    const timeThresholdValue = document.getElementById('time-threshold-value')!;
+
+    goalRewardSlider.addEventListener('input', () => {
+      goalRewardValue.textContent = parseFloat(goalRewardSlider.value).toFixed(1);
+      this.updateRewardVisualization();
+    });
+
+    obstaclePenaltySlider.addEventListener('input', () => {
+      obstaclePenaltyValue.textContent = parseFloat(obstaclePenaltySlider.value).toFixed(1);
+      this.updateRewardVisualization();
+    });
+
+    stepPenaltySlider.addEventListener('input', () => {
+      stepPenaltyValue.textContent = parseFloat(stepPenaltySlider.value).toFixed(2);
+      this.updateRewardVisualization();
+    });
+
+    timePenaltySlider.addEventListener('input', () => {
+      timePenaltyValue.textContent = parseFloat(timePenaltySlider.value).toFixed(1);
+      this.updateRewardVisualization();
+    });
+
+    timeThresholdSlider.addEventListener('input', () => {
+      timeThresholdValue.textContent = timeThresholdSlider.value;
+      this.updateRewardVisualization();
+    });
+
+    applyBtn.addEventListener('click', () => {
+      if (this.currentEnv instanceof GridWorld) {
+        this.currentEnv.setRewardConfig({
+          goalReward: parseFloat(goalRewardSlider.value),
+          obstaclePenalty: parseFloat(obstaclePenaltySlider.value),
+          stepPenalty: parseFloat(stepPenaltySlider.value),
+          timePenalty: parseFloat(timePenaltySlider.value),
+          timePenaltyThreshold: parseInt(timeThresholdSlider.value)
+        });
+        this.updateRewardVisualization();
+      }
+    });
+  }
+
+  private updateRewardVisualization(): void {
+    if (this.currentEnv instanceof GridWorld && this.rewardCanvas) {
+      // Set canvas size
+      const container = this.rewardCanvas.parentElement;
+      if (container) {
+        const maxSize = Math.min(container.clientWidth - 32, 400);
+        this.rewardCanvas.width = maxSize;
+        this.rewardCanvas.height = maxSize;
+      }
+      this.currentEnv.renderRewardFunction(this.rewardCanvas);
+    }
+  }
+
   private onAlgorithmChange(algorithm: string): void {
     const info = this.algorithmSelector.getAlgorithmInfo(algorithm);
+    
+    // Update paradigm indicators
+    this.updateParadigmIndicators(algorithm, info);
     
     // Set environment based on algorithm
     if (this.environmentSelect.value !== info.environment) {
       this.environmentSelect.value = info.environment;
     }
     
+    // Show reward config only for Q-Learning with GridWorld
+    const showRewardConfig = algorithm === 'qlearning' && info.environment === 'gridworld';
+    if (this.rewardConfigSection) {
+      this.rewardConfigSection.style.display = showRewardConfig ? 'block' : 'none';
+    }
+    if (this.rewardVizSection) {
+      this.rewardVizSection.style.display = showRewardConfig ? 'block' : 'none';
+    }
+    
+    // Show policy transform only for value-based methods with GridWorld
+    const showPolicyTransform = this.isValueBasedAlgorithm(algorithm) && info.environment === 'gridworld';
+    if (this.policyTransformSection) {
+      this.policyTransformSection.style.display = showPolicyTransform ? 'block' : 'none';
+    }
+    
+    // Reset policy transformer when changing algorithms
+    this.policyTransformer.reset();
+    
     this.onEnvironmentChange(info.environment);
     this.initializeAlgorithm(algorithm);
+    
+    if (showRewardConfig && this.currentEnv instanceof GridWorld) {
+      // Initialize reward config sliders with current values
+      const config = this.currentEnv.getRewardConfig();
+      const goalRewardSlider = document.getElementById('goal-reward') as HTMLInputElement;
+      const obstaclePenaltySlider = document.getElementById('obstacle-penalty') as HTMLInputElement;
+      const stepPenaltySlider = document.getElementById('step-penalty') as HTMLInputElement;
+      const timePenaltySlider = document.getElementById('time-penalty') as HTMLInputElement;
+      const timeThresholdSlider = document.getElementById('time-threshold') as HTMLInputElement;
+      
+      if (goalRewardSlider) {
+        goalRewardSlider.value = config.goalReward.toString();
+        document.getElementById('goal-reward-value')!.textContent = config.goalReward.toFixed(1);
+      }
+      if (obstaclePenaltySlider) {
+        obstaclePenaltySlider.value = config.obstaclePenalty.toString();
+        document.getElementById('obstacle-penalty-value')!.textContent = config.obstaclePenalty.toFixed(1);
+      }
+      if (stepPenaltySlider) {
+        stepPenaltySlider.value = config.stepPenalty.toString();
+        document.getElementById('step-penalty-value')!.textContent = config.stepPenalty.toFixed(2);
+      }
+      if (timePenaltySlider) {
+        timePenaltySlider.value = config.timePenalty.toString();
+        document.getElementById('time-penalty-value')!.textContent = config.timePenalty.toFixed(1);
+      }
+      if (timeThresholdSlider) {
+        timeThresholdSlider.value = config.timePenaltyThreshold.toString();
+        document.getElementById('time-threshold-value')!.textContent = config.timePenaltyThreshold.toString();
+      }
+      
+      this.updateRewardVisualization();
+    }
   }
 
   private onEnvironmentChange(environment: string): void {
@@ -111,10 +300,51 @@ export class Simulator {
 
     if (this.currentEnv) {
       this.currentEnv.reset();
-      this.currentEnv.render();
+      if (this.currentEnv instanceof GridWorld && this.currentAlgorithm?.getQValues) {
+        // Initialize Q-values map for GridWorld
+        let qValuesMap: Map<string, number[]>;
+        if ('getAllQValues' in this.currentAlgorithm && typeof (this.currentAlgorithm as any).getAllQValues === 'function') {
+          qValuesMap = (this.currentAlgorithm as any).getAllQValues();
+        } else {
+          qValuesMap = new Map<string, number[]>();
+          for (let row = 0; row < 6; row++) {
+            for (let col = 0; col < 6; col++) {
+              const state = { row, col };
+              const qValues = this.currentAlgorithm.getQValues(state);
+              qValuesMap.set(this.currentEnv.getStateKey(state), qValues);
+            }
+          }
+        }
+        this.currentEnv.render(qValuesMap);
+      } else {
+        this.currentEnv.render();
+      }
+      
+      // Update reward visualization
+      if (this.currentEnv instanceof GridWorld) {
+        this.updateRewardVisualization();
+      }
+      
       this.environmentViewer.startAnimation(() => {
         if (this.currentEnv) {
-          this.currentEnv.render();
+          if (this.currentEnv instanceof GridWorld && this.currentAlgorithm?.getQValues) {
+            let qValuesMap: Map<string, number[]>;
+            if ('getAllQValues' in this.currentAlgorithm && typeof (this.currentAlgorithm as any).getAllQValues === 'function') {
+              qValuesMap = (this.currentAlgorithm as any).getAllQValues();
+            } else {
+              qValuesMap = new Map<string, number[]>();
+              for (let row = 0; row < 6; row++) {
+                for (let col = 0; col < 6; col++) {
+                  const state = { row, col };
+                  const qValues = this.currentAlgorithm.getQValues(state);
+                  qValuesMap.set(this.currentEnv.getStateKey(state), qValues);
+                }
+              }
+            }
+            this.currentEnv.render(qValuesMap);
+          } else {
+            this.currentEnv.render();
+          }
         }
       });
     }
@@ -239,6 +469,15 @@ export class Simulator {
   }
 
   private setupHyperparameters(config: HyperparameterConfig): void {
+    // Dispose existing tooltips in hyperparameters container before recreating
+    const existingTooltips = document.querySelectorAll('#hyperparameters [data-bs-toggle="tooltip"]');
+    existingTooltips.forEach(element => {
+      const tooltipInstance = (bootstrap as any).Tooltip.getInstance(element);
+      if (tooltipInstance) {
+        tooltipInstance.dispose();
+      }
+    });
+    
     this.controlPanel.createHyperparameters(config);
     
     // Update algorithm when hyperparameters change
@@ -281,8 +520,8 @@ export class Simulator {
       // Handle SARSA on-policy update (needs next action before updating)
       if (isSARSA(this.currentAlgorithm)) {
         if (lastState !== null && lastAction !== null && lastReward !== null) {
-          const nextAction = result.done ? undefined : this.currentAlgorithm.selectAction(result.nextState, true);
-          this.currentAlgorithm.update(lastState, lastAction, lastReward, state, false, nextAction);
+          const nextAction = result.done ? undefined : this.currentAlgorithm.selectAction(result.nextState as any, true);
+          this.currentAlgorithm.update(lastState as any, lastAction, lastReward, state as any, false, nextAction);
         }
         lastState = state;
         lastAction = action;
@@ -290,14 +529,14 @@ export class Simulator {
         if (result.done) {
           // Update final transition
           if (lastState !== null && lastAction !== null && lastReward !== null) {
-            this.currentAlgorithm.update(lastState, lastAction, lastReward, result.nextState, true);
+            this.currentAlgorithm.update(lastState as any, lastAction, lastReward, result.nextState as any, true);
           }
           lastState = null;
           lastAction = null;
           lastReward = null;
         }
       } else {
-        this.currentAlgorithm.update(state, action, result.reward, result.nextState, result.done);
+        this.currentAlgorithm.update(state as any, action, result.reward, result.nextState as any, result.done);
       }
       
       this.episodeReward += result.reward;
@@ -311,9 +550,17 @@ export class Simulator {
         }
       }
       
+      // Update Q-values visualization
       if (this.currentAlgorithm.getQValues) {
-        const qValues = this.currentAlgorithm.getQValues(result.nextState);
+        const qValues = this.currentAlgorithm.getQValues(result.nextState as any);
         this.plotlyManager.updateQValues(qValues);
+      }
+      
+      // Update grid with Q-values or policy if it's GridWorld
+      if (this.currentEnv instanceof GridWorld && this.currentAlgorithm.getQValues) {
+        this.updatePolicyVisualization();
+      } else if (this.currentEnv) {
+        this.currentEnv.render();
       }
       
       // Update stats
@@ -363,6 +610,7 @@ export class Simulator {
     
     if (this.currentEnv) {
       this.currentEnv.reset();
+      this.updatePolicyVisualization();
     }
     
     this.plotlyManager.reset();
@@ -378,6 +626,83 @@ export class Simulator {
       ? this.episodeRewards.reduce((a, b) => a + b, 0) / this.episodeRewards.length
       : 0;
     document.getElementById('avg-reward')!.textContent = avgReward.toFixed(2);
+  }
+
+  private updateParadigmIndicators(algorithm: string, _info: any): void {
+    const paradigmMap: Record<string, { paradigm: string; learns: string }> = {
+      'qlearning': { paradigm: RLParadigm.VALUE_BASED_OFF_POLICY, learns: 'Q-values (Q(s,a))' },
+      'dqn': { paradigm: RLParadigm.VALUE_BASED_OFF_POLICY, learns: 'Q-values (Q(s,a))' },
+      'sarsa': { paradigm: RLParadigm.VALUE_BASED_ON_POLICY, learns: 'Q-values (Q(s,a))' },
+      'expected-sarsa': { paradigm: RLParadigm.VALUE_BASED_ON_POLICY, learns: 'Q-values (Q(s,a))' },
+      'reinforce': { paradigm: RLParadigm.POLICY_BASED, learns: 'Policy probabilities (π(a|s))' },
+      'ppo': { paradigm: RLParadigm.POLICY_BASED, learns: 'Policy probabilities (π(a|s))' },
+      'a3c': { paradigm: RLParadigm.ACTOR_CRITIC_ON_POLICY, learns: 'Both policy (π) and value (V)' },
+      'sac': { paradigm: RLParadigm.ACTOR_CRITIC_OFF_POLICY, learns: 'Both policy (π) and Q-values (Q)' },
+      'ddpg': { paradigm: RLParadigm.ACTOR_CRITIC_OFF_POLICY, learns: 'Both policy (π) and Q-values (Q)' },
+      'td3': { paradigm: RLParadigm.ACTOR_CRITIC_OFF_POLICY, learns: 'Both policy (π) and Q-values (Q)' }
+    };
+
+    const indicators = paradigmMap[algorithm] || { paradigm: 'Unknown', learns: 'Unknown' };
+    if (this.paradigmIndicator) {
+      this.paradigmIndicator.textContent = indicators.paradigm;
+    }
+    if (this.learnsIndicator) {
+      this.learnsIndicator.textContent = indicators.learns;
+    }
+  }
+
+  private isValueBasedAlgorithm(algorithm: string): boolean {
+    return ['qlearning', 'dqn', 'sarsa', 'expected-sarsa'].includes(algorithm);
+  }
+
+  private updatePolicyVisualization(): void {
+    if (!(this.currentEnv instanceof GridWorld) || !this.currentAlgorithm?.getQValues) {
+      return;
+    }
+
+    const transformState = this.policyTransformer.getState();
+    const showPolicy = transformState.isTransformed;
+    const animationProgress = transformState.animationProgress;
+
+    // Get Q-values map
+    let qValuesMap: Map<string, number[]>;
+    if ('getAllQValues' in this.currentAlgorithm && typeof (this.currentAlgorithm as any).getAllQValues === 'function') {
+      qValuesMap = (this.currentAlgorithm as any).getAllQValues();
+    } else {
+      qValuesMap = new Map<string, number[]>();
+      for (let row = 0; row < 6; row++) {
+        for (let col = 0; col < 6; col++) {
+          const state = { row, col };
+          const qValues = this.currentAlgorithm.getQValues!(state);
+          qValuesMap.set(this.currentEnv.getStateKey(state), qValues);
+        }
+      }
+    }
+
+    // Get policy probabilities map if transformed
+    let policyMap: Map<string, number[]> | undefined;
+    if (showPolicy || animationProgress > 0) {
+      policyMap = new Map<string, number[]>();
+      const temperature = transformState.temperature;
+      
+      if (this.currentAlgorithm.getPolicyProbabilities) {
+        for (let row = 0; row < 6; row++) {
+          for (let col = 0; col < 6; col++) {
+            const state = { row, col };
+            const probs = this.currentAlgorithm.getPolicyProbabilities!(state, temperature);
+            policyMap.set(this.currentEnv.getStateKey(state), probs);
+          }
+        }
+      }
+    }
+
+    // Update view mode indicator
+    if (this.viewModeIndicator) {
+      this.viewModeIndicator.textContent = showPolicy ? 'Policy Probabilities' : 'Q-Values';
+    }
+
+    // Render with appropriate mode
+    this.currentEnv.render(qValuesMap, policyMap, showPolicy, animationProgress);
   }
 }
 

@@ -35,7 +35,8 @@ export class DQN implements RLAlgorithm {
     const stateArray = new Array(this.env.getNumStates()).fill(0);
     const stateKey = this.env.getStateKey(state);
     const [row, col] = stateKey.split(',').map(Number);
-    stateArray[row * 10 + col] = 1;
+    const gridSize = Math.sqrt(this.env.getNumStates());
+    stateArray[row * gridSize + col] = 1;
     return tf.tensor2d([stateArray]);
   }
 
@@ -181,6 +182,23 @@ export class DQN implements RLAlgorithm {
     }
     if (params.discountFactor !== undefined) this.discountFactor = params.discountFactor;
     if (params.epsilon !== undefined) this.epsilon = params.epsilon;
+  }
+
+  isValueBased(): boolean {
+    return true;
+  }
+
+  getPolicyProbabilities(state: GridWorldState, temperature: number = 1.0): number[] {
+    const qValues = this.getQValues(state);
+    return this.softmax(qValues, temperature);
+  }
+
+  private softmax(values: number[], temperature: number): number[] {
+    const scaled = values.map(v => v / temperature);
+    const maxScaled = Math.max(...scaled);
+    const expValues = scaled.map(v => Math.exp(v - maxScaled));
+    const sum = expValues.reduce((a, b) => a + b, 0);
+    return expValues.map(v => v / sum);
   }
 }
 
