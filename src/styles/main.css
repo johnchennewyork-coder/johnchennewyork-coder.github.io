@@ -322,7 +322,7 @@ a:hover {
 
 /* Hero Section - Unified Profile, Typewriter, and Name */
 #hero {
-  padding: var(--space-3xl) 0 0;
+  padding: var(--space-xl) 0 0;
   margin-top: 76px;
   animation: fadeInUp 0.8s ease-out;
 }
@@ -351,7 +351,7 @@ a:hover {
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-weight: 600;
   color: var(--accent);
-  margin: var(--space-xs) 0 var(--space-xs) 0;
+  margin: 0 0 var(--space-xs) 0;
   margin-bottom: 0 !important;
   min-height: 60px;
   animation: fadeIn 1s ease-out 0.4s both;
@@ -398,7 +398,7 @@ a:hover {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin: var(--space-xs) 0 var(--space-xl) 0;
+  margin: var(--space-xs) 0 var(--space-sm) 0;
   letter-spacing: -0.02em;
   animation: fadeIn 1s ease-out 0.6s both;
 }
@@ -409,7 +409,7 @@ a:hover {
   font-weight: 400;
   text-align: center;
   color: var(--text-secondary);
-  margin: calc(var(--space-xs) * -1) 0 var(--space-xl) 0;
+  margin: calc(var(--space-xs) * -1) 0 var(--space-md) 0;
   letter-spacing: 0.05em;
   text-transform: lowercase;
   animation: fadeIn 1s ease-out 0.8s both;
