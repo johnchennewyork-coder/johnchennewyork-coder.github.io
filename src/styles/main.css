@@ -294,7 +294,7 @@ a:hover {
 
 /* Hero Section - Unified Profile, Typewriter, and Name */
 #hero {
-  padding: var(--space-3xl) 0 var(--space-lg);
+  padding: var(--space-3xl) 0 0;
   margin-top: 76px;
   animation: fadeInUp 0.8s ease-out;
 }
@@ -352,7 +352,7 @@ a:hover {
 
 /* Intro Section */
 #intro {
-  padding: var(--space-xl) 0 var(--space-2xl) 0;
+  padding: var(--space-xs) 0 var(--space-2xl) 0;
   animation: fadeInUp 0.8s ease-out 0.8s both;
 }
 
