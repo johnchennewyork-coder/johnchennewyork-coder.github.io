@@ -454,16 +454,18 @@ a:hover {
   text-decoration-thickness: 2px;
 }
 
-/* Section Titles - Futuristic Style */
+/* Section Titles - Futura-like Style */
 #intro h1.text-center,
 #projects_section > h1,
 #Hackathons h1,
 .container h1.text-center:not(#name_title) {
   font-family: var(--font-futuristic);
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: none;
   font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: var(--space-sm);
+  margin-top: 0;
 }
 
 /* Projects Section */
@@ -472,7 +474,7 @@ a:hover {
 }
 
 #projects_section > h1 {
-  margin-bottom: var(--space-2xl);
+  margin-bottom: var(--space-md);
   animation: fadeInUp 0.8s ease-out 1s both;
 }
 
@@ -549,7 +551,7 @@ a:hover {
 }
 
 #Hackathons h1 {
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-md);
   animation: fadeInUp 0.8s ease-out 1.4s both;
 }
 
@@ -863,7 +865,7 @@ section {
 
 /* Visitor Map Section */
 .container h1.text-center:not(#name_title) {
-  margin: var(--space-xl) 0;
+  margin: var(--space-md) 0;
   animation: fadeInUp 0.8s ease-out 2s both;
 }
 
