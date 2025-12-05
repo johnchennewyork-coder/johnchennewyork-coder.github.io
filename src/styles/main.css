@@ -403,6 +403,18 @@ a:hover {
   animation: fadeIn 1s ease-out 0.6s both;
 }
 
+#subtitle {
+  font-family: var(--font-primary);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 400;
+  text-align: center;
+  color: var(--text-secondary);
+  margin: calc(var(--space-xs) * -1) 0 var(--space-xl) 0;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+  animation: fadeIn 1s ease-out 0.8s both;
+}
+
 #intro p,
 #intro ul {
   color: var(--text-secondary);

@@ -114,8 +114,11 @@ export class Simulator {
     // Initialize tooltips for static HTML elements
     this.initializeTooltips();
 
-    // Initialize with default
-    this.onAlgorithmChange(this.algorithmSelector.getSelectedAlgorithm());
+    // Initialize with default - update compatibility on startup
+    const defaultEnvironment = this.environmentSelect.value;
+    this.algorithmSelector.updateForEnvironment(defaultEnvironment);
+    // Initialize environment first, then algorithm
+    this.onEnvironmentChange(defaultEnvironment);
   }
 
   private initializeTooltips(): void {
@@ -214,19 +217,27 @@ export class Simulator {
     }
   }
 
+
   private onAlgorithmChange(algorithm: string): void {
     const info = this.algorithmSelector.getAlgorithmInfo(algorithm);
+    
+    // Check if current environment is compatible with the selected algorithm
+    const compatibleEnvironments = this.algorithmSelector.getCompatibleEnvironments(algorithm);
+    const currentEnv = this.environmentSelect.value;
+    
+    // If current environment is incompatible, switch to algorithm's default
+    if (!compatibleEnvironments.includes(currentEnv)) {
+      this.environmentSelect.value = info.environment;
+      // Trigger environment change to update everything
+      this.onEnvironmentChange(info.environment);
+      return; // onEnvironmentChange will call initializeAlgorithm
+    }
     
     // Update paradigm indicators
     this.updateParadigmIndicators(algorithm, info);
     
-    // Set environment based on algorithm
-    if (this.environmentSelect.value !== info.environment) {
-      this.environmentSelect.value = info.environment;
-    }
-    
     // Show reward config only for Q-Learning with GridWorld
-    const showRewardConfig = algorithm === 'qlearning' && info.environment === 'gridworld';
+    const showRewardConfig = algorithm === 'qlearning' && currentEnv === 'gridworld';
     if (this.rewardConfigSection) {
       this.rewardConfigSection.style.display = showRewardConfig ? 'block' : 'none';
     }
@@ -235,7 +246,7 @@ export class Simulator {
     }
     
     // Show policy transform only for value-based methods with GridWorld
-    const showPolicyTransform = this.isValueBasedAlgorithm(algorithm) && info.environment === 'gridworld';
+    const showPolicyTransform = this.isValueBasedAlgorithm(algorithm) && currentEnv === 'gridworld';
     if (this.policyTransformSection) {
       this.policyTransformSection.style.display = showPolicyTransform ? 'block' : 'none';
     }
@@ -243,7 +254,7 @@ export class Simulator {
     // Reset policy transformer when changing algorithms
     this.policyTransformer.reset();
     
-    this.onEnvironmentChange(info.environment);
+    // Use current environment, not algorithm's default
     this.initializeAlgorithm(algorithm);
     
     if (showRewardConfig && this.currentEnv instanceof GridWorld) {
@@ -282,6 +293,8 @@ export class Simulator {
 
   private onEnvironmentChange(environment: string): void {
     this.stopTraining();
+    // Update algorithm options based on environment compatibility
+    this.algorithmSelector.updateForEnvironment(environment);
     this.initializeEnvironment(environment);
     const algorithm = this.algorithmSelector.getSelectedAlgorithm();
     this.initializeAlgorithm(algorithm);

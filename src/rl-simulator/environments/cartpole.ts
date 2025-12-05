@@ -21,6 +21,8 @@ export class CartPole {
   private tau: number = 0.02; // Time step
   private xThreshold: number = 2.4;
   private thetaThreshold: number = 12 * Math.PI / 180;
+  private maxEpisodeSteps: number = 500; // Maximum steps per episode
+  private stepCount: number = 0;
 
   constructor(canvas: HTMLCanvasElement) {
     this.canvas = canvas;
@@ -40,12 +42,16 @@ export class CartPole {
   }
 
   reset(): CartPoleState {
+    // Start with more challenging initial conditions
+    // Pole angle: random between -0.2 and 0.2 radians (~±11.5 degrees)
+    // This makes it harder to balance initially
     this.state = {
-      cartPos: (Math.random() - 0.5) * 0.1,
-      cartVel: (Math.random() - 0.5) * 0.1,
-      poleAngle: (Math.random() - 0.5) * 0.1,
-      poleVel: (Math.random() - 0.5) * 0.1
+      cartPos: (Math.random() - 0.5) * 0.2,
+      cartVel: (Math.random() - 0.5) * 0.2,
+      poleAngle: (Math.random() - 0.5) * 0.4, // Increased from 0.1 to 0.4
+      poleVel: (Math.random() - 0.5) * 0.2
     };
+    this.stepCount = 0;
     return { ...this.state };
   }
 
@@ -71,6 +77,8 @@ export class CartPole {
   }
 
   step(action: number): { nextState: CartPoleState; reward: number; done: boolean } {
+    this.stepCount++;
+    
     const force = action === 1 ? this.forceMag : -this.forceMag;
     const sinTheta = Math.sin(this.state.poleAngle);
     const cosTheta = Math.cos(this.state.poleAngle);
@@ -89,11 +97,15 @@ export class CartPole {
     while (this.state.poleAngle > Math.PI) this.state.poleAngle -= 2 * Math.PI;
     while (this.state.poleAngle < -Math.PI) this.state.poleAngle += 2 * Math.PI;
 
-    // Check termination
-    const done = Math.abs(this.state.cartPos) > this.xThreshold ||
-                 Math.abs(this.state.poleAngle) > this.thetaThreshold;
+    // Check termination: failure conditions OR maximum steps reached
+    const failed = Math.abs(this.state.cartPos) > this.xThreshold ||
+                   Math.abs(this.state.poleAngle) > this.thetaThreshold;
+    const maxStepsReached = this.stepCount >= this.maxEpisodeSteps;
+    const done = failed || maxStepsReached;
 
-    const reward = done ? 0 : 1;
+    // Reward: 1 for each step, 0 if failed
+    // If max steps reached without failing, still give reward (successful episode)
+    const reward = failed ? 0 : 1;
 
     return { nextState: { ...this.state }, reward, done };
   }
