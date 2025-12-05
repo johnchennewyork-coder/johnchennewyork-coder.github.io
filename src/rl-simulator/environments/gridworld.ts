@@ -243,8 +243,8 @@ export class GridWorld {
             this.ctx.font = `${Math.max(8, this.cellSize * 0.15)}px Arial`;
             this.ctx.textAlign = 'center';
             this.ctx.fillStyle = showPolicy || animationProgress > 0 
-              ? 'rgba(34, 197, 94, 0.9)' 
-              : 'rgba(255, 255, 255, 0.7)';
+              ? 'rgba(34, 197, 94, 0.95)' 
+              : 'rgba(255, 255, 255, 0.9)';
             
             // Up (top center)
             this.ctx.fillText(
