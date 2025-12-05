@@ -4,8 +4,13 @@ import './scripts/logo-positioning';
 import './scripts/typewriter';
 import './scripts/theme-toggle';
 import './scripts/scroll-animations';
+import './scripts/confetti';
 import './styles/main.css';
 
 // Initialize Bootstrap if needed (Bootstrap 5 doesn't require jQuery)
 // Bootstrap 5 JavaScript will be loaded via CDN or npm package
+
+// Initialize confetti effect
+import { initConfetti } from './scripts/confetti';
+initConfetti();
 
