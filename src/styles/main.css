@@ -213,7 +213,7 @@ a:hover {
   padding: var(--space-xs) var(--space-sm) !important;
   margin: 0 var(--space-xs);
   border-radius: 8px;
-  transition: all var(--transition-fast);
+  transition: all var(--transition-base);
   position: relative;
 }
 
@@ -227,7 +227,7 @@ a:hover {
   height: 2px;
   background: var(--accent);
   border-radius: 2px;
-  transition: transform var(--transition-base);
+  transition: transform var(--transition-base) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link:hover,
@@ -236,14 +236,42 @@ a:hover {
   background: rgba(99, 102, 241, 0.1);
 }
 
-.nav-link:hover::after,
-.nav-item.active .nav-link::after {
+.nav-link:hover::after {
   transform: translateX(-50%) scaleX(1);
 }
 
 .nav-item.active .nav-link {
   color: var(--accent) !important;
   background: rgba(99, 102, 241, 0.15);
+  animation: navActivePulse 0.3s ease-out;
+}
+
+.nav-item.active .nav-link::after {
+  transform: translateX(-50%) scaleX(1);
+  animation: navUnderlineSlide 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animation for active nav item */
+@keyframes navActivePulse {
+  0% {
+    background: rgba(99, 102, 241, 0.05);
+  }
+  50% {
+    background: rgba(99, 102, 241, 0.2);
+  }
+  100% {
+    background: rgba(99, 102, 241, 0.15);
+  }
+}
+
+/* Animation for underline */
+@keyframes navUnderlineSlide {
+  0% {
+    transform: translateX(-50%) scaleX(0);
+  }
+  100% {
+    transform: translateX(-50%) scaleX(1);
+  }
 }
 
 .navbar-toggler {

@@ -1,0 +1,47 @@
+// Algorithm Selector UI Component
+
+export interface AlgorithmInfo {
+  name: string;
+  category: string;
+  environment: string;
+}
+
+export class AlgorithmSelector {
+  private selectElement: HTMLSelectElement;
+  private onAlgorithmChange: (algorithm: string) => void;
+
+  constructor(selectId: string = 'algorithm-select', onAlgorithmChange: (algorithm: string) => void) {
+    this.selectElement = document.getElementById(selectId) as HTMLSelectElement;
+    this.onAlgorithmChange = onAlgorithmChange;
+    this.selectElement.addEventListener('change', () => {
+      this.onAlgorithmChange(this.selectElement.value);
+    });
+  }
+
+  getSelectedAlgorithm(): string {
+    return this.selectElement.value;
+  }
+
+  setAlgorithm(algorithm: string): void {
+    this.selectElement.value = algorithm;
+    this.onAlgorithmChange(algorithm);
+  }
+
+  getAlgorithmInfo(algorithm: string): AlgorithmInfo {
+    const algorithmMap: Record<string, AlgorithmInfo> = {
+      'qlearning': { name: 'Q-Learning', category: 'Value-Based (Off-Policy)', environment: 'gridworld' },
+      'dqn': { name: 'DQN', category: 'Value-Based (Off-Policy)', environment: 'gridworld' },
+      'sarsa': { name: 'SARSA', category: 'Value-Based (On-Policy)', environment: 'gridworld' },
+      'expected-sarsa': { name: 'Expected SARSA', category: 'Value-Based (On-Policy)', environment: 'gridworld' },
+      'reinforce': { name: 'REINFORCE', category: 'Policy-Based', environment: 'cartpole' },
+      'ppo': { name: 'PPO', category: 'Policy-Based', environment: 'cartpole' },
+      'a3c': { name: 'A3C', category: 'Actor-Critic (On-Policy)', environment: 'cartpole' },
+      'sac': { name: 'SAC', category: 'Actor-Critic (Off-Policy)', environment: 'pendulum' },
+      'ddpg': { name: 'DDPG', category: 'Actor-Critic (Off-Policy)', environment: 'pendulum' },
+      'td3': { name: 'TD3', category: 'Actor-Critic (Off-Policy)', environment: 'pendulum' }
+    };
+
+    return algorithmMap[algorithm] || { name: 'Unknown', category: 'Unknown', environment: 'gridworld' };
+  }
+}
+

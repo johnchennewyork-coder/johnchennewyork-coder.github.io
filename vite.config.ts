@@ -68,6 +68,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
+        'rl-simulator': resolve(__dirname, 'rl-simulator.html'),
       },
     },
   },
