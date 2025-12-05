@@ -39,6 +39,7 @@
   /* Typography */
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   --font-display: 'Poppins', var(--font-primary);
+  --font-futuristic: 'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   
   /* Transitions */
   --transition-fast: 150ms ease;
@@ -409,7 +410,7 @@ a:hover {
   font-weight: 400;
   text-align: center;
   color: var(--text-secondary);
-  margin: calc(var(--space-xs) * -1) 0 var(--space-md) 0;
+  margin: calc(var(--space-xs) * -1) 0 var(--space-xs) 0;
   letter-spacing: 0.05em;
   text-transform: lowercase;
   animation: fadeIn 1s ease-out 0.8s both;
@@ -451,6 +452,18 @@ a:hover {
 #intro a:hover {
   color: var(--accent-secondary);
   text-decoration-thickness: 2px;
+}
+
+/* Section Titles - Futuristic Style */
+#intro h1.text-center,
+#projects_section > h1,
+#Hackathons h1,
+.container h1.text-center:not(#name_title) {
+  font-family: var(--font-futuristic);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 /* Projects Section */
@@ -849,7 +862,7 @@ section {
 }
 
 /* Visitor Map Section */
-.container h1 {
+.container h1.text-center:not(#name_title) {
   margin: var(--space-xl) 0;
   animation: fadeInUp 0.8s ease-out 2s both;
 }
