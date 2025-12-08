@@ -4,6 +4,17 @@ import { existsSync, readFileSync, statSync } from 'fs';
 import { execSync } from 'child_process';
 import type { Plugin } from 'vite';
 
+// Load blog config
+const blogConfigPath = resolve(__dirname, 'blog-config.json');
+let blogConfig: { baseUrl: string; blogPath: string; oldDomain: string; newDomain: string } | null = null;
+if (existsSync(blogConfigPath)) {
+  try {
+    blogConfig = JSON.parse(readFileSync(blogConfigPath, 'utf8'));
+  } catch (error) {
+    console.warn('Could not load blog config:', error);
+  }
+}
+
 // Simple content type detection
 function getContentType(filePath: string): string {
   const ext = filePath.split('.').pop()?.toLowerCase() || '';
@@ -106,13 +117,25 @@ const copyResourcesPlugin = (): Plugin => {
             // Rewrite absolute URLs to relative URLs for localhost (for HTML, CSS, JS, XML)
             if (contentType.includes('text/') || contentType.includes('application/javascript') || contentType.includes('application/xml')) {
               const contentStr = content.toString();
-              // Replace absolute URLs with relative URLs
-              const rewritten = contentStr
-                .replace(/https:\/\/johntiger1\.github\.io\/blog\//g, '/blog/')
-                .replace(/https:\/\/johntiger1\.github\.io\/blog"/g, '/blog"')
-                .replace(/https:\/\/johntiger1\.github\.io\/blog'/g, "/blog'")
-                .replace(/https:\/\/johntiger1\.github\.io\/blog/g, '/blog');
-              content = Buffer.from(rewritten);
+              // Replace absolute URLs with relative URLs using config
+              if (blogConfig) {
+                const baseUrlPattern = blogConfig.baseUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                const blogUrlPattern = `${baseUrlPattern}${blogConfig.blogPath}`;
+                const rewritten = contentStr
+                  .replace(new RegExp(`${blogUrlPattern}/`, 'g'), '/blog/')
+                  .replace(new RegExp(`${blogUrlPattern}"`, 'g'), '/blog"')
+                  .replace(new RegExp(`${blogUrlPattern}'`, 'g'), "/blog'")
+                  .replace(new RegExp(blogUrlPattern, 'g'), '/blog');
+                content = Buffer.from(rewritten);
+              } else {
+                // Fallback to hardcoded pattern if config not available
+                const rewritten = contentStr
+                  .replace(/https:\/\/johnchennewyork-coder\.github\.io\/blog\//g, '/blog/')
+                  .replace(/https:\/\/johnchennewyork-coder\.github\.io\/blog"/g, '/blog"')
+                  .replace(/https:\/\/johnchennewyork-coder\.github\.io\/blog'/g, "/blog'")
+                  .replace(/https:\/\/johnchennewyork-coder\.github\.io\/blog/g, '/blog');
+                content = Buffer.from(rewritten);
+              }
             }
             
             res.setHeader('Content-Type', contentType);
@@ -133,11 +156,23 @@ const copyResourcesPlugin = (): Plugin => {
               let content = readFileSync(indexPath);
               // Rewrite absolute URLs to relative URLs for localhost
               const contentStr = content.toString();
-              const rewritten = contentStr
-                .replace(/https:\/\/johntiger1\.github\.io\/blog\//g, '/blog/')
-                .replace(/https:\/\/johntiger1\.github\.io\/blog"/g, '/blog"')
-                .replace(/https:\/\/johntiger1\.github\.io\/blog'/g, "/blog'")
-                .replace(/https:\/\/johntiger1\.github\.io\/blog/g, '/blog');
+              let rewritten = contentStr;
+              if (blogConfig) {
+                const baseUrlPattern = blogConfig.baseUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                const blogUrlPattern = `${baseUrlPattern}${blogConfig.blogPath}`;
+                rewritten = contentStr
+                  .replace(new RegExp(`${blogUrlPattern}/`, 'g'), '/blog/')
+                  .replace(new RegExp(`${blogUrlPattern}"`, 'g'), '/blog"')
+                  .replace(new RegExp(`${blogUrlPattern}'`, 'g'), "/blog'")
+                  .replace(new RegExp(blogUrlPattern, 'g'), '/blog');
+              } else {
+                // Fallback
+                rewritten = contentStr
+                  .replace(/https:\/\/johnchennewyork-coder\.github\.io\/blog\//g, '/blog/')
+                  .replace(/https:\/\/johnchennewyork-coder\.github\.io\/blog"/g, '/blog"')
+                  .replace(/https:\/\/johnchennewyork-coder\.github\.io\/blog'/g, "/blog'")
+                  .replace(/https:\/\/johnchennewyork-coder\.github\.io\/blog/g, '/blog');
+              }
               content = Buffer.from(rewritten);
               res.setHeader('Content-Type', 'text/html');
               res.end(content);
@@ -180,11 +215,23 @@ const copyResourcesPlugin = (): Plugin => {
               let content = readFileSync(indexPath);
               // Rewrite absolute URLs to relative URLs for localhost
               const contentStr = content.toString();
-              const rewritten = contentStr
-                .replace(/https:\/\/johntiger1\.github\.io\/blog\//g, '/blog/')
-                .replace(/https:\/\/johntiger1\.github\.io\/blog"/g, '/blog"')
-                .replace(/https:\/\/johntiger1\.github\.io\/blog'/g, "/blog'")
-                .replace(/https:\/\/johntiger1\.github\.io\/blog/g, '/blog');
+              let rewritten = contentStr;
+              if (blogConfig) {
+                const baseUrlPattern = blogConfig.baseUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                const blogUrlPattern = `${baseUrlPattern}${blogConfig.blogPath}`;
+                rewritten = contentStr
+                  .replace(new RegExp(`${blogUrlPattern}/`, 'g'), '/blog/')
+                  .replace(new RegExp(`${blogUrlPattern}"`, 'g'), '/blog"')
+                  .replace(new RegExp(`${blogUrlPattern}'`, 'g'), "/blog'")
+                  .replace(new RegExp(blogUrlPattern, 'g'), '/blog');
+              } else {
+                // Fallback
+                rewritten = contentStr
+                  .replace(/https:\/\/johnchennewyork-coder\.github\.io\/blog\//g, '/blog/')
+                  .replace(/https:\/\/johnchennewyork-coder\.github\.io\/blog"/g, '/blog"')
+                  .replace(/https:\/\/johnchennewyork-coder\.github\.io\/blog'/g, "/blog'")
+                  .replace(/https:\/\/johnchennewyork-coder\.github\.io\/blog/g, '/blog');
+              }
               content = Buffer.from(rewritten);
               res.setHeader('Content-Type', 'text/html');
               res.end(content);

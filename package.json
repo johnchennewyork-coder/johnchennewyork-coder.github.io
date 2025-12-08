@@ -4,8 +4,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "build": "npm run update-blog-urls && tsc && vite build",
+    "preview": "vite preview",
+    "update-blog-urls": "node scripts/update-blog-urls.js"
   },
   "dependencies": {
     "@tensorflow/tfjs": "^4.22.0",
