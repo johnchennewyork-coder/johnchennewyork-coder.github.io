@@ -64,8 +64,9 @@ The development server will start at `http://localhost:3000` and automatically o
 | Command | Description |
 |---------|-------------|
 | `npm run dev` | Start development server with hot module replacement |
-| `npm run build` | Build production-ready files to `dist/` directory |
+| `npm run build` | Build production-ready files to `dist/` directory (automatically updates blog URLs) |
 | `npm run preview` | Preview the production build locally |
+| `npm run update-blog-urls` | Update all blog URLs based on `blog-config.json` |
 
 ## 🏗️ Project Structure
 
@@ -192,6 +193,29 @@ If you prefer manual deployment instead of GitHub Actions:
 ## 📝 Blog Deployment
 
 The blog is a Hugo-generated static site located in `prev/blog/`. It is automatically included in the build and deployment process.
+
+### Blog Configuration
+
+Blog URLs are managed through a centralized configuration file: `blog-config.json`
+
+```json
+{
+  "baseUrl": "https://johnchennewyork-coder.github.io",
+  "blogPath": "/blog",
+  "oldDomain": "johntiger1.github.io",
+  "newDomain": "johnchennewyork-coder.github.io"
+}
+```
+
+**To change the blog domain:**
+1. Update `baseUrl` and `newDomain` in `blog-config.json`
+2. Run `npm run update-blog-urls` to update all blog files
+3. Or let the build process handle it automatically (runs before each build)
+
+The `update-blog-urls` script:
+- Scans all HTML and XML files in `prev/blog/`
+- Replaces the old domain with the new domain
+- Updates all links, metadata, and references
 
 ### How Blog Deployment Works
 
