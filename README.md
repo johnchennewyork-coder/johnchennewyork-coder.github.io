@@ -86,6 +86,7 @@ johnchennewyork-coder.github.io/
 │   ├── pdf/                 # PDF documents
 │   └── publications/        # Research publications
 ├── prev/                    # Archived old website files
+│   └── blog/                # Hugo-generated blog (copied to dist/blog/ during build)
 ├── index.html               # Main HTML page
 ├── vite.config.ts           # Vite configuration
 ├── tsconfig.json            # TypeScript configuration
@@ -104,7 +105,8 @@ This will:
 1. Compile TypeScript to JavaScript
 2. Bundle and minify assets
 3. Copy the `resources/` directory to `dist/resources/`
-4. Output everything to the `dist/` directory
+4. Copy the `prev/blog/` directory to `dist/blog/`
+5. Output everything to the `dist/` directory
 
 The build output will be in the `dist/` folder, ready for deployment.
 
@@ -140,6 +142,7 @@ The workflow (`.github/workflows/deploy.yml`) does the following:
    - Compiles TypeScript to JavaScript
    - Bundles and minifies assets with Vite
    - Copies `resources/` directory to `dist/resources/`
+   - Copies `prev/blog/` directory to `dist/blog/`
 
 2. **Deploys to GitHub Pages:**
    - Uploads the `dist/` folder as a Pages artifact
@@ -185,6 +188,57 @@ If you prefer manual deployment instead of GitHub Actions:
    - Save
 
 **Note:** GitHub Actions is recommended as it's automatic and ensures consistent builds.
+
+## 📝 Blog Deployment
+
+The blog is a Hugo-generated static site located in `prev/blog/`. It is automatically included in the build and deployment process.
+
+### How Blog Deployment Works
+
+1. **During Build:**
+   - The Vite build process automatically copies `prev/blog/` to `dist/blog/`
+   - This happens via the `copyResourcesPlugin` in `vite.config.ts`
+   - The blog is served at `/blog/` on the deployed site
+
+2. **Blog Structure:**
+   - Blog source files are in `prev/blog/`
+   - Blog posts are in `prev/blog/posts/`
+   - The blog index is at `prev/blog/index.html`
+   - All blog assets (CSS, JS, images) are included in the copy
+
+3. **Adding New Blog Posts:**
+   - Add new posts to `prev/blog/posts/[post-name]/index.html`
+   - Update `prev/blog/index.html` to include the new post in the listing
+   - The post will be automatically included in the next deployment
+
+4. **Blog Navigation:**
+   - The main site navbar links to `/blog/` (absolute path to prevent infinite nesting)
+   - The blog has its own navigation within blog pages
+   - Blog links use absolute paths starting with `/blog/` to ensure proper routing
+
+### Blog Development
+
+During local development (`npm run dev`), the blog is served from `prev/blog/` via Vite middleware:
+- Access the blog at `http://localhost:3000/blog/`
+- Changes to blog files are reflected immediately (no rebuild needed)
+- The blog works independently of the main site build process
+
+### Blog Troubleshooting
+
+**Blog link causes infinite nesting?**
+- Ensure the navbar link uses `/blog/` (absolute path) not `blog/` (relative path)
+- Check that blog links within blog pages also use absolute paths starting with `/blog/`
+
+**Blog not appearing after deployment?**
+- Verify that `prev/blog/` directory exists
+- Check the build logs for "✓ Copied blog directory to dist" message
+- Ensure the blog was copied to `dist/blog/` in the build output
+- Check that GitHub Pages is serving from the `dist/` directory (via GitHub Actions)
+
+**Blog styles/CSS not loading?**
+- Blog uses its own CSS files in `prev/blog/css/`
+- Ensure all blog assets are being copied during build
+- Check browser console for 404 errors on blog assets
 
 ### Other Hosting Options
 
