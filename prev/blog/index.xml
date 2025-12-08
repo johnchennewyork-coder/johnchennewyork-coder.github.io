@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>John&#39;s Machine Learning and Deep Learning Blog</title>
-    <link>https://johntiger1.github.io/blog/</link>
+    <link>https://johnchennewyork-coder.github.io/blog/</link>
     <description>Recent content on John&#39;s Machine Learning and Deep Learning Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 14 Apr 2020 17:38:21 -0400</lastBuildDate>
     
-	<atom:link href="https://johntiger1.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://johnchennewyork-coder.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Amazon Interview</title>
-      <link>https://johntiger1.github.io/blog/posts/amazon-interview/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/amazon-interview/</link>
       <pubDate>Tue, 14 Apr 2020 17:38:21 -0400</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/amazon-interview/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/amazon-interview/</guid>
       <description>Addicted to interviewing.
 Just finished the Amazon interview. It was a shadowing interview, so there was a bonus interviewer!
 Surprisingly, it was not a coding challenge! Instead they asked (quite a few) questions about my machine learning knowledge.
@@ -26,10 +26,10 @@ Should have mentioned I got an award for that.</description>
     
     <item>
       <title>Vector Compute Guide</title>
-      <link>https://johntiger1.github.io/blog/posts/vector-guide/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/vector-guide/</link>
       <pubDate>Sun, 22 Mar 2020 15:16:10 -0400</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/vector-guide/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/vector-guide/</guid>
       <description>Vector has two computing servers. One is the MaRS cluster, while the other is the Vaughan cluster.
 You can access the Vaughan cluster, via vremote.vectorinstitute.ai You can access the MaRS cluster, vi q.vectorinstitute.ai
 The power of e-mail inboxing. And making sure things get done!</description>
@@ -37,20 +37,20 @@ The power of e-mail inboxing. And making sure things get done!</description>
     
     <item>
       <title>Elements of Web Programming</title>
-      <link>https://johntiger1.github.io/blog/posts/ewp/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/ewp/</link>
       <pubDate>Sat, 14 Mar 2020 10:52:45 -0400</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/ewp/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/ewp/</guid>
       <description>I have long believed that Web programming is one of the most difficult parts of practical, software development. As the name suggests, full-stack web development encapsulates all levels of programming, from database to backend to frontend.
 Not only is there breadth across the stack, but there is also breadth across the different types of stacks. For instance, PHP web development is completely different from modern Node ES6 development is completely different from C# web development.</description>
     </item>
     
     <item>
       <title>Introduction to Group Theory</title>
-      <link>https://johntiger1.github.io/blog/posts/intro-group-theory/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/intro-group-theory/</link>
       <pubDate>Sat, 07 Mar 2020 18:40:30 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/intro-group-theory/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/intro-group-theory/</guid>
       <description>I am becoming more interested in rigorizing my knowledge of mathematics.
 A group is a set of elements $$G$$ and an operation $$\bigotimes$$. It satisfies the following four properties:
  Closure Associativity Neutral Element Inverse Element  From Groups to Vector Spaces: If we enhance our group with an outer operation, then we get a vector space! Roughly, this outer operation takes an element from inside our set, and an external element from a field (such as the reals) and then gives us a way of combining the inner element with the external element.</description>
@@ -58,20 +58,20 @@ A group is a set of elements $$G$$ and an operation $$\bigotimes$$. It satisfies
     
     <item>
       <title>We are all going south</title>
-      <link>https://johntiger1.github.io/blog/posts/rich-sutton/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/rich-sutton/</link>
       <pubDate>Wed, 19 Feb 2020 12:49:50 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/rich-sutton/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/rich-sutton/</guid>
       <description>Attended the Rich Sutton talk today at Vector. It was a great talk, where he soliloquized about his research agenda and motivation, and used this to motivate his work on SuperDyna, a general intelligence framework based on his work on options.
 At the end of this post are some rough notes from the presentation. But I wanted to discuss the key takeaways I got. I had the opportunity to talk with him personally briefly for a few moments as well over lunch.</description>
     </item>
     
     <item>
       <title>Making Imperfect Decisions</title>
-      <link>https://johntiger1.github.io/blog/posts/making-imperfect-decisions/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/making-imperfect-decisions/</link>
       <pubDate>Mon, 27 Jan 2020 15:07:56 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/making-imperfect-decisions/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/making-imperfect-decisions/</guid>
       <description>Sorry for the long hiatus everyone. I am refraining from blogging so much while I figure out some infrastructure related details: i.e. how to write inline latex effectively in the blog, how to use pictures, and importantly how to categorize things by date, etc. so that this doesn&amp;rsquo;t blow up.
 (In partciular, you can already see how the number of posts will grow linearly with time: not good).
 The paradox of graduate school: learning how to make imperfect decisions So now I have been in grad school for over a semester.</description>
@@ -79,10 +79,10 @@ The paradox of graduate school: learning how to make imperfect decisions So now 
     
     <item>
       <title>Regressions</title>
-      <link>https://johntiger1.github.io/blog/posts/regressions/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/regressions/</link>
       <pubDate>Mon, 20 Jan 2020 22:19:18 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/regressions/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/regressions/</guid>
       <description>There is a powerful, and statistical way of thinking about all regressions. Instead of viewing regression as simply &amp;ldquo;minimizing the least squares error&amp;rdquo;, or some type of MLE, we can instead think about the statistical, generative model of our process.
 This is the approach to regression that talks about $\Beta$, normal distribution, and the residuals are normally distributed!
 Essentially, Poisson regression simply makes a different modelling assumption/perspective: that we look at a $ln$ viewpoint!</description>
@@ -90,10 +90,10 @@ Essentially, Poisson regression simply makes a different modelling assumption/pe
     
     <item>
       <title>Research Topics and Conferences</title>
-      <link>https://johntiger1.github.io/blog/posts/research-topics-and-conferences/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/research-topics-and-conferences/</link>
       <pubDate>Mon, 20 Jan 2020 11:54:47 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/research-topics-and-conferences/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/research-topics-and-conferences/</guid>
       <description>As important as actually doing the research, is finding a good place to publish it.
 Here, we see some areas that I would be interested in: https://dl.acm.org/doi/abs/10.1145/3308558.3313485
 (this involves: deep learning for clinical note prediction using incorporation of wikipedia)</description>
@@ -101,10 +101,10 @@ Here, we see some areas that I would be interested in: https://dl.acm.org/doi/ab
     
     <item>
       <title>Adobe</title>
-      <link>https://johntiger1.github.io/blog/posts/adobe/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/adobe/</link>
       <pubDate>Wed, 08 Jan 2020 17:59:55 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/adobe/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/adobe/</guid>
       <description>Remember when I said interviewing season was over?
 Well, not quite.
 Just finished the interview with Adobe. This was one of the more frazzled experiences, and it did not go as planned.
@@ -114,10 +114,10 @@ Second, I kept on having connection problems during the interview. I was constan
     
     <item>
       <title>Research Log</title>
-      <link>https://johntiger1.github.io/blog/posts/research-log/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/research-log/</link>
       <pubDate>Tue, 07 Jan 2020 22:40:02 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/research-log/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/research-log/</guid>
       <description>Worked on the RL project again today.
 I implemented: 1. More updates (to the policy network) 2. Dynamic reward baselining, with rolling average of past rewards
 I am also working in the oracle clusters paradigm. If we know the actual labels, we should be able to pick optimally. Yet somehow, we are unable to. We keep falling into policy collapse, due to the attractors (local minima) in the RL process.</description>
@@ -125,10 +125,10 @@ I am also working in the oracle clusters paradigm. If we know the actual labels,
     
     <item>
       <title>Being Honest</title>
-      <link>https://johntiger1.github.io/blog/posts/being-honest/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/being-honest/</link>
       <pubDate>Fri, 03 Jan 2020 20:21:12 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/being-honest/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/being-honest/</guid>
       <description>I like to have fun.
 I like to go out on Fridays! I like to go out on the weekends!
 For a long time, I have denied myself this truth. Whether it was due to school work, no plans, or just not feeling it, I have spent many a Friday night or weekend wondering what to do. But from now on, I will be honest with myself and try to actively plan for fun on Friday nights.</description>
@@ -136,20 +136,20 @@ For a long time, I have denied myself this truth. Whether it was due to school w
     
     <item>
       <title>Learning Chinese</title>
-      <link>https://johntiger1.github.io/blog/posts/learning-chinese/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/learning-chinese/</link>
       <pubDate>Fri, 03 Jan 2020 20:14:23 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/learning-chinese/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/learning-chinese/</guid>
       <description>Nearly after a decade and a half after I stopped attending Chinese Saturday school, I am making a concious and concerted effort to learn the $belle$ language.
 As an analytical thinker, I am always interested in quickly seeing the big picture, and identifying high-information patterns that can be quickly and easily applied repeatedly within and across domains. So when you learn Chinese, there is the traditional method of learning, character-by-character, in a rote memorization way.</description>
     </item>
     
     <item>
       <title>Expectation Ambiguity</title>
-      <link>https://johntiger1.github.io/blog/posts/expectation_ambiguity/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/expectation_ambiguity/</link>
       <pubDate>Fri, 27 Dec 2019 20:51:19 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/expectation_ambiguity/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/expectation_ambiguity/</guid>
       <description>So it&amp;rsquo;s been a while since I&amp;rsquo;ve updated this blog. The short (and complete) story is that I&amp;rsquo;ve been rushing final projects for school. There might be a new article on that (later)
 Now that I am reviewing some of my SOCMLx notes (still need to scribe some stuff up), I want to revisit a topic that has always troubled me. Specifically:
 $$ E[X] vs E[XY] $$
@@ -158,10 +158,10 @@ In both of these expectations, what does the expectation refer to?</description>
     
     <item>
       <title>The_gap</title>
-      <link>https://johntiger1.github.io/blog/posts/the_gap/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/the_gap/</link>
       <pubDate>Mon, 16 Dec 2019 14:05:30 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/the_gap/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/the_gap/</guid>
       <description>The Gap is something that exists between what you learn in your DS and Algos course, and how you actually implement it in Python/Leetcode.
 Graphs are a big one.
 But even bigger are hashmaps.
@@ -170,20 +170,20 @@ In general, when we have $h(k_1) = h(k_2)$ we cannot conclude $k_1 = k_2$. But i
     
     <item>
       <title>RL example</title>
-      <link>https://johntiger1.github.io/blog/posts/rl_example/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/rl_example/</link>
       <pubDate>Mon, 16 Dec 2019 01:03:29 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/rl_example/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/rl_example/</guid>
       <description>Here are my thoughts on trying to provide an example of RL.
  Policy gradient &amp;ldquo;Standing derivative&amp;rdquo;, weighted by the return Instead, we should do Q-learning  </description>
     </item>
     
     <item>
       <title>RL Curriculum</title>
-      <link>https://johntiger1.github.io/blog/posts/rl_curriculum/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/rl_curriculum/</link>
       <pubDate>Mon, 16 Dec 2019 00:57:26 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/rl_curriculum/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/rl_curriculum/</guid>
       <description>Finally, the pieces of RL are starting to really crystallize in my head. It only took til the end of CSC2547, and my first semester of grad school to get it!
 Here is an ordering I found useful for studying:
  http://www.cs.toronto.edu/~rgrosse/courses/csc411_f18/ to lay the framework for machine learning. http://www.cs.toronto.edu/~rgrosse/courses/csc421_2019/ to lay the framework for deep learning. Policy gradient, REINFORCE is reinforced here ;)s http://karpathy.github.io/2016/05/31/rl/ to connect RL in the context of supervised learning; and the practicalities of training it https://lilianweng.</description>
@@ -191,19 +191,19 @@ Here is an ordering I found useful for studying:
     
     <item>
       <title>Active Learning</title>
-      <link>https://johntiger1.github.io/blog/posts/active-learning/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/active-learning/</link>
       <pubDate>Sun, 08 Dec 2019 18:17:38 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/active-learning/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/active-learning/</guid>
       <description>A thorny and universal open problem that continues to plague deep learning is the scarcity of labelled data. Unlabelled data can be transformed to labelled data in a procedure that is costly, labour-intensive time-consuming, and not scalable. Active learning thus deals with picking \textit{good} data points from the unlabelled dataset to label. This discrete choice of unlabelled data points is called a \textit{query} and there are several heuristics for selecting the best query, including max entropy, diversity sampling and others.</description>
     </item>
     
     <item>
       <title>Cuda Guide</title>
-      <link>https://johntiger1.github.io/blog/posts/cuda-guide/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/cuda-guide/</link>
       <pubDate>Sun, 08 Dec 2019 18:15:28 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/cuda-guide/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/cuda-guide/</guid>
       <description>Step 1: Check if cuda is available, and if the user wants to enable it. Save this into a config variable, e.g. args.device
 Step 2: Write device agnostic code.
 Use torch.tensor((1,2), device=args.device) Use x = model().to(device=args.device)
@@ -212,20 +212,20 @@ That&amp;rsquo;s it!</description>
     
     <item>
       <title>Blog Post of the Day</title>
-      <link>https://johntiger1.github.io/blog/posts/blog-post-of-the-day/blog-post-of-the-day/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/blog-post-of-the-day/blog-post-of-the-day/</link>
       <pubDate>Sat, 30 Nov 2019 01:34:51 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/blog-post-of-the-day/blog-post-of-the-day/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/blog-post-of-the-day/blog-post-of-the-day/</guid>
       <description>This is an exceptional blog post!
 https://thegradient.pub/frontiers-of-generalization-in-natural-language-processing/</description>
     </item>
     
     <item>
       <title>Hackers Guide Multidimensional Arrays</title>
-      <link>https://johntiger1.github.io/blog/posts/hackers-guide-multidimensional-arrays/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/hackers-guide-multidimensional-arrays/</link>
       <pubDate>Fri, 29 Nov 2019 19:11:03 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/hackers-guide-multidimensional-arrays/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/hackers-guide-multidimensional-arrays/</guid>
       <description>Let&amp;rsquo;s say we have an array of 3 x 1 x 6 x 8. Then we can quickly make some assertions and inferences: 1. The &amp;ldquo;smallest&amp;rdquo; level elements of this MD array are size 8.
 When we do broadcasting, we are just doing expand_dims operations, and then working on two huge cubes that are the same size!
 When we do unsqueezing, we can get a real flavour of how Torch/numpy actually stores the values in the underlying memory addresses.</description>
@@ -233,10 +233,10 @@ When we do unsqueezing, we can get a real flavour of how Torch/numpy actually st
     
     <item>
       <title>Conflict Resolution</title>
-      <link>https://johntiger1.github.io/blog/posts/conflict-resolution/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/conflict-resolution/</link>
       <pubDate>Thu, 28 Nov 2019 10:13:31 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/conflict-resolution/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/conflict-resolution/</guid>
       <description>Living in a crowded, house with different people has changed my world view, and introduced me to conflict!
 This is good, and expands my perspectives.
 These are also good exmaples to talk about in an interview.
@@ -247,10 +247,10 @@ As a general rule, the most important rule to conflict resolution is discussion,
     
     <item>
       <title>Transformers_explained</title>
-      <link>https://johntiger1.github.io/blog/posts/transformers_explained/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/transformers_explained/</link>
       <pubDate>Thu, 28 Nov 2019 09:54:25 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/transformers_explained/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/transformers_explained/</guid>
       <description>Transformers are one of the crucial building blocks of modern day NLP. There has been much confusion on them, even though thousands of blog posts, animations exist. I finally clarified my understanding after a short 5 minute conversation!
 So here is my brief, opinionated explanation of a transformer!
 Transfomer:
@@ -259,19 +259,19 @@ Transfomer:
     
     <item>
       <title>Reproduction Headaches</title>
-      <link>https://johntiger1.github.io/blog/posts/reproduction-headaches/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/reproduction-headaches/</link>
       <pubDate>Tue, 26 Nov 2019 23:08:07 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/reproduction-headaches/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/reproduction-headaches/</guid>
       <description>I absolutely detest trying to reproduce research code! Well, as it turns out, I am just trying to reproduce working code that involves multiple dependencies.</description>
     </item>
     
     <item>
       <title>On Travel</title>
-      <link>https://johntiger1.github.io/blog/posts/on-travel/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/on-travel/</link>
       <pubDate>Fri, 22 Nov 2019 19:24:10 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/on-travel/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/on-travel/</guid>
       <description>Currently writing this on a train, from Toronto to Montreal.
 Travel embiggens the soul. It is an activity that we can all do, and all have fun! It is a chance to put our best foot forward, and live life as nicely as possible!
 Here are my thoughts and tips, that I have accumulated:
@@ -280,10 +280,10 @@ Here are my thoughts and tips, that I have accumulated:
     
     <item>
       <title>Research_plans</title>
-      <link>https://johntiger1.github.io/blog/posts/research_plans/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/research_plans/</link>
       <pubDate>Thu, 21 Nov 2019 16:39:41 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/research_plans/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/research_plans/</guid>
       <description>Once you start looking at a problem, there are a wide variety things you want to try. Everything from related fields, to technical details might call for new analysis! Here is a public listing.
 Technical details: character level vs word level, the specific architecture, and whether code exists
  Style Transfer High and Low: Character-level and Multi-dataset Thematic Bonus  This research project looks at performing style transfer using character level embeddings/language model, and then also using multiple datasets.</description>
@@ -291,10 +291,10 @@ Technical details: character level vs word level, the specific architecture, and
     
     <item>
       <title>Recruiting Season End</title>
-      <link>https://johntiger1.github.io/blog/posts/recruiting-season-end/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/recruiting-season-end/</link>
       <pubDate>Thu, 21 Nov 2019 13:10:49 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/recruiting-season-end/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/recruiting-season-end/</guid>
       <description>It&amp;rsquo;s officially done.
 Recruiting season is over for me.
 One thing I learned is that recruiting-mode (recruiting-me) is a very UNnatural state of affairs for me.
@@ -305,10 +305,10 @@ I have Twilio, Akuna and Google left.</description>
     
     <item>
       <title>Divisibility</title>
-      <link>https://johntiger1.github.io/blog/posts/divisibility/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/divisibility/</link>
       <pubDate>Wed, 20 Nov 2019 15:16:55 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/divisibility/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/divisibility/</guid>
       <description>Divisibility in terms of sampling from a population.
 This is closely related to sufficiency/calbiration in machine learning!
 Quote of the day: When R has only two values we recognize this condition as requiring a parity of positive/negative predictive values across all groups.
@@ -317,10 +317,10 @@ Quote of the day: When R has only two values we recognize this condition as requ
     
     <item>
       <title>Choose Your Own Adv</title>
-      <link>https://johntiger1.github.io/blog/posts/choose-your-own-adv/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/choose-your-own-adv/</link>
       <pubDate>Tue, 19 Nov 2019 23:29:21 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/choose-your-own-adv/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/choose-your-own-adv/</guid>
       <description>You do training on only 5k examples of a dataset. (the first 5k indices) You notice an improvement in training.
 Do you follow this? Or do you ignore this?
 Generally, I would ignore it. It could be (and is very like to be) noise. If I really think this is a promising area, I would need a theory (curriculum learning), and then I would explore as a contribution to this field.</description>
@@ -328,10 +328,10 @@ Generally, I would ignore it. It could be (and is very like to be) noise. If I r
     
     <item>
       <title>Slurm</title>
-      <link>https://johntiger1.github.io/blog/posts/slurm/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/slurm/</link>
       <pubDate>Mon, 18 Nov 2019 21:58:46 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/slurm/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/slurm/</guid>
       <description>SLURM is a job scheduler for cluster computing.
 You can run commands via srun (interactive mode) and sbatch (batch processing).
 There are tons of flags you can set. Some of these will change whether or not you get output (specifically, if you get it in a file, or piped to the shell)!
@@ -341,29 +341,29 @@ You get access to SLURM environment variables</description>
     
     <item>
       <title>Bi Directional Bfs Research</title>
-      <link>https://johntiger1.github.io/blog/posts/bi-directional-bfs-research/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/bi-directional-bfs-research/</link>
       <pubDate>Sun, 17 Nov 2019 12:58:41 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/bi-directional-bfs-research/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/bi-directional-bfs-research/</guid>
       <description>When you do research, there are two main approaches:
  Start with a grand idea, intuition, or otherwise behaviour you want to enforce. Perform steps in order to achieve this vision. Start off of an existing idea. Take tiny steps that change the existing work, until it is your own. I would also place addressing &amp;ldquo;what&amp;rsquo;s wrong&amp;rdquo; with the paper under this category.  These two approaches are fundamentally different, and essentially represent working backwards from a solution vs starting from a problem, and finding a new contribution.</description>
     </item>
     
     <item>
       <title>Roadmap Almost: VAEs</title>
-      <link>https://johntiger1.github.io/blog/posts/roadmap-almost/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/roadmap-almost/</link>
       <pubDate>Sun, 17 Nov 2019 01:03:34 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/roadmap-almost/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/roadmap-almost/</guid>
       <description>The score function estimator: a single sample, DOES estimate the score function etc. The actual point of reinforce: not taking the derivative through the expectation, but taking a derivative through a random variable. And the big kicker is that we take it through the RV, SO that we assume no dependence (i.e. an rv X sampled has no dependence on the probability distribution governing X); and so the problem resorts down to maximum likelihood estimation (essentially); just trying to max/min the probability of something happening; as weighted by the reward function The two views of taking a derivative through a random variable.</description>
     </item>
     
     <item>
       <title>Vector Calc Primer</title>
-      <link>https://johntiger1.github.io/blog/posts/vector-calc-primer/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/vector-calc-primer/</link>
       <pubDate>Sat, 16 Nov 2019 16:11:59 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/vector-calc-primer/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/vector-calc-primer/</guid>
       <description>Vector calculus generally means multivariate calculus.
 A function f(x,y) = z denotes a surface in 3-dimensional space.
 IF we FIX z to a specific value, then note that we just have two variables now! Then, we are looking at a 2D-CURVE. This is equivalent to &amp;ldquo;looking at the surface from the top&amp;rdquo;, or fixing the height to a specific value, and seeing which points on the surface correspond to that height.</description>
@@ -371,10 +371,10 @@ IF we FIX z to a specific value, then note that we just have two variables now! 
     
     <item>
       <title>Goldman Sachs</title>
-      <link>https://johntiger1.github.io/blog/posts/goldman-sachs/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/goldman-sachs/</link>
       <pubDate>Mon, 11 Nov 2019 16:53:09 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/goldman-sachs/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/goldman-sachs/</guid>
       <description>Recently completed the GS technical assessment. It was not bad! I liked the programming bits (in that I got the questions, and they were straightforward), but the math section was pleasantly challenging and refreshing.
 The math section provided an opportunity to review and refresh lots of topics I have learnt throughout university and high school, including calculus (multivariable), combinatorics and counting, linear algebra, and statistics.
 In particular, it was fun reminiscing about Lagrange Multipliers, and all that!</description>
@@ -382,20 +382,20 @@ In particular, it was fun reminiscing about Lagrange Multipliers, and all that!<
     
     <item>
       <title>Common Programming Interview Tips</title>
-      <link>https://johntiger1.github.io/blog/posts/common-programming-interview-tips/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/common-programming-interview-tips/</link>
       <pubDate>Mon, 11 Nov 2019 16:45:47 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/common-programming-interview-tips/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/common-programming-interview-tips/</guid>
       <description>Here are some tips I have found to be quite useful while doing programming interviews:
  Have a whiteboard nearby (really helps to draw out your thoughts!)  Here are some technical tips: 1. A common theme is iterating down the columns of a 2D list of lists (without using numpy!) 2. Graphs! Many problems are just waiting to be solved using graphs. But the translation from the problem into the graph has some flexibility (which affects the runtime, and everything really): 1.</description>
     </item>
     
     <item>
       <title>Set</title>
-      <link>https://johntiger1.github.io/blog/posts/set/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/set/</link>
       <pubDate>Mon, 11 Nov 2019 14:08:34 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/set/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/set/</guid>
       <description>Here&amp;rsquo;s a question: how can you do membership look-up in O(1) time in Python?
 One way is via a dictionary. But what if you don&amp;rsquo;t have values to store with the keys?
 Then, you don&amp;rsquo;t really need that extra stuff. In that case, let&amp;rsquo;s use a set!
@@ -404,10 +404,10 @@ A Python set is like a mix between a list and dictionary: it only supports the &
     
     <item>
       <title>Lyft Offices</title>
-      <link>https://johntiger1.github.io/blog/posts/lyft-offices/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/lyft-offices/</link>
       <pubDate>Mon, 11 Nov 2019 14:05:37 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/lyft-offices/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/lyft-offices/</guid>
       <description>As you may know, I recently received a Lyft offer for software engineer intern in machine learning for summer 2020.
 Just got off the phone with a Lyft engineering manager! He gave me some very exciting and interesting news and information about the New York Lyft office.
 New York Lyft office has several teams including Marketplace Labs, as well as several product teams, like: Pick-up (all the data that gets sent when a rider is picked up by a driver), (Routing?</description>
@@ -415,10 +415,10 @@ New York Lyft office has several teams including Marketplace Labs, as well as se
     
     <item>
       <title>Unet</title>
-      <link>https://johntiger1.github.io/blog/posts/unet/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/unet/</link>
       <pubDate>Sun, 10 Nov 2019 19:13:24 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/unet/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/unet/</guid>
       <description>The Unet architecture is monuemental, and understanding it introduces you to so many different areas of deep learning. So I&amp;rsquo;ve decided to dedicate an entire blog post to it.
 U-net is an architecture for semantic segmentation.
 Semantic segmentation is the following task: given an image, classify each pixel as belonging to a class. It is like regular segmentation: while regular segmentation probably looks at pixel intensities and other intrinsic image vision properties (edges, gradients, coherence, continuity, etc.</description>
@@ -426,10 +426,10 @@ Semantic segmentation is the following task: given an image, classify each pixel
     
     <item>
       <title>Hugo New Considered Harmful</title>
-      <link>https://johntiger1.github.io/blog/posts/hugo-new-considered-harmful/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/hugo-new-considered-harmful/</link>
       <pubDate>Sun, 10 Nov 2019 19:04:31 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/hugo-new-considered-harmful/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/hugo-new-considered-harmful/</guid>
       <description>I&amp;rsquo;m trying to like Hugo. I really am.
 But more and more it seems to me like the only reason this static site generator exists is because, &amp;ldquo;hey, why not?&amp;rdquo;. In other words, I am finding that the overhead of using the SSG is quite high, and interfering with my ability to do what I want, leading to me wondering why I am using it at all.
 (For reference: as someone coming from a CS background, with some web dev experience, I could trivially make a simple and functional blog by myself, so the value prop for Hugo really seems limited)</description>
@@ -437,20 +437,20 @@ But more and more it seems to me like the only reason this static site generator
     
     <item>
       <title>Topics in Deep Learning</title>
-      <link>https://johntiger1.github.io/blog/posts/topics-in-cs/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/topics-in-cs/</link>
       <pubDate>Sat, 09 Nov 2019 00:38:18 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/topics-in-cs/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/topics-in-cs/</guid>
       <description>There are some new topics and muses for my study:
  Reinforcement learning (off-policy, on-policy) Embeddings; just generally getting accustomed to the lingo!  ex. a &amp;ldquo;question&amp;rdquo; embedding, or some other use of the word &amp;ldquo;embedding&amp;rdquo;  Graph neural networks Really want to concretize MCTS + Neural networks; i.e. the Alpha Zero framework  </description>
     </item>
     
     <item>
       <title>C3</title>
-      <link>https://johntiger1.github.io/blog/posts/c3.ai/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/c3.ai/</link>
       <pubDate>Fri, 08 Nov 2019 01:25:25 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/c3.ai/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/c3.ai/</guid>
       <description>So I had my 1st round final interviews for c3.ai today! It was an OK experience.
 The interview consisted of 3 portions, and I thought it was a pretty good interview process!
 First interview: Let&amp;rsquo;s say you are working for Expedia. How would you build a model to predict which trips are being taken for business and which are being taken for leisure?
@@ -459,10 +459,10 @@ Second interview: Questions on domain knowledge of ML.</description>
     
     <item>
       <title>Microsoft Onsite</title>
-      <link>https://johntiger1.github.io/blog/posts/microsoft-onsite/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/microsoft-onsite/</link>
       <pubDate>Tue, 05 Nov 2019 06:39:02 -0500</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/microsoft-onsite/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/microsoft-onsite/</guid>
       <description>I&amp;rsquo;m currently sitting in the airport in Philadelphia, having just taken the 10:30 red-eye from Seattle. I had the entire row to myself, which enabled me to sleep rather decently, all things considered! (even better than I&amp;rsquo;m sleeping at 95 Lippincott in all honesty!)
 My onsites were earlier that day in Redmond, Washington (Microsoft Main Campus). It was quite a process interviewing with them!
 Here&amp;rsquo;s a breakdown of the entire day:</description>
@@ -470,20 +470,20 @@ Here&amp;rsquo;s a breakdown of the entire day:</description>
     
     <item>
       <title>Learning to Program</title>
-      <link>https://johntiger1.github.io/blog/posts/learning-to-program/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/learning-to-program/</link>
       <pubDate>Fri, 01 Nov 2019 18:40:45 -0400</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/learning-to-program/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/learning-to-program/</guid>
       <description>This week, we covered a wide variety of approaches to neural methods to program synthesis and program induction.
 The first batch of presentations: Romila, Eric and Henri Romila: we have synthesis; the most naive way is indeed one way that CAN be used to form programs: get the input space, the program space, the action space, and then try all possible combinations. Her paper talked about some sort of Monte Carlo tree search based method; alpha zero but applied to program synthesis, and she was critical as they don&amp;rsquo;t update the policy network every time.</description>
     </item>
     
     <item>
       <title>Reinforcement Learning</title>
-      <link>https://johntiger1.github.io/blog/posts/reinforcement-learning/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/reinforcement-learning/</link>
       <pubDate>Thu, 31 Oct 2019 23:44:55 -0400</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/reinforcement-learning/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/reinforcement-learning/</guid>
       <description>Today marks my first foray into reinforcement learning territory!
 Although I have studied the topic extensively academically (well, kind of) I have not had a chance to actually sit down and play around with some implementations. So without further ado, here goes!
 Observation #1: past classifications affect future performance.
@@ -492,10 +492,10 @@ A regular ol&amp;rsquo; CNN classifier is one-shot: it makes the prediction and 
     
     <item>
       <title>Lyft_final_interview</title>
-      <link>https://johntiger1.github.io/blog/posts/lyft_final_interview/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/lyft_final_interview/</link>
       <pubDate>Thu, 31 Oct 2019 21:36:28 -0400</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/lyft_final_interview/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/lyft_final_interview/</guid>
       <description>Wow! That was quite an intense and exhausting 3 hours!
 I just finished my (virtual) final round interviews for Lyft.
 I had 3 back-to-back interviews; the first one on coding, the second on experience and team fit (with manager) and then the third on ML domain knowledge. What did not help was the huge time difference: I started my interviews at 5:30 PM, and it went all the way to 8:30 PM Toronto time.</description>
@@ -503,29 +503,29 @@ I had 3 back-to-back interviews; the first one on coding, the second on experien
     
     <item>
       <title>Hugo vs Jekyll</title>
-      <link>https://johntiger1.github.io/blog/posts/hugo-vs-jekyll/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/hugo-vs-jekyll/</link>
       <pubDate>Thu, 31 Oct 2019 11:36:57 -0400</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/hugo-vs-jekyll/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/hugo-vs-jekyll/</guid>
       <description>Seems like Jekyll wins! https://github.blog/2016-05-10-better-discoverability-for-github-pages-sites/</description>
     </item>
     
     <item>
       <title>Cross Aligned Autoencoders</title>
-      <link>https://johntiger1.github.io/blog/posts/cross-aligned-autoencoders/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/cross-aligned-autoencoders/</link>
       <pubDate>Thu, 31 Oct 2019 11:36:52 -0400</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/cross-aligned-autoencoders/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/cross-aligned-autoencoders/</guid>
       <description>How does Shen&amp;rsquo;s paper work? Well it tries to fit a cross-aligned autoencoder. This is simply an autoencoder that is also guided adversarially by a discriminator. In terms of the basics/nitty gritty technical details, we have the following:
  We have a sequential autoencoder. This is &amp;ldquo;simply&amp;rdquo; a recurrent autoencoder: i.e. an autoencoder where the encoder accepts a sequence of states, and the decoder also generates a sequence of states. This sequential autoencoder is aligned by an adversary.</description>
     </item>
     
     <item>
       <title>Ordered Dict</title>
-      <link>https://johntiger1.github.io/blog/posts/ordered-dict/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/ordered-dict/</link>
       <pubDate>Wed, 30 Oct 2019 19:42:04 -0400</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/ordered-dict/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/ordered-dict/</guid>
       <description>An OrderedDict is a dictionary that remembers insertion order. Sweet and simple! when comparing OrderedDicts, Python will check the order of the elements, as the name suggests!
 from collections import OrderedDict od = OrderedDict() od[&amp;#34;a&amp;#34;] = 99 od[&amp;#34;b&amp;#34;] = 100 od.pop() #pops the most recently entered entry! ... It also has some minor methods relating to this order:
 od.move_to_end(&amp;#39;b&amp;#39;, last=True) # moves key b to end of ordering od.move_to_end(&amp;#39;b&amp;#39;, last=False) # moves key b to beginning of ordering</description>
@@ -533,10 +533,10 @@ od.move_to_end(&amp;#39;b&amp;#39;, last=True) # moves key b to end of ordering 
     
     <item>
       <title>Data Science and Machine Learning Review</title>
-      <link>https://johntiger1.github.io/blog/posts/datascience-review/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/datascience-review/</link>
       <pubDate>Wed, 30 Oct 2019 19:38:53 -0400</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/datascience-review/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/datascience-review/</guid>
       <description>As I prepare for my final Machine Learning interview with Lyft, I look back on my Data Science career and projects. I also want to give a brief overview of the subjects that are useful for machine learning and data science.
 Data science type positions: 1. Basic statistics 2. Basic probability 3. Linear Regression 4. Normal equation
 It is difficult to draw the line precisely between machine learning and data science.</description>
@@ -544,97 +544,97 @@ It is difficult to draw the line precisely between machine learning and data sci
     
     <item>
       <title>Deque</title>
-      <link>https://johntiger1.github.io/blog/posts/deque/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/deque/</link>
       <pubDate>Wed, 30 Oct 2019 19:38:47 -0400</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/deque/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/deque/</guid>
       <description>A deque (pronounced &amp;ldquo;deck&amp;rdquo;) is a doubly-ended queue data structure in Python. It is just like your regular array, but it has faster append/pop operations!
 from collections import deque d = deque() d.appendleft(2) d.popleft() d.pop() d.append() It can also support rotation, and other nice features!</description>
     </item>
     
     <item>
       <title>Interview Tips</title>
-      <link>https://johntiger1.github.io/blog/posts/interview-tips/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/interview-tips/</link>
       <pubDate>Tue, 29 Oct 2019 23:21:23 -0400</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/interview-tips/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/interview-tips/</guid>
       <description>As a follow-up to my recent interview-recap on G-Research, I&amp;rsquo;ve come to some realizations on some general tips for doing well on technical interviews:
  Don&amp;rsquo;t procrastinate!  Scheduling a coding challenge might feel like scheduling a dentist appointment: why are you willingly scheduling pain for yourself?! But like scheduling a dentist appointment, it is a necessary fact of life. Schedule it soon as you have a relatively free day (I know, I know everyone is always busy!</description>
     </item>
     
     <item>
       <title>Whats in a Name Review</title>
-      <link>https://johntiger1.github.io/blog/posts/whats-in-a-name-review/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/whats-in-a-name-review/</link>
       <pubDate>Tue, 29 Oct 2019 13:21:25 -0400</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/whats-in-a-name-review/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/whats-in-a-name-review/</guid>
       <description>Paper review: (What’s in a Name? Reducing Bias in Bios Without Access to Protected Attributes)[https://arxiv.org/abs/1904.05233]
 Overall, I have a negative opinion of this paper. It introduces a novel way of bias mitigation, but provides little theoretical justification for why such an approach is useful, and also does not compare their work with any previous work. More over, I am extremely skeptical of the entire point of their paper, which is that we do not have access to protected attributes and so should find a way of providing fairness without looking at protected attributes.</description>
     </item>
     
     <item>
       <title>On Papers</title>
-      <link>https://johntiger1.github.io/blog/posts/on-papers/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/on-papers/</link>
       <pubDate>Tue, 29 Oct 2019 12:01:33 -0400</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/on-papers/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/on-papers/</guid>
       <description>As a follow-up to my recent post on research tips, I would like to mention that confidence and story-telling is key. Many papers have some flaws, and substantial overlap with existing papers, which becomes especially apparent once you get to know the field. The key is presenting a convincing narative that steers the discussion away from focusing too much on those flaws and similarity. In particular, when you are building the introduction, you want to build and hammer home a singular line of thought, a single progression of thought, which makes it OBVIOUS that YOUR approach is the most logical next step forward.</description>
     </item>
     
     <item>
       <title>Pure Storage Coding Challenge</title>
-      <link>https://johntiger1.github.io/blog/posts/pure-storage-coding-challenge/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/pure-storage-coding-challenge/</link>
       <pubDate>Tue, 29 Oct 2019 00:27:14 -0400</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/pure-storage-coding-challenge/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/pure-storage-coding-challenge/</guid>
       <description>Just finished the Pure Storage Coding Challenge! It consists of some coding questions, and then some CS theory questions. Overall, it was a very fair coding challenge, and actually had interesting questions that test your knowledge of CS beyond just Leetcode :)
 Great test!</description>
     </item>
     
     <item>
       <title>Research Tips</title>
-      <link>https://johntiger1.github.io/blog/posts/research-tips/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/research-tips/</link>
       <pubDate>Mon, 28 Oct 2019 00:36:02 -0400</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/research-tips/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/research-tips/</guid>
       <description>Research is hard. Here are some tips I&amp;rsquo;ve picked up over the years: 1. Try to present your work to as many people who will listen. It forces you to really understand the content yourself, and serves as a reality check 2. Make dedicated time for research. As a grad student, it is easy to put research to the side, but to solve any non-trivial problem requires constant, structured attention. 3.</description>
     </item>
     
     <item>
       <title>Variational Auto Encoder</title>
-      <link>https://johntiger1.github.io/blog/posts/vae/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/vae/</link>
       <pubDate>Sun, 27 Oct 2019 21:31:36 -0400</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/vae/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/vae/</guid>
       <description>VAEs are autoencoders with some added randomness. The encoder network (also called recognition or inference network) outputs parameters of a probability distribution for each data point. Then, for each data point, we sample from this parametrized distribution, and feed the SAMPLE to the decoder network, which then is tasked with reconstructing the output. The training objective involves changing from an integral, into just doing optimization, hence the VAE variational objective. In particular, all we do is maximize the ELBO, which helps push up our p(x) which normally would require an integral!</description>
     </item>
     
     <item>
       <title>Upcoming</title>
-      <link>https://johntiger1.github.io/blog/posts/upcoming/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/upcoming/</link>
       <pubDate>Sun, 27 Oct 2019 17:43:51 -0400</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/upcoming/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/upcoming/</guid>
       <description>So without further ado, here are the posts I plan to make:
  Exotic python data structures and where to find them (heapq, OrderedDict, Deque, bisect) Onsite interview with Microsoft Reparameterization tricks: Gaussian vs gumbel The REINFORCE gradient estimator Probability notations Research itinerary Birthday post ABD, L1, and Deep learning Symposium follow-up Scale AI follow-up The supremum IS big-O notation (usually we want the TIGHTEST worst case bound) Model vs Data Parallelism [Some more reinforcement learning][1] [Some more reinforcement learning]1  (Note that the markdown in preview does not exactly work with some more exotic features, like citations and references)</description>
     </item>
     
     <item>
       <title>Roadmap</title>
-      <link>https://johntiger1.github.io/blog/posts/roadmap/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/roadmap/</link>
       <pubDate>Sun, 27 Oct 2019 15:32:39 -0400</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/roadmap/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/roadmap/</guid>
       <description>What exactly is the value prop of this blog? Well I like to think that I have some interesting things going on in my life:
  Machine learning, deep learning, linear algebra, statistics. I am a student in deep learning, and am lucky enough to be exposed daily to the inspirational and amazing work being conducted in the U of T ML group, at Vector Institute. In particular, I want to talk about the awesome papers and concepts I learn about in CSC2547 and CSC2541 My research: to appear in ACL 2020 (fingers crossed!</description>
     </item>
     
     <item>
       <title>How to make a Hugo Subsite</title>
-      <link>https://johntiger1.github.io/blog/posts/hugo-subsite/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/hugo-subsite/</link>
       <pubDate>Sat, 26 Oct 2019 23:18:32 -0400</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/hugo-subsite/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/hugo-subsite/</guid>
       <description>You may have noticed that this blog exists under my main Github personal website. How did I get it to work?
  Github exposes your entire vitual directory by default. (This is why you can just put raw assets in the repo, and they will be served when queried directly) So, I just made Hugo build the entire blog subsite to a folder in my main repo!
   In short:</description>
@@ -642,10 +642,10 @@ Great test!</description>
     
     <item>
       <title>Hello World!</title>
-      <link>https://johntiger1.github.io/blog/posts/first-public-post/</link>
+      <link>https://johnchennewyork-coder.github.io/blog/posts/first-public-post/</link>
       <pubDate>Sat, 26 Oct 2019 18:55:39 -0400</pubDate>
       
-      <guid>https://johntiger1.github.io/blog/posts/first-public-post/</guid>
+      <guid>https://johnchennewyork-coder.github.io/blog/posts/first-public-post/</guid>
       <description>I&amp;rsquo;ve finally set up the Hugo blog subsite on my personal github site, so here is the obligatory &amp;ldquo;Hello, world!&amp;rdquo;
 Current thoughts about Hugo: Neat, but probably would have been better served by a more established/feature-rich system like Jekyll or perhaps Gatsby!
 In particular: I have concerns about dating/naming of posts, especially as this list grows (hopefully) long!</description>
