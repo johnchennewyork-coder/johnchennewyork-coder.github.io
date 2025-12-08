@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Handle click events
   navLinks.forEach(link => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (_e) => {
       const href = (link as HTMLAnchorElement).getAttribute('href');
       if (href && href.startsWith('#')) {
         const targetId = href.substring(1);
@@ -101,8 +101,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Fallback: use scroll position to determine active section if observer didn't find anything
-    const shouldUseFallback = !mostVisible || (mostVisible !== null && mostVisible.ratio < 0.05);
-    if (shouldUseFallback) {
+    let needsFallback = false;
+    if (!mostVisible) {
+      needsFallback = true;
+    } else {
+      // TypeScript workaround: use non-null assertion since we've already checked for null
+      const ratio = (mostVisible as { id: string; ratio: number; top: number }).ratio;
+      if (ratio < 0.05) {
+        needsFallback = true;
+      }
+    }
+    if (needsFallback) {
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
       
