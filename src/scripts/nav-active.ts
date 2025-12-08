@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Handle click events
   navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
+    link.addEventListener('click', () => {
       const href = (link as HTMLAnchorElement).getAttribute('href');
       if (href && href.startsWith('#')) {
         const targetId = href.substring(1);
@@ -101,7 +101,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Fallback: use scroll position to determine active section if observer didn't find anything
-    if (!mostVisible || mostVisible.ratio < 0.05) {
+    const shouldUseFallback = !mostVisible || (mostVisible !== null && mostVisible.ratio < 0.05);
+    if (shouldUseFallback) {
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
       
