@@ -12,8 +12,7 @@ import { PlotlyManager } from './visualizations/plotly-manager';
 
 export class AgentsSimulator {
   private currentAgent: Agent | null = null;
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  private agentCreator: AgentCreator; // Used via callback in constructor
+  private agentCreator: AgentCreator;
   private taskInput: TaskInput;
   private controlPanel: ControlPanel;
   private memoryVisualizer: MemoryVisualizer;
@@ -28,6 +27,8 @@ export class AgentsSimulator {
 
   constructor() {
     this.agentCreator = new AgentCreator((config) => this.onAgentCreated(config));
+    // agentCreator is used via its callback - accessing it to satisfy TypeScript
+    void this.agentCreator;
     this.taskInput = new TaskInput();
     this.controlPanel = new ControlPanel(
       () => this.executeTask(),
