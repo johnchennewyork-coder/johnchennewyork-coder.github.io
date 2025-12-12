@@ -193,6 +193,8 @@ a:hover {
   box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
   padding: var(--space-sm) var(--space-lg);
   transition: all var(--transition-base);
+  z-index: 1030;
+  position: relative;
 }
 
 .navbar-brand {
@@ -279,6 +281,18 @@ a:hover {
   border: 1px solid var(--glass-border);
   border-radius: 8px;
   padding: var(--space-xs);
+  background: transparent;
+  color: var(--text-primary);
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25);
+  outline: none;
+}
+
+.navbar-toggler:hover {
+  background: rgba(99, 102, 241, 0.1);
+  border-color: var(--accent);
 }
 
 .navbar-toggler-icon {
@@ -731,9 +745,34 @@ section {
     font-size: 1.25rem;
   }
   
+  .navbar-toggler {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin-left: auto;
+  }
+  
   .nav-link {
     font-size: 0.9rem;
     padding: var(--space-xs) !important;
+  }
+  
+  .navbar-collapse {
+    background: var(--glass-bg-current);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-radius: 8px;
+    margin-top: var(--space-sm);
+    padding: var(--space-sm);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow-current);
+  }
+  
+  .navbar-collapse .nav-link {
+    padding: var(--space-sm) !important;
+    margin: var(--space-xs) 0;
+    display: block;
+    width: 100%;
   }
   
   .theme-toggle {
@@ -823,6 +862,19 @@ section {
   
   .navbar-collapse {
     margin-top: var(--space-sm);
+    background: var(--glass-bg-current);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-radius: 8px;
+    padding: var(--space-sm);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow-current);
+  }
+  
+  .navbar-collapse .nav-link {
+    padding: var(--space-sm) !important;
+    margin: var(--space-xs) 0;
+    display: block;
   }
   
   #name_title {

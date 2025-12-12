@@ -299,43 +299,43 @@ if (!doNotTrack) {
 </tbody>
 </table>
 
-<p>For clarity, we&rsquo;ll often omit the batch dimension $$B$$ in our notation, but it should be understood that all tensors have an additional first dimension for batching.</p>
+<p>For clarity, we&rsquo;ll often omit the batch dimension $B$ in our notation, but it should be understood that all tensors have an additional first dimension for batching.</p>
 
 <h2 id="1-input-token-indices">1. Input: Token Indices</h2>
 
 <p>The input to a Transformer is a sequence of token indices from the vocabulary.</p>
 
-<p><strong>Matrix dimensions:</strong> $$(B, n)$$</p>
+<p><strong>Matrix dimensions:</strong> $(B, n)$</p>
 
-<p>Each element is an integer in the range $$[0, V-1]$$ representing a token ID. For example, with a batch size of 32 and sequence length of 100, we have a tensor of shape $$(32, 100)$$.</p>
+<p>Each element is an integer in the range $[0, V-1]$ representing a token ID. For example, with a batch size of 32 and sequence length of 100, we have a tensor of shape $(32, 100)$.</p>
 
 <h2 id="2-word-embeddings">2. Word Embeddings</h2>
 
 <p>The token indices are converted to dense vector representations through an embedding lookup.</p>
 
-<p><strong>Embedding matrix:</strong> $$(V, d_{\text{model}})$$</p>
+<p><strong>Embedding matrix:</strong> $(V, d_{\text{model}})$</p>
 
-<p><strong>After embedding lookup:</strong> $$(B, n, d_{\text{model}})$$</p>
+<p><strong>After embedding lookup:</strong> $(B, n, d_{\text{model}})$</p>
 
-<p>The embedding layer contains a learnable matrix of size $$(V, d_{\text{model}})$$ where each row corresponds to a vocabulary token. The embedding lookup operation converts each token index to its corresponding $$d_{\text{model}}$$-dimensional vector.</p>
+<p>The embedding layer contains a learnable matrix of size $(V, d_{\text{model}})$ where each row corresponds to a vocabulary token. The embedding lookup operation converts each token index to its corresponding $d_{\text{model}}$-dimensional vector.</p>
 
-<p>For example, with $$V = 50000$$, $$d_{\text{model}} = 512$$, $$B = 32$$, and $$n = 100$$ (vocabulary size, model dimension, batch size, and sequence length respectively):</p>
+<p>For example, with $V = 50000$, $d_{\text{model}} = 512$, $B = 32$, and $n = 100$ (vocabulary size, model dimension, batch size, and sequence length respectively):</p>
 <ul style="list-style-type: none; padding-left: 0;">
-<li style="margin: 5px 0;"><strong>Embedding matrix:</strong> $$(50000, 512)$$</li>
-<li style="margin: 5px 0;"><strong>Embedded input:</strong> $$(32, 100, 512)$$</li>
+<li style="margin: 5px 0;"><strong>Embedding matrix:</strong> $(50000, 512)$</li>
+<li style="margin: 5px 0;"><strong>Embedded input:</strong> $(32, 100, 512)$</li>
 </ul>
 
 <h2 id="3-positional-encoding">3. Positional Encoding</h2>
 
 <p>Since Transformers don&rsquo;t have recurrence or convolution, positional information must be added explicitly. Positional encodings are added (not concatenated) to the word embeddings.</p>
 
-<p><strong>Positional encoding matrix:</strong> $$(n, d_{\text{model}})$$</p>
+<p><strong>Positional encoding matrix:</strong> $(n, d_{\text{model}})$</p>
 
-<p><strong>After adding positional encoding:</strong> $$(B, n, d_{\text{model}})$$</p>
+<p><strong>After adding positional encoding:</strong> $(B, n, d_{\text{model}})$</p>
 
-<p>The positional encoding has the same dimensions as the embedded input. The addition is element-wise, broadcasting the $$(n, d_{\text{model}})$$ positional encoding across the batch dimension.</p>
+<p>The positional encoding has the same dimensions as the embedded input. The addition is element-wise, broadcasting the $(n, d_{\text{model}})$ positional encoding across the batch dimension.</p>
 
-<p>After this step, we have: <strong>$$(B, n, d_{\text{model}})$$</strong></p>
+<p>After this step, we have: <strong>$(B, n, d_{\text{model}})$</strong></p>
 
 <h2 id="4-single-head-attention-mechanism">4. Single-Head Attention Mechanism</h2>
 
@@ -345,89 +345,89 @@ if (!doNotTrack) {
 
 <p>Three linear transformations project the input into query, key, and value spaces.</p>
 
-<p><strong>Input to projections:</strong> $$(B, n, d_{\text{model}})$$</p>
+<p><strong>Input to projections:</strong> $(B, n, d_{\text{model}})$</p>
 
 <p><strong>Weight matrices:</strong></p>
 <ul style="list-style-type: none; padding-left: 0;">
-<li style="margin: 5px 0;"><strong>$$W_Q$$:</strong> $$(d_{\text{model}}, d_k)$$</li>
-<li style="margin: 5px 0;"><strong>$$W_K$$:</strong> $$(d_{\text{model}}, d_k)$$</li>
-<li style="margin: 5px 0;"><strong>$$W_V$$:</strong> $$(d_{\text{model}}, d_v)$$</li>
+<li style="margin: 5px 0;"><strong>$W_Q$:</strong> $(d_{\text{model}}, d_k)$</li>
+<li style="margin: 5px 0;"><strong>$W_K$:</strong> $(d_{\text{model}}, d_k)$</li>
+<li style="margin: 5px 0;"><strong>$W_V$:</strong> $(d_{\text{model}}, d_v)$</li>
 </ul>
 
 <p><strong>After projections:</strong></p>
 <ul style="list-style-type: none; padding-left: 0;">
-<li style="margin: 5px 0;"><strong>$$Q = XW_Q$$:</strong> $$(B, n, d_k)$$</li>
-<li style="margin: 5px 0;"><strong>$$K = XW_K$$:</strong> $$(B, n, d_k)$$</li>
-<li style="margin: 5px 0;"><strong>$$V = XW_V$$:</strong> $$(B, n, d_v)$$</li>
+<li style="margin: 5px 0;"><strong>$Q = XW_Q$:</strong> $(B, n, d_k)$</li>
+<li style="margin: 5px 0;"><strong>$K = XW_K$:</strong> $(B, n, d_k)$</li>
+<li style="margin: 5px 0;"><strong>$V = XW_V$:</strong> $(B, n, d_v)$</li>
 </ul>
 
-<p>In the original paper, $$d_k = d_v = \frac{d_{\text{model}}}{h}$$. For example, with model dimension $$d_{\text{model}} = 512$$ and number of heads $$h = 8$$, we have $$d_k = d_v = 64$$.</p>
+<p>In the original paper, $d_k = d_v = \frac{d_{\text{model}}}{h}$. For example, with model dimension $d_{\text{model}} = 512$ and number of heads $h = 8$, we have $d_k = d_v = 64$.</p>
 
 <h3 id="42-attention-scores">4.2. Attention Scores</h3>
 
-<p>Attention scores are computed as the dot product of queries and keys, scaled by $$\sqrt{d_k}$$.</p>
+<p>Attention scores are computed as the dot product of queries and keys, scaled by $\sqrt{d_k}$.</p>
 
-<p><strong>Computation:</strong> $$S = \frac{QK^T}{\sqrt{d_k}}$$</p>
+<p><strong>Computation:</strong> $S = \frac{QK^T}{\sqrt{d_k}}$</p>
 
 <p><strong>Matrix dimensions:</strong></p>
 <ul style="list-style-type: none; padding-left: 0;">
-<li style="margin: 5px 0;"><strong>$$Q$$:</strong> $$(B, n, d_k)$$</li>
-<li style="margin: 5px 0;"><strong>$$K^T$$:</strong> $$(B, d_k, n)$$ (transposed)</li>
-<li style="margin: 5px 0;"><strong>$$S$$:</strong> $$(B, n, n)$$</li>
+<li style="margin: 5px 0;"><strong>$Q$:</strong> $(B, n, d_k)$</li>
+<li style="margin: 5px 0;"><strong>$K^T$:</strong> $(B, d_k, n)$ (transposed)</li>
+<li style="margin: 5px 0;"><strong>$S$:</strong> $(B, n, n)$</li>
 </ul>
 
-<p>The attention score matrix $$S$$ has shape $$(B, n, n)$$ where $$S_{ij}$$ represents how much token $$i$$ should attend to token $$j$$.</p>
+<p>The attention score matrix $S$ has shape $(B, n, n)$ where $S_{ij}$ represents how much token $i$ should attend to token $j$.</p>
 
 <h3 id="43-attention-weights">4.3. Attention Weights</h3>
 
 <p>Apply softmax to the attention scores to get attention weights.</p>
 
-<p><strong>Computation:</strong> $$A = \text{softmax}(S)$$</p>
+<p><strong>Computation:</strong> $A = \text{softmax}(S)$</p>
 
-<p><strong>Matrix dimensions:</strong> $$(B, n, n)$$</p>
+<p><strong>Matrix dimensions:</strong> $(B, n, n)$</p>
 
-<p>The softmax is applied along the last dimension (over keys), so each row sums to 1. The attention weight matrix $$A$$ has the same dimensions as the score matrix $$S$$.</p>
+<p>The softmax is applied along the last dimension (over keys), so each row sums to 1. The attention weight matrix $A$ has the same dimensions as the score matrix $S$.</p>
 
 <h3 id="44-attention-output">4.4. Attention Output</h3>
 
 <p>Multiply attention weights by values to get the output.</p>
 
-<p><strong>Computation:</strong> $$\text{Attention}(Q, K, V) = AV$$</p>
+<p><strong>Computation:</strong> $\text{Attention}(Q, K, V) = AV$</p>
 
 <p><strong>Matrix dimensions:</strong></p>
 <ul style="list-style-type: none; padding-left: 0;">
-<li style="margin: 5px 0;"><strong>$$A$$:</strong> $$(B, n, n)$$</li>
-<li style="margin: 5px 0;"><strong>$$V$$:</strong> $$(B, n, d_v)$$</li>
-<li style="margin: 5px 0;"><strong>Output:</strong> $$(B, n, d_v)$$</li>
+<li style="margin: 5px 0;"><strong>$A$:</strong> $(B, n, n)$</li>
+<li style="margin: 5px 0;"><strong>$V$:</strong> $(B, n, d_v)$</li>
+<li style="margin: 5px 0;"><strong>Output:</strong> $(B, n, d_v)$</li>
 </ul>
 
-<p>For a single head, the attention output has dimensions $$(B, n, d_v)$$.</p>
+<p>For a single head, the attention output has dimensions $(B, n, d_v)$.</p>
 
 <h2 id="5-multi-head-attention">5. Multi-Head Attention</h2>
 
-<p>Multi-head attention runs $$h$$ parallel attention mechanisms, then concatenates and projects the results.</p>
+<p>Multi-head attention runs $h$ parallel attention mechanisms, then concatenates and projects the results.</p>
 
 <h3 id="51-multiple-heads">5.1. Multiple Heads</h3>
 
 <p>Each head independently computes attention:</p>
 
-<p><strong>Per-head output:</strong> $$(B, n, d_v)$$</p>
+<p><strong>Per-head output:</strong> $(B, n, d_v)$</p>
 
-<p><strong>All heads (stacked):</strong> $$(B, h, n, d_v)$$</p>
+<p><strong>All heads (stacked):</strong> $(B, h, n, d_v)$</p>
 
-<p>Or equivalently, if we concatenate along the feature dimension: <strong>$$(B, n, h \cdot d_v)$$</strong></p>
+<p>Or equivalently, if we concatenate along the feature dimension: <strong>$(B, n, h \cdot d_v)$</strong></p>
 
 <h3 id="52-concatenation-and-output-projection">5.2. Concatenation and Output Projection</h3>
 
 <p>The outputs from all heads are concatenated and projected through a linear layer.</p>
 
-<p><strong>After concatenation:</strong> $$(B, n, h \cdot d_v)$$</p>
+<p><strong>After concatenation:</strong> $(B, n, h \cdot d_v)$</p>
 
-<p>Since $$d_v = \frac{d_{\text{model}}}{h}$$, we have $$h \cdot d_v = d_{\text{model}}$$, so: <strong>$$(B, n, d_{\text{model}})$$</strong></p>
+<p>Since $d_v = \frac{d_{\text{model}}}{h}$, we have $h \cdot d_v = d_{\text{model}}$, so: <strong>$(B, n, d_{\text{model}})$</strong></p>
 
-<p><strong>Output projection weight:</strong> $$W_O$$: $$(d_{\text{model}}, d_{\text{model}})$$</p>
+<p><strong>Output projection weight:</strong> $W_O$: $(d_{\text{model}}, d_{\text{model}})$</p>
 
-<p><strong>Final multi-head attention output:</strong> $$(B, n, d_{\text{model}})$$</p>
+<p><strong>Final multi-head attention output:</strong> $(B, n, d_{\text{model}})$</p>
 
 <p>The output projection is optional but commonly used. The final output maintains the same dimensions as the input to the attention mechanism.</p>
 
@@ -435,13 +435,13 @@ if (!doNotTrack) {
 
 <p>After multi-head attention, we add a residual connection and apply layer normalization.</p>
 
-<p><strong>Attention output:</strong> $$(B, n, d_{\text{model}})$$</p>
+<p><strong>Attention output:</strong> $(B, n, d_{\text{model}})$</p>
 
-<p><strong>Residual (original input):</strong> $$(B, n, d_{\text{model}})$$</p>
+<p><strong>Residual (original input):</strong> $(B, n, d_{\text{model}})$</p>
 
-<p><strong>After residual addition:</strong> $$(B, n, d_{\text{model}})$$</p>
+<p><strong>After residual addition:</strong> $(B, n, d_{\text{model}})$</p>
 
-<p><strong>After layer normalization:</strong> $$(B, n, d_{\text{model}})$$</p>
+<p><strong>After layer normalization:</strong> $(B, n, d_{\text{model}})$</p>
 
 <p>Layer normalization operates along the feature dimension and doesn&rsquo;t change tensor shape.</p>
 
@@ -451,25 +451,25 @@ if (!doNotTrack) {
 
 <h3 id="71-first-linear-layer">7.1. First Linear Layer</h3>
 
-<p><strong>Input:</strong> $$(B, n, d_{\text{model}})$$</p>
+<p><strong>Input:</strong> $(B, n, d_{\text{model}})$</p>
 
-<p><strong>Weight matrix:</strong> $$W_1$$: $$(d_{\text{model}}, d_{\text{ff}})$$</p>
+<p><strong>Weight matrix:</strong> $W_1$: $(d_{\text{model}}, d_{\text{ff}})$</p>
 
-<p><strong>After first linear layer:</strong> $$(B, n, d_{\text{ff}})$$</p>
+<p><strong>After first linear layer:</strong> $(B, n, d_{\text{ff}})$</p>
 
-<p>In the original paper, $$d_{\text{ff}} = 2048$$, which is 4 times $$d_{\text{model}} = 512$$.</p>
+<p>In the original paper, $d_{\text{ff}} = 2048$, which is 4 times $d_{\text{model}} = 512$.</p>
 
 <h3 id="72-relu-activation">7.2. ReLU Activation</h3>
 
-<p><strong>After ReLU:</strong> $$(B, n, d_{\text{ff}})$$</p>
+<p><strong>After ReLU:</strong> $(B, n, d_{\text{ff}})$</p>
 
 <p>The ReLU activation is element-wise and doesn&rsquo;t change dimensions.</p>
 
 <h3 id="73-second-linear-layer">7.3. Second Linear Layer</h3>
 
-<p><strong>Weight matrix:</strong> $$W_2$$: $$(d_{\text{ff}}, d_{\text{model}})$$</p>
+<p><strong>Weight matrix:</strong> $W_2$: $(d_{\text{ff}}, d_{\text{model}})$</p>
 
-<p><strong>After second linear layer:</strong> $$(B, n, d_{\text{model}})$$</p>
+<p><strong>After second linear layer:</strong> $(B, n, d_{\text{model}})$</p>
 
 <p>The FFN expands to $$d_{\text{ff}}$$ dimensions and then projects back to $$d_{\text{model}}$$ dimensions.</p>
 
@@ -477,25 +477,25 @@ if (!doNotTrack) {
 
 <p>After the FFN, we apply another residual connection and layer normalization.</p>
 
-<p><strong>FFN output:</strong> $$(B, n, d_{\text{model}})$$</p>
+<p><strong>FFN output:</strong> $(B, n, d_{\text{model}})$</p>
 
-<p><strong>Residual (input to FFN):</strong> $$(B, n, d_{\text{model}})$$</p>
+<p><strong>Residual (input to FFN):</strong> $(B, n, d_{\text{model}})$</p>
 
-<p><strong>After residual addition:</strong> $$(B, n, d_{\text{model}})$$</p>
+<p><strong>After residual addition:</strong> $(B, n, d_{\text{model}})$</p>
 
-<p><strong>After layer normalization:</strong> $$(B, n, d_{\text{model}})$$</p>
+<p><strong>After layer normalization:</strong> $(B, n, d_{\text{model}})$</p>
 
 <h2 id="9-transformer-encoder-block-summary">9. Transformer Encoder Block Summary</h2>
 
-<p>A complete Transformer encoder block maintains $$(B, n, d_{\text{model}})$$ dimensions throughout:</p>
+<p>A complete Transformer encoder block maintains $(B, n, d_{\text{model}})$ dimensions throughout:</p>
 
 <ol>
-<li>Input: $$(B, n, d_{\text{model}})$$</li>
-<li>Multi-head attention: $$(B, n, d_{\text{model}})$$</li>
-<li>Residual + LayerNorm: $$(B, n, d_{\text{model}})$$</li>
-<li>FFN: $$(B, n, d_{\text{model}})$$</li>
-<li>Residual + LayerNorm: $$(B, n, d_{\text{model}})$$</li>
-<li>Output: $$(B, n, d_{\text{model}})$$</li>
+<li>Input: $(B, n, d_{\text{model}})$</li>
+<li>Multi-head attention: $(B, n, d_{\text{model}})$</li>
+<li>Residual + LayerNorm: $(B, n, d_{\text{model}})$</li>
+<li>FFN: $(B, n, d_{\text{model}})$</li>
+<li>Residual + LayerNorm: $(B, n, d_{\text{model}})$</li>
+<li>Output: $(B, n, d_{\text{model}})$</li>
 </ol>
 
 <h2 id="10-output-layer-for-language-modeling">10. Output Layer (for Language Modeling)</h2>
@@ -504,17 +504,17 @@ if (!doNotTrack) {
 
 <h3 id="101-output-projection">10.1. Output Projection</h3>
 
-<p><strong>Input:</strong> $$(B, n, d_{\text{model}})$$</p>
+<p><strong>Input:</strong> $(B, n, d_{\text{model}})$</p>
 
-<p><strong>Weight matrix:</strong> $$W_{\text{out}}$$: $$(d_{\text{model}}, V)$$</p>
+<p><strong>Weight matrix:</strong> $W_{\text{out}}$: $(d_{\text{model}}, V)$</p>
 
-<p><strong>After projection:</strong> $$(B, n, V)$$</p>
+<p><strong>After projection:</strong> $(B, n, V)$</p>
 
 <p>This projects each position&rsquo;s representation to vocabulary logits.</p>
 
 <h3 id="102-softmax">10.2. Softmax</h3>
 
-<p><strong>After softmax:</strong> $$(B, n, V)$$</p>
+<p><strong>After softmax:</strong> $(B, n, V)$</p>
 
 <p>The softmax is applied along the vocabulary dimension, giving probability distributions over the vocabulary for each position.</p>
 
@@ -526,11 +526,11 @@ if (!doNotTrack) {
 
 <p>The decoder&rsquo;s self-attention uses a causal mask to prevent attending to future positions.</p>
 
-<p><strong>Decoder input:</strong> $$(B, m, d_{\text{model}})$$ where $$m$$ is the target sequence length</p>
+<p><strong>Decoder input:</strong> $(B, m, d_{\text{model}})$ where $m$ is the target sequence length</p>
 
-<p><strong>Attention scores:</strong> $$(B, m, m)$$ with mask applied</p>
+<p><strong>Attention scores:</strong> $(B, m, m)$ with mask applied</p>
 
-<p><strong>Attention output:</strong> $$(B, m, d_{\text{model}})$$</p>
+<p><strong>Attention output:</strong> $(B, m, d_{\text{model}})$</p>
 
 <p>The dimensions follow the same pattern as encoder self-attention, but with sequence length $$m$$ instead of $$n$$.</p>
 
@@ -538,76 +538,76 @@ if (!doNotTrack) {
 
 <p>In encoder-decoder attention, queries come from the decoder while keys and values come from the encoder.</p>
 
-<p><strong>Queries (from decoder):</strong> $$(B, m, d_k)$$</p>
+<p><strong>Queries (from decoder):</strong> $(B, m, d_k)$</p>
 
-<p><strong>Keys (from encoder):</strong> $$(B, n, d_k)$$</p>
+<p><strong>Keys (from encoder):</strong> $(B, n, d_k)$</p>
 
-<p><strong>Values (from encoder):</strong> $$(B, n, d_v)$$</p>
+<p><strong>Values (from encoder):</strong> $(B, n, d_v)$</p>
 
-<p><strong>Attention scores:</strong> $$QK^T = (B, m, d_k) \times (B, d_k, n) = (B, m, n)$$</p>
+<p><strong>Attention scores:</strong> $QK^T = (B, m, d_k) \times (B, d_k, n) = (B, m, n)$</p>
 
-<p><strong>Attention output:</strong> $$(B, m, d_v)$$</p>
+<p><strong>Attention output:</strong> $(B, m, d_v)$</p>
 
-<p>Note that the attention score matrix is $$(B, m, n)$$, not $$(B, m, m)$$ or $$(B, n, n)$$, because we&rsquo;re attending from decoder positions to encoder positions.</p>
+<p>Note that the attention score matrix is $(B, m, n)$, not $(B, m, m)$ or $(B, n, n)$, because we&rsquo;re attending from decoder positions to encoder positions.</p>
 
 <h2 id="12-complete-dimension-flow-example">12. Complete Dimension Flow Example</h2>
 
 <p>Let&rsquo;s trace through a concrete example with the original Transformer paper parameters:</p>
 
 <ul>
-<li>$$B = 32$$ (batch size)</li>
-<li>$$n = 100$$ (source sequence length)</li>
-<li>$$V = 50000$$ (vocabulary size)</li>
-<li>$$d_{\text{model}} = 512$$</li>
-<li>$$h = 8$$ (number of heads)</li>
-<li>$$d_k = d_v = 64$$ ($$512/8$$)</li>
-<li>$$d_{\text{ff}} = 2048$$</li>
+<li>$B = 32$ (batch size)</li>
+<li>$n = 100$ (source sequence length)</li>
+<li>$V = 50000$ (vocabulary size)</li>
+<li>$d_{\text{model}} = 512$</li>
+<li>$h = 8$ (number of heads)</li>
+<li>$d_k = d_v = 64$ ($512/8$)</li>
+<li>$d_{\text{ff}} = 2048$</li>
 </ul>
 
 <p><strong>Dimension flow:</strong></p>
 
 <ol>
-<li>Input tokens: $$(32, 100)$$</li>
-<li>Word embeddings: $$(32, 100, 512)$$</li>
-<li>+ Positional encoding: $$(32, 100, 512)$$</li>
+<li>Input tokens: $(32, 100)$</li>
+<li>Word embeddings: $(32, 100, 512)$</li>
+<li>+ Positional encoding: $(32, 100, 512)$</li>
 <li>Multi-head attention:
    <ul>
-   <li>Q, K, V projections: $$(32, 100, 64)$$ each</li>
-   <li>Attention scores: $$(32, 100, 100)$$</li>
-   <li>Attention weights: $$(32, 100, 100)$$</li>
-   <li>Per-head output: $$(32, 100, 64)$$</li>
-   <li>Concatenated: $$(32, 100, 512)$$</li>
-   <li>Output projection: $$(32, 100, 512)$$</li>
+   <li>Q, K, V projections: $(32, 100, 64)$ each</li>
+   <li>Attention scores: $(32, 100, 100)$</li>
+   <li>Attention weights: $(32, 100, 100)$</li>
+   <li>Per-head output: $(32, 100, 64)$</li>
+   <li>Concatenated: $(32, 100, 512)$</li>
+   <li>Output projection: $(32, 100, 512)$</li>
    </ul>
 </li>
-<li>Residual + LayerNorm: $$(32, 100, 512)$$</li>
+<li>Residual + LayerNorm: $(32, 100, 512)$</li>
 <li>Feed-forward network:
    <ul>
-   <li>First linear: $$(32, 100, 2048)$$</li>
-   <li>ReLU: $$(32, 100, 2048)$$</li>
-   <li>Second linear: $$(32, 100, 512)$$</li>
+   <li>First linear: $(32, 100, 2048)$</li>
+   <li>ReLU: $(32, 100, 2048)$</li>
+   <li>Second linear: $(32, 100, 512)$</li>
    </ul>
 </li>
-<li>Residual + LayerNorm: $$(32, 100, 512)$$</li>
-<li>Output projection: $$(32, 100, 50000)$$</li>
-<li>Softmax: $$(32, 100, 50000)$$</li>
+<li>Residual + LayerNorm: $(32, 100, 512)$</li>
+<li>Output projection: $(32, 100, 50000)$</li>
+<li>Softmax: $(32, 100, 50000)$</li>
 </ol>
 
 <h2 id="13-key-insights">13. Key Insights</h2>
 
 <ul>
-<li><strong>Dimension preservation:</strong> The main data flow maintains $$(B, n, d_{\text{model}})$$ dimensions through most of the network, with temporary expansions in attention (to $$(B, n, n)$$ for scores) and FFN (to $$(B, n, d_{\text{ff}})$$).</li>
+<li><strong>Dimension preservation:</strong> The main data flow maintains $(B, n, d_{\text{model}})$ dimensions through most of the network, with temporary expansions in attention (to $(B, n, n)$ for scores) and FFN (to $(B, n, d_{\text{ff}})$).</li>
 
-<li><strong>Attention complexity:</strong> The attention score matrix is quadratic in sequence length $$(B, n, n)$$, which is why Transformers have $$O(n^2)$$ complexity.</li>
+<li><strong>Attention complexity:</strong> The attention score matrix is quadratic in sequence length $(B, n, n)$, which is why Transformers have $O(n^2)$ complexity.</li>
 
-<li><strong>Multi-head dimension math:</strong> With $$h$$ heads, each head uses $$d_k = d_v = \frac{d_{\text{model}}}{h}$$ dimensions. After concatenation, we get back to $$d_{\text{model}}$$ dimensions: $$h \times \frac{d_{\text{model}}}{h} = d_{\text{model}}$$.</li>
+<li><strong>Multi-head dimension math:</strong> With $h$ heads, each head uses $d_k = d_v = \frac{d_{\text{model}}}{h}$ dimensions. After concatenation, we get back to $d_{\text{model}}$ dimensions: $h \times \frac{d_{\text{model}}}{h} = d_{\text{model}}$.</li>
 
-<li><strong>FFN expansion:</strong> The feed-forward network expands to $$d_{\text{ff}}$$ (typically $$4 \times d_{\text{model}}$$) before projecting back, allowing for richer representations.</li>
+<li><strong>FFN expansion:</strong> The feed-forward network expands to $d_{\text{ff}}$ (typically $4 \times d_{\text{model}}$) before projecting back, allowing for richer representations.</li>
 </ul>
 
 <h2 id="14-conclusion">14. Conclusion</h2>
 
-<p>Understanding matrix dimensions is essential for debugging Transformer implementations and ensuring correct tensor operations. The key pattern is that most operations preserve the sequence and model dimensions $$(B, n, d_{\text{model}})$$, with specific expansions for attention computations and feed-forward transformations. Keeping track of these dimensions at each step helps prevent shape mismatches and provides insight into the computational flow of the architecture.</p>
+<p>Understanding matrix dimensions is essential for debugging Transformer implementations and ensuring correct tensor operations. The key pattern is that most operations preserve the sequence and model dimensions $(B, n, d_{\text{model}})$, with specific expansions for attention computations and feed-forward transformations. Keeping track of these dimensions at each step helps prevent shape mismatches and provides insight into the computational flow of the architecture.</p>
 
         
         
