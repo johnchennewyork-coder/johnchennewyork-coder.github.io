@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Reinforcement Fine-Tuning: When and Why to Use RLHF - LLM Engineering Toolbox #1 - John&#39;s Machine Learning and Deep Learning Blog</title>
+  <meta name="description" content="The first article in the LLM Engineering Toolbox series. Learn when and why to use Reinforcement Learning from Human Feedback (RLHF) for fine-tuning language models, with a concrete code example using PPO.">
+  <meta name="author" content="John Chen"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "John\x27s Machine Learning and Deep Learning Blog",
+    
+    "url": "https:\/\/johnchennewyork-coder.github.io\/blog"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/johnchennewyork-coder.github.io\/blog"
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/johnchennewyork-coder.github.io\/blog",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/johnchennewyork-coder.github.io\/blog\/posts\/reinforcement-fine-tuning\/",
+          "name": "Reinforcement Fine-Tuning: When and Why to Use RLHF"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "John Chen"
+  },
+  "headline": "Reinforcement Fine-Tuning: When and Why to Use RLHF",
+  "description" : "The first article in the LLM Engineering Toolbox series. Learn when and why to use Reinforcement Learning from Human Feedback (RLHF) for fine-tuning language models, with a concrete code example using PPO.",
+  "inLanguage" : "en",
+  "wordCount":  0 ,
+  "datePublished" : "2025-12-12T00:49:15",
+  "dateModified" : "2025-12-12T00:49:15",
+  "image" : "https:\/\/johnchennewyork-coder.github.io\/blog\/img\/avatar-icon.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "https:\/\/johnchennewyork-coder.github.io\/blog\/posts\/reinforcement-fine-tuning\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/johnchennewyork-coder.github.io\/blog",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/johnchennewyork-coder.github.io\/blog\/img\/avatar-icon.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Reinforcement Fine-Tuning: When and Why to Use RLHF" />
+<meta property="og:description" content="The first article in the LLM Engineering Toolbox series. Learn when and why to use Reinforcement Learning from Human Feedback (RLHF) for fine-tuning language models, with a concrete code example using PPO.">
+<meta property="og:image" content="https://johnchennewyork-coder.github.io/blog/img/avatar-icon.png" />
+<meta property="og:url" content="https://johnchennewyork-coder.github.io/blog/posts/reinforcement-fine-tuning/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="John&#39;s Machine Learning and Deep Learning Blog" />
+
+  <meta name="twitter:title" content="Reinforcement Fine-Tuning: When and Why to Use RLHF" />
+  <meta name="twitter:description" content="The first article in the LLM Engineering Toolbox series. Learn when and why to use Reinforcement Learning from Human Feedback (RLHF) for fine-tuning language models, with a concrete code example using PPO.">
+  <meta name="twitter:image" content="https://johnchennewyork-coder.github.io/blog/img/avatar-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <link href='https://johnchennewyork-coder.github.io/blog/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.59.0" />
+  <link rel="alternate" href="https://johnchennewyork-coder.github.io/blog/index.xml" type="application/rss+xml" title="John&#39;s Machine Learning and Deep Learning Blog"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://johnchennewyork-coder.github.io/blog/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://johnchennewyork-coder.github.io/blog/css/highlight.min.css" /><link rel="stylesheet" href="https://johnchennewyork-coder.github.io/blog/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-150888192-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://johnchennewyork-coder.github.io/blog">John&#39;s Machine Learning and Deep Learning Blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/blog">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/blog/page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/blog/tags">Tags</a>
+            </li>
+          
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="John&#39;s Machine Learning and Deep Learning Blog" href="https://johnchennewyork-coder.github.io/blog">
+            <img class="avatar-img" src="https://johnchennewyork-coder.github.io/blog/img/avatar-icon.png" alt="John&#39;s Machine Learning and Deep Learning Blog" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>Reinforcement Fine-Tuning: When and Why to Use RLHF</h1>
+              
+              
+                <hr class="small">
+              
+              <span class="post-meta">LLM Engineering Toolbox #1</span>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Welcome to the <strong>LLM Engineering Toolbox</strong> series! This series focuses on practical techniques for building production-ready language models, with each article answering three key questions: <em>What is it?</em>, <em>Why use it?</em>, and <em>When to use it?</em> We&rsquo;ll provide concrete code examples and real-world context to help you make informed decisions about which techniques to apply in your projects.</p>
+
+<p>In this first article, we&rsquo;ll dive into <strong>Reinforcement Learning from Human Feedback (RLHF)</strong>, also known as reinforcement fine-tuning. This technique has been instrumental in creating models like ChatGPT, Claude, and other modern conversational AI systems.</p>
+
+<h2 id="what-is-reinforcement-fine-tuning">What is Reinforcement Fine-Tuning?</h2>
+
+<p>Reinforcement fine-tuning (RLHF) is a technique that uses reinforcement learning to align language models with human preferences. Unlike supervised fine-tuning, which learns from labeled examples, RLHF optimizes a model&rsquo;s behavior based on reward signals that reflect human preferences.</p>
+
+<p>The typical RLHF pipeline consists of three stages:</p>
+
+<ol>
+<li><strong>Supervised Fine-Tuning (SFT):</strong> Train a base language model on high-quality demonstrations (e.g., human-written responses to prompts)</li>
+<li><strong>Reward Model Training:</strong> Train a separate model to predict human preferences by learning from comparisons (e.g., &ldquo;response A is better than response B&rdquo;)</li>
+<li><strong>Reinforcement Learning Fine-Tuning:</strong> Use a policy gradient algorithm (typically PPO) to optimize the language model to maximize the reward predicted by the reward model</li>
+</ol>
+
+<h2 id="why-use-rlhf">Why Use RLHF?</h2>
+
+<h3 id="1-alignment-with-human-preferences">1. Alignment with Human Preferences</h3>
+
+<p>Traditional language models are trained to predict the next token, which doesn&rsquo;t necessarily align with what humans find helpful, harmless, or honest. RLHF allows you to optimize for these subjective qualities that are difficult to encode in a loss function.</p>
+
+<p><strong>Example:</strong> A model might generate a technically correct but verbose explanation. With RLHF, you can train it to prefer concise, clear responses that humans find more useful.</p>
+
+<h3 id="2-handling-subjective-objectives">2. Handling Subjective Objectives</h3>
+
+<p>Many desirable model behaviors are subjective and context-dependent:</p>
+
+<ul>
+<li><strong>Helpfulness:</strong> What makes a response helpful varies by user and situation</li>
+<li><strong>Style:</strong> Tone, formality, and writing style preferences</li>
+<li><strong>Safety:</strong> Avoiding harmful content while maintaining usefulness</li>
+<li><strong>Creativity vs. Accuracy:</strong> Balancing creative responses with factual correctness</li>
+</ul>
+
+<p>RLHF excels at optimizing for these nuanced, hard-to-quantify objectives.</p>
+
+<h3 id="3-improving-over-supervised-fine-tuning">3. Improving Over Supervised Fine-Tuning</h3>
+
+<p>While supervised fine-tuning (SFT) can teach a model to follow instructions, RLHF can:</p>
+
+<ul>
+<li>Refine responses beyond what&rsquo;s in the training data</li>
+<li>Learn from implicit feedback (preferences) rather than explicit labels</li>
+<li>Optimize for long-term coherence and quality across entire responses</li>
+<li>Handle cases where multiple valid responses exist, learning which humans prefer</li>
+</ul>
+
+<h3 id="4-scalable-feedback-collection">4. Scalable Feedback Collection</h3>
+
+<p>RLHF can work with:</p>
+
+<ul>
+<li>Binary comparisons (easier to collect than full annotations)</li>
+<li>Implicit feedback (user clicks, engagement metrics)</li>
+<li>Rankings (multiple responses ranked by quality)</li>
+</li>
+</ul>
+
+<p>This makes it more scalable than collecting full supervised datasets.</p>
+
+<h2 id="when-to-use-rlhf">When to Use RLHF?</h2>
+
+<h3 id="use-rlhf-when">✅ Use RLHF When:</h3>
+
+<ol>
+<li><p><strong>You need to optimize for subjective quality metrics</strong><br>
+Your success criteria are hard to encode in a standard loss function (e.g., &ldquo;helpful&rdquo;, &ldquo;engaging&rdquo;, &ldquo;professional tone&rdquo;).</p></li>
+
+<li><p><strong>You have access to preference data</strong><br>
+You can collect comparisons, rankings, or implicit feedback signals (clicks, ratings, etc.).</p></li>
+
+<li><p><strong>Supervised fine-tuning isn&rsquo;t sufficient</strong><br>
+SFT gets you partway there, but you need to refine behavior beyond what&rsquo;s in your training data.</p></li>
+
+<li><p><strong>You&rsquo;re building a production conversational system</strong><br>
+User experience and alignment matter more than raw language modeling performance.</p></li>
+
+<li><p><strong>You have computational resources</strong><br>
+RLHF requires training multiple models (base model, reward model, policy) and running RL training, which is computationally expensive.</p></li>
+</ol>
+
+<h3 id="dont-use-rlhf-when">❌ Don&rsquo;t Use RLHF When:</h3>
+
+<ol>
+<li><p><strong>You have clear, objective metrics</strong><br>
+If you can define your objective precisely (e.g., exact match accuracy, BLEU score), supervised learning is simpler and more efficient.</p></li>
+
+<li><p><strong>You lack preference data</strong><br>
+Without feedback signals, you can&rsquo;t train a reward model or optimize the policy.</p></li>
+
+<li><p><strong>Computational resources are limited</strong><br>
+RLHF is expensive. If you&rsquo;re working with limited compute, consider simpler alternatives like prompt engineering or supervised fine-tuning.</p></li>
+
+<li><p><strong>You need deterministic outputs</strong><br>
+RLHF introduces stochasticity. If you need reproducible, deterministic behavior, supervised fine-tuning is more appropriate.</p></li>
+
+<li><p><strong>Your task is well-solved by supervised learning</strong><br>
+If supervised fine-tuning already achieves your goals, adding RLHF may not be worth the complexity and cost.</p></li>
+</ol>
+
+<h2 id="concrete-code-example">Concrete Code Example</h2>
+
+<p>Let&rsquo;s implement a simplified RLHF pipeline using PyTorch and the Proximal Policy Optimization (PPO) algorithm. This example shows the core components:</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<span class="kn">from</span> <span class="nn">torch.distributions</span> <span class="kn">import</span> <span class="n">Categorical</span>
+<span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">GPT2LMHeadModel</span><span class="p">,</span> <span class="n">GPT2Tokenizer</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">class</span> <span class="nc">RewardModel</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Simple reward model that predicts scalar reward for a response.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base_model</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base_model</span> <span class="o">=</span> <span class="n">base_model</span>
+        <span class="c1"># Add a linear head to predict reward</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reward_head</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">base_model</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">n_embd</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_ids</span><span class="p">,</span> <span class="n">attention_mask</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="c1"># Get hidden states from base model</span>
+        <span class="n">outputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_model</span><span class="p">(</span><span class="n">input_ids</span><span class="p">,</span> <span class="n">attention_mask</span><span class="o">=</span><span class="n">attention_mask</span><span class="p">)</span>
+        <span class="c1"># Use the last hidden state of the last token</span>
+        <span class="n">last_hidden</span> <span class="o">=</span> <span class="n">outputs</span><span class="o">.</span><span class="n">last_hidden_state</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>  <span class="c1"># [batch_size, hidden_size]</span>
+        <span class="c1"># Predict reward</span>
+        <span class="n">reward</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reward_head</span><span class="p">(</span><span class="n">last_hidden</span><span class="p">)</span>  <span class="c1"># [batch_size, 1]</span>
+        <span class="k">return</span> <span class="n">reward</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># [batch_size]</span>
+
+
+<span class="k">class</span> <span class="nc">PPOTrainer</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Simplified PPO trainer for RLHF.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">policy_model</span><span class="p">,</span>  <span class="c1"># The language model we&#39;re fine-tuning</span>
+        <span class="n">reference_model</span><span class="p">,</span>  <span class="c1"># Frozen reference model (for KL penalty)</span>
+        <span class="n">reward_model</span><span class="p">,</span>  <span class="c1"># Reward model</span>
+        <span class="n">tokenizer</span><span class="p">,</span>
+        <span class="n">learning_rate</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">,</span>
+        <span class="n">clip_epsilon</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+        <span class="n">kl_coef</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">policy_model</span> <span class="o">=</span> <span class="n">policy_model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reference_model</span> <span class="o">=</span> <span class="n">reference_model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reward_model</span> <span class="o">=</span> <span class="n">reward_model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tokenizer</span> <span class="o">=</span> <span class="n">tokenizer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clip_epsilon</span> <span class="o">=</span> <span class="n">clip_epsilon</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">kl_coef</span> <span class="o">=</span> <span class="n">kl_coef</span>
+        
+        <span class="c1"># Freeze reference model</span>
+        <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">reference_model</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
+            <span class="n">param</span><span class="o">.</span><span class="n">requires_grad</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">reward_model</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
+            <span class="n">param</span><span class="o">.</span><span class="n">requires_grad</span> <span class="o">=</span> <span class="kc">False</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">policy_model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span>
+            <span class="n">lr</span><span class="o">=</span><span class="n">learning_rate</span>
+        <span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">generate_response</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Generate a response using the policy model.&quot;&quot;&quot;</span>
+        <span class="n">input_ids</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s1">&#39;pt&#39;</span><span class="p">)</span>
+        <span class="n">log_probs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">tokens</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_length</span><span class="p">):</span>
+                <span class="n">outputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">policy_model</span><span class="p">(</span><span class="n">input_ids</span><span class="p">)</span>
+                <span class="n">logits</span> <span class="o">=</span> <span class="n">outputs</span><span class="o">.</span><span class="n">logits</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+                <span class="n">probs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">logits</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">dist</span> <span class="o">=</span> <span class="n">Categorical</span><span class="p">(</span><span class="n">probs</span><span class="o">=</span><span class="n">probs</span><span class="p">)</span>
+                <span class="n">token</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>
+                <span class="n">log_prob</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">log_prob</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+                
+                <span class="n">tokens</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+                <span class="n">log_probs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">log_prob</span><span class="p">)</span>
+                <span class="n">input_ids</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">input_ids</span><span class="p">,</span> <span class="n">token</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                
+                <span class="c1"># Stop at end token</span>
+                <span class="k">if</span> <span class="n">token</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">eos_token_id</span><span class="p">:</span>
+                    <span class="k">break</span>
+        
+        <span class="k">return</span> <span class="n">tokens</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">log_probs</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">compute_reward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">response_tokens</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Compute reward for a response using the reward model.&quot;&quot;&quot;</span>
+        <span class="n">prompt_ids</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s1">&#39;pt&#39;</span><span class="p">)</span>
+        <span class="n">full_sequence</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">prompt_ids</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="n">response_tokens</span><span class="p">])],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        
+        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+            <span class="n">reward</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reward_model</span><span class="p">(</span><span class="n">full_sequence</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">reward</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    
+    <span class="k">def</span> <span class="nf">compute_kl_penalty</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">response_tokens</span><span class="p">,</span> <span class="n">policy_log_probs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Compute KL divergence penalty between policy and reference model.&quot;&quot;&quot;</span>
+        <span class="n">prompt_ids</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s1">&#39;pt&#39;</span><span class="p">)</span>
+        <span class="n">full_sequence</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">prompt_ids</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="n">response_tokens</span><span class="p">])],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        
+        <span class="c1"># Get reference model log probs</span>
+        <span class="n">ref_log_probs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">token</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">response_tokens</span><span class="p">):</span>
+                <span class="n">context</span> <span class="o">=</span> <span class="n">full_sequence</span><span class="p">[:,</span> <span class="p">:</span><span class="n">len</span><span class="p">(</span><span class="n">prompt_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="n">i</span><span class="p">]</span>
+                <span class="n">outputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reference_model</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+                <span class="n">logits</span> <span class="o">=</span> <span class="n">outputs</span><span class="o">.</span><span class="n">logits</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+                <span class="n">probs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">logits</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">ref_log_prob</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">probs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">token</span><span class="p">]</span> <span class="o">+</span> <span class="mf">1e-10</span><span class="p">)</span>
+                <span class="n">ref_log_probs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ref_log_prob</span><span class="p">)</span>
+        
+        <span class="n">ref_log_probs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">ref_log_probs</span><span class="p">)</span>
+        <span class="c1"># KL divergence: sum of (policy_log_prob - ref_log_prob)</span>
+        <span class="n">kl</span> <span class="o">=</span> <span class="p">(</span><span class="n">policy_log_probs</span> <span class="o">-</span> <span class="n">ref_log_probs</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">kl</span>
+    
+    <span class="k">def</span> <span class="nf">train_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompts</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Perform one PPO training step.&quot;&quot;&quot;</span>
+        <span class="n">responses</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">log_probs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">rewards</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">kl_penalties</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="c1"># Collect rollouts</span>
+        <span class="k">for</span> <span class="n">prompt</span> <span class="ow">in</span> <span class="n">prompts</span><span class="p">:</span>
+            <span class="n">tokens</span><span class="p">,</span> <span class="n">log_prob_seq</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">generate_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+            <span class="n">reward</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compute_reward</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">tokens</span><span class="p">)</span>
+            <span class="n">kl_penalty</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compute_kl_penalty</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">tokens</span><span class="p">,</span> <span class="n">log_prob_seq</span><span class="p">)</span>
+            
+            <span class="n">responses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+            <span class="n">log_probs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">log_prob_seq</span><span class="p">)</span>
+            <span class="n">rewards</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
+            <span class="n">kl_penalties</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">kl_penalty</span><span class="p">)</span>
+        
+        <span class="c1"># Compute advantages (simplified - in practice, use GAE)</span>
+        <span class="n">advantages</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">kl_coef</span> <span class="o">*</span> <span class="n">kl</span> 
+                      <span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">kl</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">rewards</span><span class="p">,</span> <span class="n">kl_penalties</span><span class="p">)]</span>
+        
+        <span class="c1"># PPO loss</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">log_prob_seq</span><span class="p">,</span> <span class="n">advantage</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">log_probs</span><span class="p">,</span> <span class="n">advantages</span><span class="p">):</span>
+            <span class="c1"># Simplified PPO: maximize log_prob * advantage</span>
+            <span class="c1"># In practice, use importance sampling and clipping</span>
+            <span class="n">loss</span> <span class="o">-=</span> <span class="n">log_prob_seq</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">*</span> <span class="n">advantage</span>
+        
+        <span class="c1"># Update policy</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+        
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;loss&#39;</span><span class="p">:</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span>
+            <span class="s1">&#39;mean_reward&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">rewards</span><span class="p">),</span>
+            <span class="s1">&#39;mean_kl&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">kl</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="k">for</span> <span class="n">kl</span> <span class="ow">in</span> <span class="n">kl_penalties</span><span class="p">])</span>
+        <span class="p">}</span>
+
+
+<span class="c1"># Example usage</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="c1"># Load models</span>
+    <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">GPT2Tokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s1">&#39;gpt2&#39;</span><span class="p">)</span>
+    <span class="n">tokenizer</span><span class="o">.</span><span class="n">pad_token</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">eos_token</span>
+    
+    <span class="c1"># Policy model (the one we&#39;re fine-tuning)</span>
+    <span class="n">policy_model</span> <span class="o">=</span> <span class="n">GPT2LMHeadModel</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s1">&#39;gpt2&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Reference model (frozen copy for KL penalty)</span>
+    <span class="n">reference_model</span> <span class="o">=</span> <span class="n">GPT2LMHeadModel</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s1">&#39;gpt2&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Reward model (pretrained on preference data)</span>
+    <span class="n">reward_base</span> <span class="o">=</span> <span class="n">GPT2LMHeadModel</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s1">&#39;gpt2&#39;</span><span class="p">)</span>
+    <span class="n">reward_model</span> <span class="o">=</span> <span class="n">RewardModel</span><span class="p">(</span><span class="n">reward_base</span><span class="p">)</span>
+    
+    <span class="c1"># Initialize trainer</span>
+    <span class="n">trainer</span> <span class="o">=</span> <span class="n">PPOTrainer</span><span class="p">(</span>
+        <span class="n">policy_model</span><span class="o">=</span><span class="n">policy_model</span><span class="p">,</span>
+        <span class="n">reference_model</span><span class="o">=</span><span class="n">reference_model</span><span class="p">,</span>
+        <span class="n">reward_model</span><span class="o">=</span><span class="n">reward_model</span><span class="p">,</span>
+        <span class="n">tokenizer</span><span class="o">=</span><span class="n">tokenizer</span><span class="p">,</span>
+    <span class="p">)</span>
+    
+    <span class="c1"># Training loop</span>
+    <span class="n">prompts</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;Explain quantum computing in simple terms.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;What are the benefits of renewable energy?&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;How does machine learning work?&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    
+    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+        <span class="n">metrics</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">train_step</span><span class="p">(</span><span class="n">prompts</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epoch </span><span class="si">{epoch}</span><span class="s2">: Loss=</span><span class="si">{metrics[&#39;loss&#39;]:.4f}</span><span class="s2">, Reward=</span><span class="si">{metrics[&#39;mean_reward&#39;]:.4f}</span><span class="s2">, KL=</span><span class="si">{metrics[&#39;mean_kl&#39;]:.4f}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h3 id="key-components-explained">Key Components Explained</h3>
+
+<ol>
+<li><p><strong>RewardModel:</strong> A model that takes a prompt-response pair and outputs a scalar reward. In practice, this is trained on human preference data (e.g., &ldquo;response A is better than response B&rdquo;).</p></li>
+
+<li><p><strong>PPOTrainer:</strong> The main training loop that:
+   - Generates responses using the current policy
+   - Computes rewards using the reward model
+   - Computes KL divergence penalty to prevent the policy from deviating too far from the reference model
+   - Updates the policy using PPO to maximize reward while minimizing KL divergence</p></li>
+
+<li><p><strong>KL Penalty:</strong> Prevents the policy from over-optimizing for the reward model and losing general language modeling capabilities. It keeps the policy &ldquo;close&rdquo; to the reference model.</p></li>
+</ol>
+
+<h3 id="important-note">Important Note</h3>
+
+<p>This is a <strong>simplified</strong> implementation for educational purposes. Production RLHF systems include:</p>
+
+<ul>
+<li>Generalized Advantage Estimation (GAE) for better advantage computation</li>
+<li>Importance sampling and clipping for stable PPO updates</li>
+<li>Value function estimation for variance reduction</li>
+<li>Batched generation and training for efficiency</li>
+<li>Checkpointing and evaluation metrics</li>
+</ul>
+
+<p>For production use, consider libraries like <a href="https://github.com/huggingface/trl">TRL (Transformers Reinforcement Learning)</a> or <a href="https://github.com/allenai/RL4LMs">RL4LMs</a>.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Reinforcement fine-tuning (RLHF) is a powerful technique for aligning language models with human preferences. Use it when:</p>
+
+<ul>
+<li>You need to optimize for subjective quality metrics</li>
+<li>You have access to preference or feedback data</li>
+<li>Supervised fine-tuning alone isn&rsquo;t sufficient</li>
+<li>You&rsquo;re building production conversational systems</li>
+</ul>
+
+<p>However, RLHF is computationally expensive and adds complexity. If you have clear objective metrics or limited resources, consider simpler alternatives first.</p>
+
+<p>In the next article in the <strong>LLM Engineering Toolbox</strong> series, we&rsquo;ll explore another technique for building production-ready language models. Stay tuned!</p>
+
+        
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=https%3a%2f%2fjohnchennewyork-coder.github.io%2fblog%2fposts%2freinforcement-fine-tuning%2f&amp;text=Reinforcement%20Fine-Tuning%3a%20When%20and%20Why%20to%20Use%20RLHF&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjohnchennewyork-coder.github.io%2fblog%2fposts%2freinforcement-fine-tuning%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fjohnchennewyork-coder.github.io%2fblog%2fposts%2freinforcement-fine-tuning%2f&amp;title=Reinforcement%20Fine-Tuning%3a%20When%20and%20Why%20to%20Use%20RLHF" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fjohnchennewyork-coder.github.io%2fposts%2freinforcement-fine-tuning%2f&amp;title=Reinforcement%20Fine-Tuning%3a%20When%20and%20Why%20to%20Use%20RLHF" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fjohnchennewyork-coder.github.io%2fblog%2fposts%2freinforcement-fine-tuning%2f&amp;title=Reinforcement%20Fine-Tuning%3a%20When%20and%20Why%20to%20Use%20RLHF" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fjohnchennewyork-coder.github.io%2fblog%2fposts%2freinforcement-fine-tuning%2f&amp;description=Reinforcement%20Fine-Tuning%3a%20When%20and%20Why%20to%20Use%20RLHF" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://johnchennewyork-coder.github.io/blog/posts/transformer-attention-dimensions/" data-toggle="tooltip" data-placement="top" title="Transformer Attention Matrix Dimensions">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              John Chen
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2025
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://johnchennewyork-coder.github.io/blog">John&#39;s Machine Learning and Deep Learning Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.59.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://johnchennewyork-coder.github.io/blog/js/main.js"></script>
+<script src="https://johnchennewyork-coder.github.io/blog/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body, {
+  delimiters: [
+    {left: "$$", right: "$$", display: true},
+    {left: "$", right: "$", display: false},
+    {left: "\\[", right: "\\]", display: true},
+    {left: "\\(", right: "\\)", display: false}
+  ],
+  throwOnError: false
+}); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://johnchennewyork-coder.github.io/blog/js/load-photoswipe.js"></script>
+
+
+
+
+    
+  </body>
+</html>
